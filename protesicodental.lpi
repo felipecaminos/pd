@@ -1,0 +1,653 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CONFIG>
+  <ProjectOptions>
+    <Version Value="9"/>
+    <General>
+      <SessionStorage Value="InProjectDir"/>
+      <MainUnit Value="0"/>
+      <AutoCreateForms Value="False"/>
+      <Title Value="protesyx"/>
+      <UseAppBundle Value="False"/>
+      <ResourceType Value="res"/>
+      <Icon Value="0"/>
+    </General>
+    <i18n>
+      <OutDir Value="po"/>
+    </i18n>
+    <VersionInfo>
+      <UseVersionInfo Value="True"/>
+      <AutoIncrementBuild Value="True"/>
+      <MinorVersionNr Value="2"/>
+      <BuildNr Value="3"/>
+      <Language Value="040A"/>
+      <CharSet Value="04B0"/>
+      <StringTable ProductVersion=""/>
+    </VersionInfo>
+    <BuildModes Count="2">
+      <Item1 Name="Default" Default="True"/>
+      <Item2 Name="COMPILADO FINAL">
+        <CompilerOptions>
+          <Version Value="11"/>
+          <Target>
+            <Filename Value="protesicodental"/>
+          </Target>
+          <SearchPaths>
+            <IncludeFiles Value="$(ProjOutDir)"/>
+            <OtherUnitFiles Value="ayuda"/>
+          </SearchPaths>
+          <Parsing>
+            <SyntaxOptions>
+              <AllowLabel Value="False"/>
+            </SyntaxOptions>
+          </Parsing>
+          <CodeGeneration>
+            <SmartLinkUnit Value="True"/>
+          </CodeGeneration>
+          <Linking>
+            <Debugging>
+              <GenerateDebugInfo Value="False"/>
+            </Debugging>
+            <LinkSmart Value="True"/>
+            <Options>
+              <Win32>
+                <GraphicApplication Value="True"/>
+              </Win32>
+            </Options>
+          </Linking>
+          <Other>
+            <Verbosity>
+              <ShowGenInfo Value="False"/>
+              <ShowNothing Value="True"/>
+            </Verbosity>
+            <WriteFPCLogo Value="False"/>
+            <CompilerMessages>
+              <MsgFileName Value=""/>
+            </CompilerMessages>
+            <CompilerPath Value="$(CompPath)"/>
+          </Other>
+        </CompilerOptions>
+      </Item2>
+    </BuildModes>
+    <PublishOptions>
+      <Version Value="2"/>
+    </PublishOptions>
+    <RunParams>
+      <local>
+        <FormatVersion Value="1"/>
+      </local>
+    </RunParams>
+    <RequiredPackages Count="20">
+      <Item1>
+        <PackageName Value="pl_fzcontrols"/>
+      </Item1>
+      <Item2>
+        <PackageName Value="pl_zeosdbo"/>
+      </Item2>
+      <Item3>
+        <PackageName Value="pl_acs"/>
+      </Item3>
+      <Item4>
+        <PackageName Value="industrial"/>
+      </Item4>
+      <Item5>
+        <PackageName Value="pl_cindy"/>
+      </Item5>
+      <Item6>
+        <PackageName Value="pl_lazsolutions"/>
+      </Item6>
+      <Item7>
+        <PackageName Value="pl_spktoolbar"/>
+      </Item7>
+      <Item8>
+        <PackageName Value="TurboPowerIPro"/>
+      </Item8>
+      <Item9>
+        <PackageName Value="Printer4Lazarus"/>
+      </Item9>
+      <Item10>
+        <PackageName Value="lr_DialogDesign"/>
+      </Item10>
+      <Item11>
+        <PackageName Value="LR_SqlDB"/>
+      </Item11>
+      <Item12>
+        <PackageName Value="LR_ZeosDB"/>
+      </Item12>
+      <Item13>
+        <PackageName Value="lazreport"/>
+      </Item13>
+      <Item14>
+        <PackageName Value="pl_bgracontrols"/>
+      </Item14>
+      <Item15>
+        <PackageName Value="pl_luicontrols"/>
+      </Item15>
+      <Item16>
+        <PackageName Value="pl_jujiboutils"/>
+      </Item16>
+      <Item17>
+        <PackageName Value="pl_rx"/>
+      </Item17>
+      <Item18>
+        <PackageName Value="FCL"/>
+      </Item18>
+      <Item19>
+        <PackageName Value="SQLDBLaz"/>
+      </Item19>
+      <Item20>
+        <PackageName Value="LCL"/>
+      </Item20>
+    </RequiredPackages>
+    <Units Count="56">
+      <Unit0>
+        <Filename Value="protesicodental.lpr"/>
+        <IsPartOfProject Value="True"/>
+        <UnitName Value="protesicodental"/>
+      </Unit0>
+      <Unit1>
+        <Filename Value="principal.pas"/>
+        <IsPartOfProject Value="True"/>
+        <ComponentName Value="FormPrincipal"/>
+        <HasResources Value="True"/>
+        <ResourceBaseClass Value="Form"/>
+        <UnitName Value="principal"/>
+      </Unit1>
+      <Unit2>
+        <Filename Value="conexion_dm.pas"/>
+        <IsPartOfProject Value="True"/>
+        <ComponentName Value="dmConexion"/>
+        <HasResources Value="True"/>
+        <ResourceBaseClass Value="DataModule"/>
+        <UnitName Value="conexion_dm"/>
+      </Unit2>
+      <Unit3>
+        <Filename Value="src/base/base_input.pas"/>
+        <IsPartOfProject Value="True"/>
+        <ComponentName Value="FormBaseInput"/>
+        <HasResources Value="True"/>
+        <ResourceBaseClass Value="Form"/>
+        <UnitName Value="base_input"/>
+      </Unit3>
+      <Unit4>
+        <Filename Value="src/base/base_abm.pas"/>
+        <IsPartOfProject Value="True"/>
+        <ComponentName Value="FormBaseABM"/>
+        <HasResources Value="True"/>
+        <ResourceBaseClass Value="Form"/>
+        <UnitName Value="base_abm"/>
+      </Unit4>
+      <Unit5>
+        <Filename Value="src/formularios_abm/provincias_dm.pas"/>
+        <IsPartOfProject Value="True"/>
+        <ComponentName Value="dmProvincias"/>
+        <HasResources Value="True"/>
+        <ResourceBaseClass Value="DataModule"/>
+        <UnitName Value="provincias_dm"/>
+      </Unit5>
+      <Unit6>
+        <Filename Value="src/formularios_abm/provincias_abm.pas"/>
+        <IsPartOfProject Value="True"/>
+        <ComponentName Value="ProvinciasABM"/>
+        <HasResources Value="True"/>
+        <ResourceBaseClass Value="Form"/>
+        <UnitName Value="provincias_abm"/>
+      </Unit6>
+      <Unit7>
+        <Filename Value="src/varios/acercade.pas"/>
+        <IsPartOfProject Value="True"/>
+        <ComponentName Value="FAcercaDe"/>
+        <HasResources Value="True"/>
+        <ResourceBaseClass Value="Form"/>
+        <UnitName Value="acercade"/>
+      </Unit7>
+      <Unit8>
+        <Filename Value="src/formularios_abm/ciudades_dm.pas"/>
+        <IsPartOfProject Value="True"/>
+        <ComponentName Value="dmCiudades"/>
+        <HasResources Value="True"/>
+        <ResourceBaseClass Value="DataModule"/>
+        <UnitName Value="ciudades_dm"/>
+      </Unit8>
+      <Unit9>
+        <Filename Value="src/formularios_abm/ciudades_input.pas"/>
+        <IsPartOfProject Value="True"/>
+        <ComponentName Value="CiudadesInput"/>
+        <HasResources Value="True"/>
+        <ResourceBaseClass Value="Form"/>
+        <UnitName Value="ciudades_input"/>
+      </Unit9>
+      <Unit10>
+        <Filename Value="src/formularios_abm/ciudades_abm.pas"/>
+        <IsPartOfProject Value="True"/>
+        <ComponentName Value="CiudadesABM"/>
+        <HasResources Value="True"/>
+        <ResourceBaseClass Value="Form"/>
+        <UnitName Value="ciudades_abm"/>
+      </Unit10>
+      <Unit11>
+        <Filename Value="src/formularios_abm/dentistas_dm.pas"/>
+        <IsPartOfProject Value="True"/>
+        <ComponentName Value="dmDentistas"/>
+        <HasResources Value="True"/>
+        <ResourceBaseClass Value="DataModule"/>
+        <UnitName Value="dentistas_dm"/>
+      </Unit11>
+      <Unit12>
+        <Filename Value="src/formularios_abm/provincias_input.pas"/>
+        <IsPartOfProject Value="True"/>
+        <ComponentName Value="ProvinciasInput"/>
+        <HasResources Value="True"/>
+        <ResourceBaseClass Value="Form"/>
+        <UnitName Value="provincias_input"/>
+      </Unit12>
+      <Unit13>
+        <Filename Value="src/formularios_abm/dentistas_input.pas"/>
+        <IsPartOfProject Value="True"/>
+        <ComponentName Value="DentistasInput"/>
+        <HasResources Value="True"/>
+        <ResourceBaseClass Value="Form"/>
+        <UnitName Value="dentistas_input"/>
+      </Unit13>
+      <Unit14>
+        <Filename Value="src/formularios_abm/dentistas_abm.pas"/>
+        <IsPartOfProject Value="True"/>
+        <ComponentName Value="DentistasABM"/>
+        <HasResources Value="True"/>
+        <ResourceBaseClass Value="Form"/>
+        <UnitName Value="dentistas_abm"/>
+      </Unit14>
+      <Unit15>
+        <Filename Value="src/formularios_abm/productos_dm.pas"/>
+        <IsPartOfProject Value="True"/>
+        <ComponentName Value="dmProductos"/>
+        <HasResources Value="True"/>
+        <ResourceBaseClass Value="DataModule"/>
+        <UnitName Value="productos_dm"/>
+      </Unit15>
+      <Unit16>
+        <Filename Value="src/formularios_abm/productos_input.pas"/>
+        <IsPartOfProject Value="True"/>
+        <ComponentName Value="ProductosInput"/>
+        <HasResources Value="True"/>
+        <ResourceBaseClass Value="Form"/>
+        <UnitName Value="productos_input"/>
+      </Unit16>
+      <Unit17>
+        <Filename Value="src/formularios_abm/productos_abm.pas"/>
+        <IsPartOfProject Value="True"/>
+        <ComponentName Value="ProductosABM"/>
+        <HasResources Value="True"/>
+        <ResourceBaseClass Value="Form"/>
+        <UnitName Value="productos_abm"/>
+      </Unit17>
+      <Unit18>
+        <Filename Value="src/formularios_abm/contactos_dm.pas"/>
+        <IsPartOfProject Value="True"/>
+        <ComponentName Value="dmContactos"/>
+        <HasResources Value="True"/>
+        <ResourceBaseClass Value="DataModule"/>
+        <UnitName Value="contactos_dm"/>
+      </Unit18>
+      <Unit19>
+        <Filename Value="src/formularios_abm/contactos_input.pas"/>
+        <IsPartOfProject Value="True"/>
+        <ComponentName Value="ContactosInput"/>
+        <HasResources Value="True"/>
+        <ResourceBaseClass Value="Form"/>
+        <UnitName Value="contactos_input"/>
+      </Unit19>
+      <Unit20>
+        <Filename Value="src/formularios_abm/contactos_abm.pas"/>
+        <IsPartOfProject Value="True"/>
+        <ComponentName Value="ContactosABM"/>
+        <HasResources Value="True"/>
+        <ResourceBaseClass Value="Form"/>
+        <UnitName Value="contactos_abm"/>
+      </Unit20>
+      <Unit21>
+        <Filename Value="src/formularios_abm/contactos_listado.pas"/>
+        <IsPartOfProject Value="True"/>
+        <ComponentName Value="ListadoContactos"/>
+        <HasResources Value="True"/>
+        <ResourceBaseClass Value="Form"/>
+        <UnitName Value="contactos_listado"/>
+      </Unit21>
+      <Unit22>
+        <Filename Value="src/formularios_abm/iva_dm.pas"/>
+        <IsPartOfProject Value="True"/>
+        <ComponentName Value="dmIVA"/>
+        <HasResources Value="True"/>
+        <ResourceBaseClass Value="DataModule"/>
+        <UnitName Value="iva_dm"/>
+      </Unit22>
+      <Unit23>
+        <Filename Value="src/formularios_abm/iva_input.pas"/>
+        <IsPartOfProject Value="True"/>
+        <ComponentName Value="IVAInput"/>
+        <HasResources Value="True"/>
+        <ResourceBaseClass Value="Form"/>
+        <UnitName Value="iva_input"/>
+      </Unit23>
+      <Unit24>
+        <Filename Value="src/formularios_abm/iva_abm.pas"/>
+        <IsPartOfProject Value="True"/>
+        <ComponentName Value="IVAABM"/>
+        <HasResources Value="True"/>
+        <ResourceBaseClass Value="Form"/>
+        <UnitName Value="iva_abm"/>
+      </Unit24>
+      <Unit25>
+        <Filename Value="ayuda/index.html"/>
+        <IsPartOfProject Value="True"/>
+      </Unit25>
+      <Unit26>
+        <Filename Value="src/varios/htmlhelp2viewer.pas"/>
+        <IsPartOfProject Value="True"/>
+        <ComponentName Value="HelpViewerForm"/>
+        <HasResources Value="True"/>
+        <ResourceBaseClass Value="Form"/>
+        <UnitName Value="HtmlHelp2Viewer"/>
+      </Unit26>
+      <Unit27>
+        <Filename Value="src/formularios_abm/categoriaproductos_dm.pas"/>
+        <IsPartOfProject Value="True"/>
+        <ComponentName Value="dmCategoriaProductos"/>
+        <HasResources Value="True"/>
+        <ResourceBaseClass Value="DataModule"/>
+        <UnitName Value="categoriaproductos_dm"/>
+      </Unit27>
+      <Unit28>
+        <Filename Value="src/formularios_abm/categoriaproductos_input.pas"/>
+        <IsPartOfProject Value="True"/>
+        <ComponentName Value="CatProductosInput"/>
+        <HasResources Value="True"/>
+        <ResourceBaseClass Value="Form"/>
+        <UnitName Value="categoriaproductos_input"/>
+      </Unit28>
+      <Unit29>
+        <Filename Value="src/formularios_abm/categoriaproductos_abm.pas"/>
+        <IsPartOfProject Value="True"/>
+        <ComponentName Value="CatProductosABM"/>
+        <HasResources Value="True"/>
+        <ResourceBaseClass Value="Form"/>
+        <UnitName Value="categoriaproductos_abm"/>
+      </Unit29>
+      <Unit30>
+        <Filename Value="src/trabajos/trabajo_dm.pas"/>
+        <IsPartOfProject Value="True"/>
+        <ComponentName Value="dmTrabajo"/>
+        <HasResources Value="True"/>
+        <ResourceBaseClass Value="DataModule"/>
+        <UnitName Value="trabajo_dm"/>
+      </Unit30>
+      <Unit31>
+        <Filename Value="src/trabajos/trabajo_nuevo.pas"/>
+        <IsPartOfProject Value="True"/>
+        <ComponentName Value="TrabajoNuevo"/>
+        <HasResources Value="True"/>
+        <ResourceBaseClass Value="Form"/>
+        <UnitName Value="trabajo_nuevo"/>
+      </Unit31>
+      <Unit32>
+        <Filename Value="src/agenda/agenda_dm.pas"/>
+        <IsPartOfProject Value="True"/>
+        <ComponentName Value="dmAgenda"/>
+        <HasResources Value="True"/>
+        <ResourceBaseClass Value="DataModule"/>
+        <UnitName Value="agenda_dm"/>
+      </Unit32>
+      <Unit33>
+        <Filename Value="src/agenda/agenda_seleccion.pas"/>
+        <IsPartOfProject Value="True"/>
+        <ComponentName Value="Agenda"/>
+        <HasResources Value="True"/>
+        <ResourceBaseClass Value="Form"/>
+        <UnitName Value="agenda_seleccion"/>
+      </Unit33>
+      <Unit34>
+        <Filename Value="src/agenda/agenda_fecha_input.pas"/>
+        <IsPartOfProject Value="True"/>
+        <ComponentName Value="AgendaInputFecha"/>
+        <HasResources Value="True"/>
+        <ResourceBaseClass Value="Form"/>
+        <UnitName Value="agenda_fecha_input"/>
+      </Unit34>
+      <Unit35>
+        <Filename Value="src/agenda/agenda_tarea_input.pas"/>
+        <IsPartOfProject Value="True"/>
+        <ComponentName Value="AgendaInputTarea"/>
+        <HasResources Value="True"/>
+        <ResourceBaseClass Value="Form"/>
+        <UnitName Value="agenda_tarea_input"/>
+      </Unit35>
+      <Unit36>
+        <Filename Value="src/trabajos/trabajo_tareas_finalizar.pas"/>
+        <IsPartOfProject Value="True"/>
+        <ComponentName Value="TareaFinalizar"/>
+        <HasResources Value="True"/>
+        <ResourceBaseClass Value="Form"/>
+        <UnitName Value="trabajo_tareas_finalizar"/>
+      </Unit36>
+      <Unit37>
+        <Filename Value="src/trabajos/trabajo_tareas_dm.pas"/>
+        <IsPartOfProject Value="True"/>
+        <ComponentName Value="dmTrabajosTareas"/>
+        <HasResources Value="True"/>
+        <ResourceBaseClass Value="DataModule"/>
+        <UnitName Value="trabajo_tareas_dm"/>
+      </Unit37>
+      <Unit38>
+        <Filename Value="src/trabajos/trabajo_tareas.pas"/>
+        <IsPartOfProject Value="True"/>
+        <ComponentName Value="TrabajosYTareas"/>
+        <HasResources Value="True"/>
+        <ResourceBaseClass Value="Form"/>
+        <UnitName Value="trabajo_tareas"/>
+      </Unit38>
+      <Unit39>
+        <Filename Value="src/trabajos/trabajo_tareas_asignarplazos.pas"/>
+        <IsPartOfProject Value="True"/>
+        <ComponentName Value="TareasEstablecerPlazo"/>
+        <HasResources Value="True"/>
+        <ResourceBaseClass Value="Form"/>
+        <UnitName Value="trabajo_tareas_asignarplazos"/>
+      </Unit39>
+      <Unit40>
+        <Filename Value="src/trabajos/trabajo_tareas_despacho.pas"/>
+        <IsPartOfProject Value="True"/>
+        <ComponentName Value="TareasDespacho"/>
+        <HasResources Value="True"/>
+        <ResourceBaseClass Value="Form"/>
+        <UnitName Value="trabajo_tareas_despacho"/>
+      </Unit40>
+      <Unit41>
+        <Filename Value="src/trabajos/trabajo_dialogo_remitoguia.pas"/>
+        <IsPartOfProject Value="True"/>
+        <ComponentName Value="DialogoRemitoGuia"/>
+        <HasResources Value="True"/>
+        <ResourceBaseClass Value="Form"/>
+        <UnitName Value="trabajo_dialogo_remitoguia"/>
+      </Unit41>
+      <Unit42>
+        <Filename Value="src/trabajos/trabajo_dialogo_obs_dentista.pas"/>
+        <IsPartOfProject Value="True"/>
+        <ComponentName Value="DialogoObservacionDentista"/>
+        <HasResources Value="True"/>
+        <ResourceBaseClass Value="Form"/>
+        <UnitName Value="trabajo_dialogo_obs_dentista"/>
+      </Unit42>
+      <Unit43>
+        <Filename Value="src/trabajos/trabajo_finalizar.pas"/>
+        <IsPartOfProject Value="True"/>
+        <ComponentName Value="TrabajoFinalizar"/>
+        <HasResources Value="True"/>
+        <ResourceBaseClass Value="Form"/>
+        <UnitName Value="trabajo_finalizar"/>
+      </Unit43>
+      <Unit44>
+        <Filename Value="src/trabajos/trabajo_finalizar_input.pas"/>
+        <IsPartOfProject Value="True"/>
+        <ComponentName Value="TrabajosFinalizarInput"/>
+        <HasResources Value="True"/>
+        <ResourceBaseClass Value="Form"/>
+        <UnitName Value="trabajo_finalizar_input"/>
+      </Unit44>
+      <Unit45>
+        <Filename Value="src/trabajos/trabajo_dialogo_facturacion.pas"/>
+        <IsPartOfProject Value="True"/>
+        <ComponentName Value="DialogoFactura"/>
+        <HasResources Value="True"/>
+        <ResourceBaseClass Value="Form"/>
+        <UnitName Value="trabajo_dialogo_facturacion"/>
+      </Unit45>
+      <Unit46>
+        <Filename Value="src/cuentas_corrientes/cuentas_corrientes_listado.pas"/>
+        <IsPartOfProject Value="True"/>
+        <ComponentName Value="CuentasCorrientes"/>
+        <HasResources Value="True"/>
+        <ResourceBaseClass Value="Form"/>
+        <UnitName Value="cuentas_corrientes_listado"/>
+      </Unit46>
+      <Unit47>
+        <Filename Value="src/cuentas_corrientes/cuentas_corrientes_dm.pas"/>
+        <IsPartOfProject Value="True"/>
+        <ComponentName Value="dmCuentasCorrientes"/>
+        <HasResources Value="True"/>
+        <ResourceBaseClass Value="DataModule"/>
+        <UnitName Value="cuentas_corrientes_dm"/>
+      </Unit47>
+      <Unit48>
+        <Filename Value="src/varios/aaaa_unit_pruebas.pas"/>
+        <IsPartOfProject Value="True"/>
+        <ComponentName Value="Form1"/>
+        <HasResources Value="True"/>
+        <ResourceBaseClass Value="Form"/>
+        <UnitName Value="aaaa_unit_pruebas"/>
+      </Unit48>
+      <Unit49>
+        <Filename Value="src/base/base_form_maestro.pas"/>
+        <IsPartOfProject Value="True"/>
+        <ComponentName Value="FormMaestro"/>
+        <HasResources Value="True"/>
+        <ResourceBaseClass Value="Form"/>
+        <UnitName Value="base_form_maestro"/>
+      </Unit49>
+      <Unit50>
+        <Filename Value="src/trabajos/trabajo_dialogo_factura.pas"/>
+        <IsPartOfProject Value="True"/>
+        <ComponentName Value="DialogoFacturaC"/>
+        <HasResources Value="True"/>
+        <ResourceBaseClass Value="Form"/>
+        <UnitName Value="trabajo_dialogo_factura"/>
+      </Unit50>
+      <Unit51>
+        <Filename Value="src/cuentas_corrientes/cuentas_corrientes_facturacion.pas"/>
+        <IsPartOfProject Value="True"/>
+        <ComponentName Value="FacturacionTrabajosCC"/>
+        <HasResources Value="True"/>
+        <ResourceBaseClass Value="Form"/>
+        <UnitName Value="cuentas_corrientes_facturacion"/>
+      </Unit51>
+      <Unit52>
+        <Filename Value="src/cuentas_corrientes/cuentes_corrientes_pagos.pas"/>
+        <IsPartOfProject Value="True"/>
+        <ComponentName Value="CuentasCorrientesPagos"/>
+        <HasResources Value="True"/>
+        <ResourceBaseClass Value="Form"/>
+        <UnitName Value="cuentes_corrientes_pagos"/>
+      </Unit52>
+      <Unit53>
+        <Filename Value="src/trabajos/trabajo_dialogo_remito.pas"/>
+        <IsPartOfProject Value="True"/>
+        <ComponentName Value="DialogoRemito"/>
+        <HasResources Value="True"/>
+        <ResourceBaseClass Value="Form"/>
+        <UnitName Value="trabajo_dialogo_remito"/>
+      </Unit53>
+      <Unit54>
+        <Filename Value="src/agenda/cuentas_corrientes_dialogo_recibo.pas"/>
+        <IsPartOfProject Value="True"/>
+        <ComponentName Value="DialogoRecibo"/>
+        <HasResources Value="True"/>
+        <ResourceBaseClass Value="Form"/>
+        <UnitName Value="cuentas_corrientes_dialogo_recibo"/>
+      </Unit54>
+      <Unit55>
+        <Filename Value="src/varios/uconvertiraletras.pas"/>
+        <IsPartOfProject Value="True"/>
+        <UnitName Value="uConvertirALetras"/>
+      </Unit55>
+    </Units>
+  </ProjectOptions>
+  <CompilerOptions>
+    <Version Value="11"/>
+    <SearchPaths>
+      <IncludeFiles Value="$(ProjOutDir)"/>
+      <OtherUnitFiles Value="ayuda;src/formularios_abm;src/varios;src/cuentas_corrientes;src/agenda;src/trabajos;src/base"/>
+    </SearchPaths>
+    <CodeGeneration>
+      <SmartLinkUnit Value="True"/>
+      <TargetCPU Value="x86_64"/>
+      <TargetOS Value="linux"/>
+    </CodeGeneration>
+    <Linking>
+      <Debugging>
+        <UseValgrind Value="True"/>
+        <UseExternalDbgSyms Value="True"/>
+      </Debugging>
+      <LinkSmart Value="True"/>
+      <Options>
+        <PassLinkerOptions Value="True"/>
+        <LinkerOptions Value="-T"/>
+        <Win32>
+          <GraphicApplication Value="True"/>
+        </Win32>
+      </Options>
+    </Linking>
+    <Other>
+      <Verbosity>
+        <ShowGenInfo Value="False"/>
+        <ShowNothing Value="True"/>
+        <ShowHintsForUnusedUnitsInMainSrc Value="True"/>
+      </Verbosity>
+      <CompilerMessages>
+        <MsgFileName Value=""/>
+      </CompilerMessages>
+      <CompilerPath Value="$(CompPath)"/>
+      <ExecuteBefore>
+        <CompileReasons Compile="False" Build="False"/>
+      </ExecuteBefore>
+    </Other>
+  </CompilerOptions>
+  <Debugging>
+    <Exceptions Count="9">
+      <Item1>
+        <Name Value="EAbort"/>
+      </Item1>
+      <Item2>
+        <Name Value="ECodetoolError"/>
+      </Item2>
+      <Item3>
+        <Name Value="EFOpenError"/>
+      </Item3>
+      <Item4>
+        <Name Value="EIBDatabaseError"/>
+      </Item4>
+      <Item5>
+        <Name Value="EUpdateError"/>
+      </Item5>
+      <Item6>
+        <Name Value="EDatabaseError"/>
+      </Item6>
+      <Item7>
+        <Name Value="EInterfaceWarning"/>
+      </Item7>
+      <Item8>
+        <Name Value="EConvertError"/>
+      </Item8>
+      <Item9>
+        <Name Value="EThread"/>
+      </Item9>
+    </Exceptions>
+  </Debugging>
+</CONFIG>

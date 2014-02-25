@@ -1,0 +1,96 @@
+inherited CiudadesInput: TCiudadesInput
+  Left = 537
+  Height = 272
+  Top = 143
+  Width = 561
+  Caption = 'Ciudades'
+  ClientHeight = 272
+  ClientWidth = 561
+  OnCreate = FormCreate
+  inherited GroupBox1: TGroupBox
+    object DBEdit1: TDBEdit[0]
+      Left = 6
+      Height = 30
+      Top = 31
+      Width = 168
+      DataField = 'NOMBRE'
+      DataSource = dsInput
+      CharCase = ecNormal
+      MaxLength = 0
+      TabOrder = 0
+    end
+    object Label1: TLabel[1]
+      Left = 6
+      Height = 18
+      Top = 7
+      Width = 45
+      Caption = 'Ciudad'
+      ParentColor = False
+    end
+    object Label2: TLabel[2]
+      Left = 6
+      Height = 18
+      Top = 63
+      Width = 59
+      Caption = 'Provincia'
+      ParentColor = False
+    end
+    object Label3: TLabel[3]
+      Left = 6
+      Height = 18
+      Top = 119
+      Width = 88
+      Caption = 'Departamento'
+      ParentColor = False
+    end
+    object DBLookupComboBox1: TDBLookupComboBox[4]
+      Left = 6
+      Height = 30
+      Top = 143
+      Width = 300
+      DataField = 'DEPARTAMENTO_ID'
+      DataSource = dsInput
+      KeyField = 'ID_DEPARTAMENTO'
+      ListField = 'NOMBRE'
+      ListFieldIndex = 0
+      ListSource = BuscaDepartamento
+      LookupCache = False
+      OnEnter = DBLookupComboBox1Enter
+      ReadOnly = True
+      TabOrder = 1
+    end
+    object DBLookupComboBox2: TDBLookupComboBox[5]
+      Left = 6
+      Height = 30
+      Top = 87
+      Width = 297
+      KeyField = 'ID_PROVINCIA'
+      ListField = 'NOMBRE'
+      ListFieldIndex = 0
+      ListSource = BuscaProvincia
+      LookupCache = False
+      OnChange = DBLookupComboBox2Change
+      TabOrder = 2
+    end
+  end
+  inherited dsInput: TDataSource
+    DataSet = dmCiudades.zCiudades
+    left = 280
+  end
+  inherited Configuracion: TXMLPropStorage
+    left = 208
+  end
+  object BuscaProvincia: TDataSource[4]
+    AutoEdit = False
+    DataSet = dmCiudades.zProvincias
+    left = 240
+    top = 72
+  end
+  object BuscaDepartamento: TDataSource[5]
+    AutoEdit = False
+    DataSet = dmCiudades.zDepartamentos
+    Enabled = False
+    left = 240
+    top = 128
+  end
+end

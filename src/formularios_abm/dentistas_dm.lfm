@@ -1,0 +1,493 @@
+object dmDentistas: TdmDentistas
+  OnCreate = DataModuleCreate
+  OnDestroy = DataModuleDestroy
+  OldCreateOrder = False
+  Height = 216
+  HorizontalOffset = 397
+  VerticalOffset = 260
+  Width = 289
+  object zDentistas: TZQuery
+    Connection = dmConexion.ZConnection1
+    UpdateObject = upDentistas
+    SQL.Strings = (
+      'SELECT a.ID_DENTISTA, a.APELLIDO, a.NOMBRE, a.DNI, a.CUIT, a.DIRECCION,'
+      '    a.DIRECCION2, a.LOCALIDAD_ID, a.CP, a.MOVIL, a.TELEFONO, a.EMAIL, a.CLINICA,'
+      '    a.TIPOIVA_ID, a.PORCENTAJE, a.CREDITO_MAX, a.FECHA_BAJA'
+      'FROM DENTISTAS a '
+    )
+    Params = <>
+    left = 32
+    top = 8
+    object zDentistasID_DENTISTA: TLongintField
+      DisplayWidth = 10
+      FieldKind = fkData
+      FieldName = 'ID_DENTISTA'
+      Index = 0
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = True
+      Visible = False
+    end
+    object zDentistasAPELLIDO: TStringField
+      DisplayLabel = 'Apellido'
+      DisplayWidth = 10
+      FieldKind = fkData
+      FieldName = 'APELLIDO'
+      Index = 1
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+      Size = 200
+    end
+    object zDentistasNOMBRE: TStringField
+      DisplayLabel = 'Nombre'
+      DisplayWidth = 10
+      FieldKind = fkData
+      FieldName = 'NOMBRE'
+      Index = 2
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+      Size = 200
+    end
+    object zDentistasDNI: TStringField
+      DisplayWidth = 40
+      FieldKind = fkData
+      FieldName = 'DNI'
+      Index = 3
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+      Visible = False
+      Size = 40
+    end
+    object zDentistasCUIT: TStringField
+      DisplayWidth = 12
+      FieldKind = fkData
+      FieldName = 'CUIT'
+      Index = 4
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+      Visible = False
+      Size = 52
+    end
+    object zDentistasDIRECCION: TStringField
+      DisplayLabel = 'Direccion'
+      DisplayWidth = 10
+      FieldKind = fkData
+      FieldName = 'DIRECCION'
+      Index = 5
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+      Size = 200
+    end
+    object zDentistasDIRECCION2: TStringField
+      DisplayWidth = 10
+      FieldKind = fkData
+      FieldName = 'DIRECCION2'
+      Index = 6
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+      Visible = False
+      Size = 200
+    end
+    object StringField1: TStringField
+      DisplayLabel = 'Ciudad'
+      DisplayWidth = 10
+      FieldKind = fkLookup
+      FieldName = 'COMPLETO'
+      Index = 7
+      KeyFields = 'LOCALIDAD_ID'
+      LookupCache = False
+      LookupDataSet = zCiudades
+      LookupKeyFields = 'ID_LOCALIDAD'
+      LookupResultField = 'COMPLETO'
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+      Size = 372
+    end
+    object zDentistasLOCALIDAD_ID: TLongintField
+      DisplayWidth = 10
+      FieldKind = fkData
+      FieldName = 'LOCALIDAD_ID'
+      Index = 8
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+      Visible = False
+    end
+    object zDentistasCP: TStringField
+      DisplayWidth = 4
+      FieldKind = fkData
+      FieldName = 'CP'
+      Index = 9
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+      Visible = False
+      Size = 36
+    end
+    object zDentistasMOVIL: TStringField
+      DisplayLabel = 'Celular'
+      DisplayWidth = 9
+      FieldKind = fkData
+      FieldName = 'MOVIL'
+      Index = 10
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+      Size = 60
+    end
+    object zDentistasTELEFONO: TStringField
+      DisplayLabel = 'Telefono'
+      DisplayWidth = 9
+      FieldKind = fkData
+      FieldName = 'TELEFONO'
+      Index = 11
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+      Size = 60
+    end
+    object zDentistasCLINICA: TStringField
+      DisplayLabel = 'Clinica'
+      DisplayWidth = 10
+      FieldKind = fkData
+      FieldName = 'CLINICA'
+      Index = 12
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+      Size = 40
+    end
+    object zDentistasEMAIL: TStringField
+      DisplayLabel = 'CorreoE'
+      DisplayWidth = 15
+      FieldKind = fkData
+      FieldName = 'EMAIL'
+      Index = 13
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+      Size = 240
+    end
+    object zDentistasTIPOIVA_ID: TLongintField
+      DisplayLabel = 'Tipo IVA'
+      DisplayWidth = 8
+      FieldKind = fkData
+      FieldName = 'TIPOIVA_ID'
+      Index = 14
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+      Visible = False
+    end
+    object zDentistasCREDITO_MAX: TFloatField
+      DisplayLabel = 'Credito Max'
+      DisplayWidth = 7
+      FieldKind = fkData
+      FieldName = 'CREDITO_MAX'
+      Index = 15
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+      DisplayFormat = '#0.00'
+      Currency = True
+      MaxValue = 0
+      MinValue = 0
+      Precision = 2
+    end
+    object zDentistasPORCENTAJE: TFloatField
+      DisplayLabel = '% Incremento'
+      DisplayWidth = 4
+      FieldKind = fkData
+      FieldName = 'PORCENTAJE'
+      Index = 16
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+      DisplayFormat = '#0.0'
+      MaxValue = 0
+      MinValue = 0
+      Precision = 2
+    end
+    object zDentistasFECHA_BAJA: TDateField
+      DisplayWidth = 10
+      FieldKind = fkData
+      FieldName = 'FECHA_BAJA'
+      Index = 17
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+      Visible = False
+    end
+    object StringField2: TStringField
+      DisplayWidth = 20
+      FieldKind = fkLookup
+      FieldName = 'IVA'
+      Index = 18
+      KeyFields = 'TIPOIVA_ID'
+      LookupCache = False
+      LookupDataSet = zTipoIva
+      LookupKeyFields = 'ID_TIPO'
+      LookupResultField = 'NOMBRE'
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+      Size = 228
+    end
+  end
+  object upDentistas: TZUpdateSQL
+    DeleteSQL.Strings = (
+      'DELETE FROM DENTISTAS'
+      'WHERE'
+      '  DENTISTAS.ID_DENTISTA = :OLD_ID_DENTISTA'
+    )
+    InsertSQL.Strings = (
+      'INSERT INTO DENTISTAS'
+      '  (ID_DENTISTA, APELLIDO, NOMBRE, DNI, CUIT, DIRECCION, DIRECCION2, LOCALIDAD_ID, '
+      '   CP, MOVIL, TELEFONO, EMAIL, CLINICA, TIPOIVA_ID, PORCENTAJE, CREDITO_MAX, '
+      '   FECHA_BAJA)'
+      'VALUES'
+      '  (:ID_DENTISTA, :APELLIDO, :NOMBRE, :DNI, :CUIT, :DIRECCION, :DIRECCION2, '
+      '   :LOCALIDAD_ID, :CP, :MOVIL, :TELEFONO, :EMAIL, :CLINICA, :TIPOIVA_ID, '
+      '   :PORCENTAJE, :CREDITO_MAX, :FECHA_BAJA)'
+    )
+    ModifySQL.Strings = (
+      'UPDATE DENTISTAS SET'
+      '  ID_DENTISTA = :ID_DENTISTA,'
+      '  APELLIDO = :APELLIDO,'
+      '  NOMBRE = :NOMBRE,'
+      '  DNI = :DNI,'
+      '  CUIT = :CUIT,'
+      '  DIRECCION = :DIRECCION,'
+      '  DIRECCION2 = :DIRECCION2,'
+      '  LOCALIDAD_ID = :LOCALIDAD_ID,'
+      '  CP = :CP,'
+      '  MOVIL = :MOVIL,'
+      '  TELEFONO = :TELEFONO,'
+      '  EMAIL = :EMAIL,'
+      '  CLINICA = :CLINICA,'
+      '  TIPOIVA_ID = :TIPOIVA_ID,'
+      '  PORCENTAJE = :PORCENTAJE,'
+      '  CREDITO_MAX = :CREDITO_MAX,'
+      '  FECHA_BAJA = :FECHA_BAJA'
+      'WHERE'
+      '  DENTISTAS.ID_DENTISTA = :OLD_ID_DENTISTA'
+    )
+    UseSequenceFieldForRefreshSQL = False
+    left = 32
+    top = 72
+    ParamData = <    
+      item
+        DataType = ftUnknown
+        Name = 'ID_DENTISTA'
+        ParamType = ptUnknown
+      end    
+      item
+        DataType = ftUnknown
+        Name = 'APELLIDO'
+        ParamType = ptUnknown
+      end    
+      item
+        DataType = ftUnknown
+        Name = 'NOMBRE'
+        ParamType = ptUnknown
+      end    
+      item
+        DataType = ftUnknown
+        Name = 'DNI'
+        ParamType = ptUnknown
+      end    
+      item
+        DataType = ftUnknown
+        Name = 'CUIT'
+        ParamType = ptUnknown
+      end    
+      item
+        DataType = ftUnknown
+        Name = 'DIRECCION'
+        ParamType = ptUnknown
+      end    
+      item
+        DataType = ftUnknown
+        Name = 'DIRECCION2'
+        ParamType = ptUnknown
+      end    
+      item
+        DataType = ftUnknown
+        Name = 'LOCALIDAD_ID'
+        ParamType = ptUnknown
+      end    
+      item
+        DataType = ftUnknown
+        Name = 'CP'
+        ParamType = ptUnknown
+      end    
+      item
+        DataType = ftUnknown
+        Name = 'MOVIL'
+        ParamType = ptUnknown
+      end    
+      item
+        DataType = ftUnknown
+        Name = 'TELEFONO'
+        ParamType = ptUnknown
+      end    
+      item
+        DataType = ftUnknown
+        Name = 'EMAIL'
+        ParamType = ptUnknown
+      end    
+      item
+        DataType = ftUnknown
+        Name = 'CLINICA'
+        ParamType = ptUnknown
+      end    
+      item
+        DataType = ftUnknown
+        Name = 'TIPOIVA_ID'
+        ParamType = ptUnknown
+      end    
+      item
+        DataType = ftUnknown
+        Name = 'PORCENTAJE'
+        ParamType = ptUnknown
+      end    
+      item
+        DataType = ftUnknown
+        Name = 'CREDITO_MAX'
+        ParamType = ptUnknown
+      end    
+      item
+        DataType = ftUnknown
+        Name = 'FECHA_BAJA'
+        ParamType = ptUnknown
+      end    
+      item
+        DataType = ftUnknown
+        Name = 'OLD_ID_DENTISTA'
+        ParamType = ptUnknown
+      end>
+  end
+  object zCiudades: TZReadOnlyQuery
+    Connection = dmConexion.ZConnection1
+    SortedFields = 'PROVINCIA'
+    SQL.Strings = (
+      'SELECT a.ID_LOCALIDAD, a.LOCALIDAD, a.DEPARTAMENTO, a.PROVINCIA, a.LOCALIDAD||'' (''||a.PROVINCIA||'')'' as COMPLETO'
+      'FROM LOCALIDADES a ;'
+    )
+    Params = <>
+    IndexFieldNames = 'PROVINCIA Asc'
+    left = 192
+    top = 8
+    object zCiudadesID_LOCALIDAD: TLongintField
+      DisplayWidth = 10
+      FieldKind = fkData
+      FieldName = 'ID_LOCALIDAD'
+      Index = 0
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = True
+      Visible = False
+    end
+    object zCiudadesLOCALIDAD: TStringField
+      DisplayWidth = 20
+      FieldKind = fkData
+      FieldName = 'LOCALIDAD'
+      Index = 1
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+      Size = 200
+    end
+    object zCiudadesDEPARTAMENTO: TStringField
+      DisplayWidth = 10
+      FieldKind = fkData
+      FieldName = 'DEPARTAMENTO'
+      Index = 2
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+      Size = 160
+    end
+    object zCiudadesPROVINCIA: TStringField
+      DisplayWidth = 15
+      FieldKind = fkData
+      FieldName = 'PROVINCIA'
+      Index = 3
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+      Size = 160
+    end
+    object zCiudadesCOMPLETO: TStringField
+      DisplayWidth = 20
+      FieldKind = fkData
+      FieldName = 'COMPLETO'
+      Index = 4
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = True
+      Required = False
+      Size = 372
+    end
+  end
+  object zTipoIva: TZReadOnlyQuery
+    Connection = dmConexion.ZConnection1
+    SQL.Strings = (
+      'SELECT a.ID_TIPO, a.DESCRIPCION||''(''|| a.PORCENTAJE||'')'' as NOMBRE'
+      'FROM TIPOS_IVAS a ;'
+    )
+    Params = <>
+    left = 192
+    top = 64
+    object zTipoIvaID_TIPO: TLongintField
+      DisplayWidth = 10
+      FieldKind = fkData
+      FieldName = 'ID_TIPO'
+      Index = 0
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = True
+      Visible = False
+    end
+    object zTipoIvaNOMBRE: TStringField
+      DisplayWidth = 228
+      FieldKind = fkData
+      FieldName = 'NOMBRE'
+      Index = 1
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = True
+      Required = False
+      Size = 228
+    end
+  end
+end

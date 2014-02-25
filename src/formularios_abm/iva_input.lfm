@@ -1,0 +1,59 @@
+inherited IVAInput: TIVAInput
+  Left = 752
+  Height = 195
+  Top = 342
+  Width = 328
+  Caption = 'IVA'
+  ClientHeight = 195
+  ClientWidth = 328
+  inherited GroupBox1: TGroupBox
+    Height = 128
+    ClientHeight = 109
+    object Label1: TLabel[0]
+      Left = 6
+      Height = 18
+      Top = -1
+      Width = 79
+      Caption = 'Descripción:'
+      ParentColor = False
+    end
+    object Label2: TLabel[1]
+      Left = 6
+      Height = 18
+      Top = 55
+      Width = 69
+      Caption = 'Porcentaje:'
+      ParentColor = False
+    end
+    object DBEdit1: TDBEdit[2]
+      Left = 6
+      Height = 30
+      Top = 23
+      Width = 302
+      DataField = 'DESCRIPCION'
+      DataSource = dsInput
+      CharCase = ecNormal
+      MaxLength = 0
+      TabOrder = 1
+    end
+    object DBEdit2: TDBEdit[3]
+      Left = 6
+      Height = 30
+      Top = 79
+      Width = 73
+      DataField = 'PORCENTAJE'
+      DataSource = dsInput
+      CharCase = ecNormal
+      MaxLength = 160
+      TabOrder = 0
+    end
+  end
+  inherited Panel1: TPanel
+    Left = 1
+    Top = 136
+  end
+  inherited dsInput: TDataSource
+    DataSet = dmIVA.zTiposIVA
+    left = 208
+  end
+end

@@ -1,0 +1,165 @@
+inherited CuentasCorrientesPagos: TCuentasCorrientesPagos
+  Left = 686
+  Height = 405
+  Top = 175
+  Width = 562
+  AutoSize = True
+  BorderStyle = bsSingle
+  BorderWidth = 4
+  Caption = 'Pagos a Cuentas Corrientes'
+  ClientHeight = 405
+  ClientWidth = 562
+  OnCreate = FormCreate
+  OnDestroy = FormDestroy
+  object Odontologo: TLabel[0]
+    Left = 8
+    Height = 18
+    Top = 8
+    Width = 75
+    Caption = 'Odontologo'
+    ParentColor = False
+  end
+  object DBLookupComboBox1: TDBLookupComboBox[1]
+    Left = 88
+    Height = 30
+    Top = 8
+    Width = 216
+    KeyField = 'ID_DENTISTA'
+    ListField = 'DENTISTA'
+    ListFieldIndex = 0
+    ListSource = dsDentistas
+    LookupCache = False
+    OnChange = DBLookupComboBox1Change
+    TabOrder = 0
+  end
+  object DBGrid1: TDBGrid[2]
+    Left = 4
+    Height = 248
+    Top = 48
+    Width = 456
+    Color = clWindow
+    Columns = <>
+    DataSource = dsCuentasCorrientes
+    Enabled = False
+    Options = [dgTitles, dgIndicator, dgColumnResize, dgColumnMove, dgColLines, dgRowLines, dgTabs, dgRowSelect, dgAlwaysShowSelection, dgConfirmDelete, dgCancelOnExit, dgMultiselect]
+    ReadOnly = True
+    TabOrder = 1
+    TitleFont.Height = -15
+    TitleFont.Name = 'Ume P Gothic C5'
+    Visible = False
+  end
+  object Saldo: TLabel[3]
+    Left = 312
+    Height = 18
+    Top = 8
+    Width = 35
+    Caption = 'Saldo'
+    ParentColor = False
+  end
+  object DBText1: TDBText[4]
+    Left = 356
+    Height = 23
+    Top = 8
+    Width = 104
+    Alignment = taRightJustify
+    AutoSize = False
+    DataField = 'SALDO'
+    DataSource = dsSaldo
+    Font.Height = -19
+    Font.Name = 'Sans'
+    ParentColor = False
+    ParentFont = False
+  end
+  object Panel1: TPanel[5]
+    Left = 4
+    Height = 46
+    Top = 312
+    Width = 456
+    BevelOuter = bvLowered
+    BevelWidth = 2
+    ClientHeight = 46
+    ClientWidth = 456
+    TabOrder = 2
+    object RealizarPago: TBitBtn
+      Left = 8
+      Height = 32
+      Top = 8
+      Width = 176
+      Caption = 'Realizar Pago'
+      Enabled = False
+      Glyph.Data = {
+        36040000424D3604000000000000360000002800000010000000100000000100
+        2000000000000004000064000000640000000000000000000000FFFFFF00FFFF
+        FF00000000230000003300000033000000330000003300000033000000330000
+        003300000033000000330000003300000023FFFFFF00FFFFFF00FFFFFF00FFFF
+        FF00A06931C0AB6E31FFAA6B2DFFAA6C2FFFAA6D31FFAA6D31FFAA6D31FFAA6D
+        31FFAA6C2FFFAA6B2DFFAB6E31FFA06931C0FFFFFF00FFFFFF00FFFFFF00FFFF
+        FF00AB6E31FFEEAF60FFFFF7DEFFE9A95BFFEAAB5EFFEAAC5FFFEAAB5FFFEAAB
+        5EFFE9A95AFFFFF7DEFFEEAF60FFAB6E31FFFFFFFF00FFFFFF00FFFFFF00FFFF
+        FF00AA6B2DFFFFF6DDFFFCEDD2FFFCEFD5FFFDF1D9FFFDF1D9FFFDF0D7FFFCEE
+        D4FFFCEDD2FFFCEDD1FFFFF6DDFFAA6B2DFFFFFFFF00FFFFFF00FFFFFF00FFFF
+        FF00AA6C2EFFE8AE66FFFDEED4FFDE9C4FFFDFA055FFDFA056FFDE9E52FFFDEF
+        D6FFDC9747FFFCEDD1FFE8AE66FFAA6C2EFFFFFFFF00FFFFFF00FFFFFF00FFFF
+        FF00AA6C2FFFE7B26EFFFEF1D8FFDB9D53FFDDA25BFFDEA35CFFDDA159FFDB9D
+        52FFFDEFD5FFFCEDD3FFE7B16DFFAA6C2FFFFFFFFF00FFFFFF00FFFFFF00FFFF
+        FF00AA6D2FFFE8B474FFFEF1D8FFD79C54FFDAA15BFFDAA25DFFDAA15CFFD89F
+        57FFE0AE71FFFDEFD5FFE8B473FFAA6D2FFFFFFFFF00FFFFFF00FFFFFF00FFFF
+        FF00AA6C2FFFE8B77AFFFEF1D8FFD49A53FFD79F5AFFD7A05CFFD7A05CFFD69E
+        59FFD49851FFFEF1D7FFE8B77AFFAA6C2FFFFFFFFF00FFFFFF00FFFFFF00FFFF
+        FF00AA6C2FFFE7B97FFFFFF1D8FFD19650FFD39C58FFD49D5AFFD49D5AFFD39B
+        57FFD0964FFFFFF1D8FFE7B97FFFAA6C2FFFFFFFFF00FFFFFF00FFFFFF00FFFF
+        FF00AA6C2EFFE7BC84FFFFF1D7FFCD934EFFD09957FFD19B58FFD09957FFCF98
+        54FFCD934EFFFFF3DAFFE8BD85FFAA6C2FFFFFFFFF00FFFFFF00FFFFFF00FFFF
+        FF00AA6C2EFFE5BE88FFFEF0D5FFC78E49FFCB9553FFCB9755FFD5A66AFFE7C2
+        8FFFE7C18DFFE5BF8AFFE8C28EFFAB6D2FFFFFFFFF00FFFFFF00FFFFFF00FFFF
+        FF00AA6C2DFFE5C08DFFFEEDD1FFFFF1D7FFC48E4AFFC6914EFFE7C495FFC08A
+        51FFA66628FFA56425FFEBC999FFAC6E30FFFFFFFF00FFFFFF00FFFFFF00FFFF
+        FF00AA6B2CFFE3C090FFFDECCFFFBA803AFFFFF1D5FFCFA168FFE5C496FFA666
+        27FFDCA25AFFE9CA9EFFD3A774FFAD6F32ACFFFFFF00FFFFFF00FFFFFF00FFFF
+        FF00AA6B2BFFFFF5D9FFFDECCEFFFDECCFFFFEEDD0FFFFF0D4FFE4C498FFA564
+        23FFE9CCA2FFD2A875FFAB6E2FA700000000FFFFFF00FFFFFF00FFFFFF00FFFF
+        FF00AB6D2EFFE6CAA2FFFFF4D7FFE2C499FFE3C69CFFE4C79EFFE6CAA2FFE8CF
+        A7FFD1AA7AFFAB6D2FA60000000000000000FFFFFF00FFFFFF00FFFFFF00FFFF
+        FF00AE7133EFAA6B2CFFC08E57FFA96929FFAA6B2CFFAB6C2CFFAB6C2EFFAC6D
+        2FFFAD6F31EA000000000000000000000000FFFFFF00FFFFFF00
+      }
+      OnClick = RealizarPagoClick
+      TabOrder = 0
+    end
+    object BitBtn3: TBitBtn
+      Left = 192
+      Height = 32
+      Top = 8
+      Width = 100
+      Caption = 'BitBtn3'
+      Enabled = False
+      TabOrder = 1
+      Visible = False
+    end
+    object BitBtn1: TBitBtn
+      Left = 300
+      Height = 32
+      Top = 8
+      Width = 144
+      DefaultCaption = True
+      Kind = bkClose
+      ModalResult = 11
+      TabOrder = 2
+    end
+  end
+  object dsDentistas: TDataSource[6]
+    DataSet = dmCuentasCorrientes.zDentistas
+    left = 208
+    top = 24
+  end
+  object dsSaldo: TDataSource[7]
+    DataSet = dmCuentasCorrientes.zSaldoCuentaCorriente
+    left = 320
+    top = 24
+  end
+  object dsCuentasCorrientes: TDataSource[8]
+    DataSet = dmCuentasCorrientes.zCuentasCorrientes
+    left = 324
+    top = 160
+  end
+end

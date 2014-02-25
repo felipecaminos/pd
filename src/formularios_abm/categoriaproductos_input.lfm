@@ -1,0 +1,28 @@
+inherited CatProductosInput: TCatProductosInput
+  Left = 415
+  Height = 164
+  Top = 264
+  Caption = 'CATEGORIA DE PRODUCTOS'
+  ClientHeight = 164
+  inherited GroupBox1: TGroupBox
+    Height = 64
+    ClientHeight = 45
+    object DBEdit1: TDBEdit[0]
+      Left = 6
+      Height = 30
+      Top = 7
+      Width = 304
+      DataField = 'DESCRIPCION'
+      DataSource = dsInput
+      CharCase = ecNormal
+      MaxLength = 0
+      TabOrder = 0
+    end
+  end
+  inherited Panel1: TPanel
+    Top = 64
+  end
+  inherited dsInput: TDataSource
+    DataSet = dmCategoriaProductos.zCategoriaProductos
+  end
+end

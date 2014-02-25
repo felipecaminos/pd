@@ -1,0 +1,104 @@
+object dmIVA: TdmIVA
+  OnCreate = DataModuleCreate
+  OnDestroy = DataModuleDestroy
+  OldCreateOrder = False
+  Height = 227
+  HorizontalOffset = 306
+  VerticalOffset = 194
+  Width = 277
+  object zTiposIVA: TZQuery
+    Connection = dmConexion.ZConnection1
+    UpdateObject = upTiposIVA
+    SQL.Strings = (
+      'SELECT a.ID_TIPO, a.DESCRIPCION, a.PORCENTAJE'
+      'FROM TIPOS_IVAS a ;'
+      ''
+    )
+    Params = <>
+    left = 160
+    top = 16
+    object zTiposIVAID_TIPO: TLongintField
+      DisplayWidth = 10
+      FieldKind = fkData
+      FieldName = 'ID_TIPO'
+      Index = 0
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+      Visible = False
+    end
+    object zTiposIVADESCRIPCION: TStringField
+      DisplayLabel = 'Tipos de Incripcion IVA'
+      DisplayWidth = 25
+      FieldKind = fkData
+      FieldName = 'DESCRIPCION'
+      Index = 1
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+      Size = 160
+    end
+    object zTiposIVAPORCENTAJE: TFloatField
+      DisplayLabel = 'Porcentaje'
+      DisplayWidth = 10
+      FieldKind = fkData
+      FieldName = 'PORCENTAJE'
+      Index = 2
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+      DisplayFormat = '#0.00'
+      MaxValue = 0
+      MinValue = 0
+      Precision = 2
+    end
+  end
+  object upTiposIVA: TZUpdateSQL
+    DeleteSQL.Strings = (
+      'DELETE FROM TIPOS_IVAS'
+      'WHERE'
+      '  TIPOS_IVAS.ID_TIPO = :OLD_ID_TIPO'
+    )
+    InsertSQL.Strings = (
+      'INSERT INTO TIPOS_IVAS'
+      '  (ID_TIPO, DESCRIPCION, PORCENTAJE)'
+      'VALUES'
+      '  (:ID_TIPO, :DESCRIPCION, :PORCENTAJE)'
+    )
+    ModifySQL.Strings = (
+      'UPDATE TIPOS_IVAS SET'
+      '  ID_TIPO = :ID_TIPO,'
+      '  DESCRIPCION = :DESCRIPCION,'
+      '  PORCENTAJE = :PORCENTAJE'
+      'WHERE'
+      '  TIPOS_IVAS.ID_TIPO = :OLD_ID_TIPO'
+    )
+    UseSequenceFieldForRefreshSQL = False
+    left = 160
+    top = 88
+    ParamData = <    
+      item
+        DataType = ftUnknown
+        Name = 'ID_TIPO'
+        ParamType = ptUnknown
+      end    
+      item
+        DataType = ftUnknown
+        Name = 'DESCRIPCION'
+        ParamType = ptUnknown
+      end    
+      item
+        DataType = ftUnknown
+        Name = 'PORCENTAJE'
+        ParamType = ptUnknown
+      end    
+      item
+        DataType = ftUnknown
+        Name = 'OLD_ID_TIPO'
+        ParamType = ptUnknown
+      end>
+  end
+end

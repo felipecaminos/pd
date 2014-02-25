@@ -1,0 +1,55 @@
+unit acercade;
+
+{$mode objfpc}{$H+}
+
+interface
+
+uses
+  Classes, SysUtils, FileUtil, Forms, Controls, Graphics, Dialogs, StdCtrls,
+  Buttons, ExtCtrls;
+
+type
+
+  { TfrmAcercaDe }
+
+  TfrmAcercaDe = class(TForm)
+    btnCerrar: TBitBtn;
+    etqDerechos: TLabel;
+    etqLicencia: TLabel;
+    Image1: TImage;
+    memoLicencia: TMemo;
+    procedure FormCreate(Sender: TObject);
+    procedure Image1Click(Sender: TObject);
+    procedure memoLicenciaChange(Sender: TObject);
+  private
+    { private declarations }
+  public
+    { public declarations }
+  end;
+
+var
+  frmAcercaDe: TfrmAcercaDe;
+
+implementation
+
+{$R *.lfm}
+
+{ TfrmAcercaDe }
+
+procedure TfrmAcercaDe.FormCreate(Sender: TObject);
+begin
+
+end;
+
+procedure TfrmAcercaDe.Image1Click(Sender: TObject);
+begin
+
+end;
+
+procedure TfrmAcercaDe.memoLicenciaChange(Sender: TObject);
+begin
+
+end;
+
+end.
+

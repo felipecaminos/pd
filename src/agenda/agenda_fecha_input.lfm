@@ -1,0 +1,52 @@
+inherited AgendaInputFecha: TAgendaInputFecha
+  Left = 309
+  Height = 126
+  Top = 174
+  Width = 334
+  Caption = 'PLAZO DE ENTREGA'
+  ClientHeight = 126
+  ClientWidth = 334
+  inherited GroupBox1: TGroupBox
+    Height = 64
+    ClientHeight = 45
+    object DBDateEdit1: TDBDateEdit[0]
+      Left = 158
+      Height = 27
+      Top = 7
+      Width = 96
+      AutoSelect = False
+      ButtonWidth = 40
+      CancelCaption = 'Cancelar'
+      CharCase = ecNormal
+      DialogTitle = 'Seleccionar Fecha'
+      Enabled = False
+      MaxLength = 10
+      NumGlyphs = 2
+      PopupColor = clWindow
+      TabOrder = 0
+      Text = '  /  /    '
+      YearDigits = dyFour
+      OnExit = DBDateEdit1Exit
+      DataField = 'ESTIMADO_SALIDA'
+      DataSource = dsInput
+    end
+    object Label1: TLabel[1]
+      Left = 6
+      Height = 17
+      Top = 7
+      Width = 148
+      Caption = 'Nueva fecha estimada'
+      ParentColor = False
+    end
+  end
+  inherited Panel1: TPanel
+    Top = 64
+  end
+  inherited dsInput: TDatasource
+    DataSet = dmAgenda.zTareasAtrasHoy
+    left = 224
+  end
+  inherited Configuracion: TXMLPropStorage
+    left = 280
+  end
+end

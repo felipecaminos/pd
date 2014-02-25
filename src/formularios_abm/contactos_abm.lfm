@@ -1,0 +1,38 @@
+inherited ContactosABM: TContactosABM
+  Left = 304
+  Top = 266
+  Caption = 'Listado de Contactos'
+  OnCreate = FormCreate
+  OnDestroy = FormDestroy
+  inherited RxDBGrid1: TRxDBGrid
+    OnDblClick = RxDBGrid1DblClick
+  end
+  inherited btnNuevo: TBitBtn
+    Width = 112
+    OnClick = btnNuevoClick
+  end
+  inherited btnBorrar: TBitBtn
+    Left = 128
+    Width = 112
+    OnClick = btnBorrarClick
+  end
+  inherited btnModificar: TBitBtn
+    Left = 248
+    Width = 112
+    OnClick = btnModificarClick
+  end
+  object BitBtn2: TBitBtn[6]
+    Left = 368
+    Height = 32
+    Top = 384
+    Width = 144
+    Caption = 'Listado Completo'
+    OnClick = BitBtn2Click
+    TabOrder = 6
+  end
+  inherited dsABM: TDataSource[7]
+    DataSet = dmContactos.zContactos
+  end
+  inherited Configuracion: TXMLPropStorage[8]
+  end
+end

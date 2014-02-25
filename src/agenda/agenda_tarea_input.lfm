@@ -1,0 +1,49 @@
+object AgendaInputTarea: TAgendaInputTarea
+  Left = 462
+  Height = 343
+  Top = 206
+  Width = 718
+  AutoSize = True
+  Caption = 'AgendaInputTarea'
+  ClientHeight = 343
+  ClientWidth = 718
+  LCLVersion = '1.1'
+  object DBGrid1: TDBGrid
+    Left = 0
+    Height = 256
+    Top = 0
+    Width = 696
+    Color = clWindow
+    Columns = <>
+    DataSource = dsTareas
+    Options = [dgTitles, dgIndicator, dgColumnResize, dgColumnMove, dgColLines, dgRowLines, dgTabs, dgRowSelect, dgAlwaysShowSelection, dgConfirmDelete, dgCancelOnExit]
+    ReadOnly = True
+    Scrollbars = ssAutoBoth
+    TabOrder = 0
+    OnDblClick = BitBtn1Click
+  end
+  object BitBtn1: TBitBtn
+    Left = 8
+    Height = 30
+    Top = 264
+    Width = 171
+    Caption = 'Agendar Tarea'
+    OnClick = BitBtn1Click
+    TabOrder = 1
+  end
+  object BitBtn2: TBitBtn
+    Left = 584
+    Height = 30
+    Top = 264
+    Width = 112
+    DefaultCaption = True
+    Kind = bkClose
+    ModalResult = 11
+    TabOrder = 2
+  end
+  object dsTareas: TDatasource
+    DataSet = dmAgenda.zTareasAdelante
+    left = 208
+    top = 24
+  end
+end

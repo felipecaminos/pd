@@ -1,0 +1,1215 @@
+object dmTrabajo: TdmTrabajo
+  OnCreate = DataModuleCreate
+  OldCreateOrder = False
+  Height = 413
+  HorizontalOffset = 306
+  VerticalOffset = 293
+  Width = 578
+  object zTrabajos: TZQuery
+    Connection = dmConexion.ZConnection1
+    UpdateObject = upTrabajos
+    SQL.Strings = (
+      'SELECT r.ID_TRABAJOS, r.DENTISTA_ID, r.PRODUCTO_ID, r.PACIENTE, r.FECHA_ENTRADA,'
+      '    r.PROXIMO_PLAZO, r.FECHA_SALIDA, r.PRECIO, r.PAGADO'
+      'FROM TRABAJOS r'
+    )
+    Params = <>
+    left = 48
+    top = 8
+    object zTrabajosID_TRABAJOS: TLongintField
+      DisplayWidth = 10
+      FieldKind = fkData
+      FieldName = 'ID_TRABAJOS'
+      Index = 0
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = True
+    end
+    object zTrabajosDENTISTA_ID: TLongintField
+      DisplayLabel = 'DENT'
+      DisplayWidth = 3
+      FieldKind = fkData
+      FieldName = 'DENTISTA_ID'
+      Index = 1
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+    end
+    object zTrabajosPRODUCTO_ID: TLongintField
+      DisplayLabel = 'PROD'
+      DisplayWidth = 3
+      FieldKind = fkData
+      FieldName = 'PRODUCTO_ID'
+      Index = 2
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+    end
+    object zTrabajosPACIENTE: TStringField
+      DisplayWidth = 10
+      FieldKind = fkData
+      FieldName = 'PACIENTE'
+      Index = 3
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+      Size = 200
+    end
+    object zTrabajosFECHA_ENTRADA: TDateTimeField
+      DisplayLabel = 'ENTRADA'
+      DisplayWidth = 6
+      FieldKind = fkData
+      FieldName = 'FECHA_ENTRADA'
+      Index = 4
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+    end
+    object zTrabajosPROXIMO_PLAZO: TDateField
+      DisplayLabel = 'PLAZO'
+      DisplayWidth = 6
+      FieldKind = fkData
+      FieldName = 'PROXIMO_PLAZO'
+      Index = 5
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+    end
+    object zTrabajosFECHA_SALIDA: TDateTimeField
+      DisplayLabel = 'SALIDA'
+      DisplayWidth = 6
+      FieldKind = fkData
+      FieldName = 'FECHA_SALIDA'
+      Index = 6
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+    end
+    object zTrabajosPAGADO: TSmallintField
+      DisplayLabel = 'PAG'
+      DisplayWidth = 4
+      FieldKind = fkData
+      FieldName = 'PAGADO'
+      Index = 7
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+    end
+    object zTrabajosPRECIO: TFloatField
+      DisplayWidth = 6
+      FieldKind = fkData
+      FieldName = 'PRECIO'
+      Index = 8
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+      Currency = True
+      MaxValue = 0
+      MinValue = 0
+      Precision = 2
+    end
+  end
+  object upTrabajos: TZUpdateSQL
+    DeleteSQL.Strings = (
+      'DELETE FROM TRABAJOS'
+      'WHERE'
+      '  TRABAJOS.ID_TRABAJOS = :OLD_ID_TRABAJOS'
+    )
+    InsertSQL.Strings = (
+      'INSERT INTO TRABAJOS'
+      '  (ID_TRABAJOS, DENTISTA_ID, PRODUCTO_ID, PACIENTE, FECHA_ENTRADA, PROXIMO_PLAZO, '
+      '   FECHA_SALIDA, PRECIO, PAGADO)'
+      'VALUES'
+      '  (:ID_TRABAJOS, :DENTISTA_ID, :PRODUCTO_ID, :PACIENTE, :FECHA_ENTRADA, '
+      '   :PROXIMO_PLAZO, :FECHA_SALIDA, :PRECIO, :PAGADO)'
+    )
+    ModifySQL.Strings = (
+      'UPDATE TRABAJOS SET'
+      '  ID_TRABAJOS = :ID_TRABAJOS,'
+      '  DENTISTA_ID = :DENTISTA_ID,'
+      '  PRODUCTO_ID = :PRODUCTO_ID,'
+      '  PACIENTE = :PACIENTE,'
+      '  FECHA_ENTRADA = :FECHA_ENTRADA,'
+      '  PROXIMO_PLAZO = :PROXIMO_PLAZO,'
+      '  FECHA_SALIDA = :FECHA_SALIDA,'
+      '  PRECIO = :PRECIO,'
+      '  PAGADO = :PAGADO'
+      'WHERE'
+      '  TRABAJOS.ID_TRABAJOS = :OLD_ID_TRABAJOS'
+    )
+    UseSequenceFieldForRefreshSQL = False
+    left = 48
+    top = 64
+    ParamData = <    
+      item
+        DataType = ftUnknown
+        Name = 'ID_TRABAJOS'
+        ParamType = ptUnknown
+      end    
+      item
+        DataType = ftUnknown
+        Name = 'DENTISTA_ID'
+        ParamType = ptUnknown
+      end    
+      item
+        DataType = ftUnknown
+        Name = 'PRODUCTO_ID'
+        ParamType = ptUnknown
+      end    
+      item
+        DataType = ftUnknown
+        Name = 'PACIENTE'
+        ParamType = ptUnknown
+      end    
+      item
+        DataType = ftUnknown
+        Name = 'FECHA_ENTRADA'
+        ParamType = ptUnknown
+      end    
+      item
+        DataType = ftUnknown
+        Name = 'PROXIMO_PLAZO'
+        ParamType = ptUnknown
+      end    
+      item
+        DataType = ftUnknown
+        Name = 'FECHA_SALIDA'
+        ParamType = ptUnknown
+      end    
+      item
+        DataType = ftUnknown
+        Name = 'PRECIO'
+        ParamType = ptUnknown
+      end    
+      item
+        DataType = ftUnknown
+        Name = 'PAGADO'
+        ParamType = ptUnknown
+      end    
+      item
+        DataType = ftUnknown
+        Name = 'OLD_ID_TRABAJOS'
+        ParamType = ptUnknown
+      end>
+  end
+  object zDentistas: TZReadOnlyQuery
+    Connection = dmConexion.ZConnection1
+    SQL.Strings = (
+      'SELECT a.ID_DENTISTA, a.DENTISTA, a.MOVIL, a.CLINICA'
+      'FROM BUSQUEDA_DENTISTAS a ;'
+    )
+    Params = <>
+    left = 136
+    top = 8
+    object zDentistasID_DENTISTA: TLongintField
+      DisplayWidth = 10
+      FieldKind = fkData
+      FieldName = 'ID_DENTISTA'
+      Index = 0
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+    end
+    object zDentistasDENTISTA: TStringField
+      DisplayWidth = 580
+      FieldKind = fkData
+      FieldName = 'DENTISTA'
+      Index = 1
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+      Size = 580
+    end
+    object zDentistasMOVIL: TStringField
+      DisplayWidth = 60
+      FieldKind = fkData
+      FieldName = 'MOVIL'
+      Index = 2
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+      Size = 60
+    end
+    object zDentistasCLINICA: TStringField
+      DisplayWidth = 160
+      FieldKind = fkData
+      FieldName = 'CLINICA'
+      Index = 3
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+      Size = 160
+    end
+  end
+  object zProductos: TZReadOnlyQuery
+    Connection = dmConexion.ZConnection1
+    Filtered = True
+    SQL.Strings = (
+      'SELECT a.ID_PRODUCTO, a.CATEGORIA, a.CODIGO_INTERNO, a.PRODUCTO, a.PRECIO'
+      'FROM BUSQUEDA_PRODUCTOS a '
+      ''
+    )
+    Params = <>
+    left = 224
+    top = 64
+    object zProductosID_PRODUCTO: TLongintField
+      DisplayWidth = 10
+      FieldKind = fkData
+      FieldName = 'ID_PRODUCTO'
+      Index = 0
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+    end
+    object zProductosCATEGORIA: TLongintField
+      DisplayWidth = 10
+      FieldKind = fkData
+      FieldName = 'CATEGORIA'
+      Index = 1
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+    end
+    object zProductosCODIGO_INTERNO: TLongintField
+      DisplayWidth = 7
+      FieldKind = fkData
+      FieldName = 'CODIGO_INTERNO'
+      Index = 2
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+    end
+    object zProductosPRODUCTO: TStringField
+      DisplayWidth = 20
+      FieldKind = fkData
+      FieldName = 'PRODUCTO'
+      Index = 3
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+      Size = 532
+    end
+    object zProductosPRECIO: TFloatField
+      DisplayWidth = 10
+      FieldKind = fkData
+      FieldName = 'PRECIO'
+      Index = 4
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+      Currency = True
+      MaxValue = 0
+      MinValue = 0
+      Precision = 2
+    end
+  end
+  object genTrabajos: TZSequence
+    Connection = dmConexion.ZConnection1
+    SequenceName = 'GEN_TRABAJOS_ID'
+    left = 136
+    top = 64
+  end
+  object zTareas: TZQuery
+    Connection = dmConexion.ZConnection1
+    UpdateObject = upTareas
+    SQL.Strings = (
+      'SELECT a.ID_TAREA, a.TRABAJO_ID, a.TIPO_TAREA_ID, a.OBSERVACION_DENTISTA,'
+      '    a.FECHA_INGRESO, a.ESTIMADO_SALIDA, a.TERMINADO, a.FECHA_SALIDA,'
+      '    a.DATO_REMITO, a.ORDEN'
+      'FROM TAREAS a '
+      ''
+    )
+    Params = <>
+    left = 520
+    top = 8
+    object zTareasID_TAREA: TLongintField
+      DisplayLabel = 'ID'
+      DisplayWidth = 5
+      FieldKind = fkData
+      FieldName = 'ID_TAREA'
+      Index = 0
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = True
+    end
+    object zTareasTRABAJO_ID: TLongintField
+      DisplayLabel = 'TRAB'
+      DisplayWidth = 5
+      FieldKind = fkData
+      FieldName = 'TRABAJO_ID'
+      Index = 1
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+    end
+    object zTareasTIPO_TAREA_ID: TLongintField
+      DisplayLabel = 'T.T.ID'
+      DisplayWidth = 5
+      FieldKind = fkData
+      FieldName = 'TIPO_TAREA_ID'
+      Index = 2
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+    end
+    object zTareasOBSERVACION_DENTISTA: TStringField
+      DisplayWidth = 160
+      FieldKind = fkData
+      FieldName = 'OBSERVACION_DENTISTA'
+      Index = 3
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+      Visible = False
+      Size = 160
+    end
+    object zTareasFECHA_INGRESO: TDateTimeField
+      DisplayLabel = 'INGRESO'
+      DisplayWidth = 6
+      FieldKind = fkData
+      FieldName = 'FECHA_INGRESO'
+      Index = 4
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+    end
+    object zTareasESTIMADO_SALIDA: TDateField
+      DisplayLabel = 'ESTIMADO'
+      DisplayWidth = 6
+      FieldKind = fkData
+      FieldName = 'ESTIMADO_SALIDA'
+      Index = 5
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+    end
+    object zTareasTERMINADO: TDateTimeField
+      DisplayWidth = 6
+      FieldKind = fkData
+      FieldName = 'TERMINADO'
+      Index = 6
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+    end
+    object zTareasFECHA_SALIDA: TDateTimeField
+      DisplayLabel = 'SALIDA'
+      DisplayWidth = 6
+      FieldKind = fkData
+      FieldName = 'FECHA_SALIDA'
+      Index = 7
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+    end
+    object zTareasDATO_REMITO: TStringField
+      DisplayWidth = 160
+      FieldKind = fkData
+      FieldName = 'DATO_REMITO'
+      Index = 8
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+      Visible = False
+      Size = 160
+    end
+    object zTareasORDEN: TSmallintField
+      DisplayWidth = 6
+      FieldKind = fkData
+      FieldName = 'ORDEN'
+      Index = 9
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+    end
+  end
+  object upTareas: TZUpdateSQL
+    DeleteSQL.Strings = (
+      'DELETE FROM TAREAS'
+      'WHERE'
+      '  TAREAS.ID_TAREA = :OLD_ID_TAREA'
+    )
+    InsertSQL.Strings = (
+      'INSERT INTO TAREAS'
+      '  (ID_TAREA, TRABAJO_ID, TIPO_TAREA_ID, OBSERVACION_DENTISTA, FECHA_INGRESO, '
+      '   ESTIMADO_SALIDA, TERMINADO, FECHA_SALIDA, DATO_REMITO, ORDEN)'
+      'VALUES'
+      '  (:ID_TAREA, :TRABAJO_ID, :TIPO_TAREA_ID, :OBSERVACION_DENTISTA, :FECHA_INGRESO, '
+      '   :ESTIMADO_SALIDA, :TERMINADO, :FECHA_SALIDA, :DATO_REMITO, :ORDEN)'
+    )
+    ModifySQL.Strings = (
+      'UPDATE TAREAS SET'
+      '  ID_TAREA = :ID_TAREA,'
+      '  TRABAJO_ID = :TRABAJO_ID,'
+      '  TIPO_TAREA_ID = :TIPO_TAREA_ID,'
+      '  OBSERVACION_DENTISTA = :OBSERVACION_DENTISTA,'
+      '  FECHA_INGRESO = :FECHA_INGRESO,'
+      '  ESTIMADO_SALIDA = :ESTIMADO_SALIDA,'
+      '  TERMINADO = :TERMINADO,'
+      '  FECHA_SALIDA = :FECHA_SALIDA,'
+      '  DATO_REMITO = :DATO_REMITO,'
+      '  ORDEN = :ORDEN'
+      'WHERE'
+      '  TAREAS.ID_TAREA = :OLD_ID_TAREA'
+    )
+    UseSequenceFieldForRefreshSQL = False
+    left = 520
+    top = 64
+    ParamData = <    
+      item
+        DataType = ftUnknown
+        Name = 'ID_TAREA'
+        ParamType = ptUnknown
+      end    
+      item
+        DataType = ftUnknown
+        Name = 'TRABAJO_ID'
+        ParamType = ptUnknown
+      end    
+      item
+        DataType = ftUnknown
+        Name = 'TIPO_TAREA_ID'
+        ParamType = ptUnknown
+      end    
+      item
+        DataType = ftUnknown
+        Name = 'OBSERVACION_DENTISTA'
+        ParamType = ptUnknown
+      end    
+      item
+        DataType = ftUnknown
+        Name = 'FECHA_INGRESO'
+        ParamType = ptUnknown
+      end    
+      item
+        DataType = ftUnknown
+        Name = 'ESTIMADO_SALIDA'
+        ParamType = ptUnknown
+      end    
+      item
+        DataType = ftUnknown
+        Name = 'TERMINADO'
+        ParamType = ptUnknown
+      end    
+      item
+        DataType = ftUnknown
+        Name = 'FECHA_SALIDA'
+        ParamType = ptUnknown
+      end    
+      item
+        DataType = ftUnknown
+        Name = 'DATO_REMITO'
+        ParamType = ptUnknown
+      end    
+      item
+        DataType = ftUnknown
+        Name = 'ORDEN'
+        ParamType = ptUnknown
+      end    
+      item
+        DataType = ftUnknown
+        Name = 'OLD_ID_TAREA'
+        ParamType = ptUnknown
+      end>
+  end
+  object zRelaciones: TZReadOnlyQuery
+    Connection = dmConexion.ZConnection1
+    SQL.Strings = (
+      'SELECT a.PRODUCTO_ID, a.TIPO_TAREA_ID, a.ORDEN'
+      'FROM TAREAS_EN_PRODUCTOS a '
+      'WHERE'
+      '    a.PRODUCTO_ID = :PRODUCTO_ID'
+    )
+    Params = <    
+      item
+        DataType = ftUnknown
+        Name = 'PRODUCTO_ID'
+        ParamType = ptUnknown
+      end>
+    DataSource = dsMaestro
+    MasterFields = 'PRODUCTO_ID'
+    MasterSource = dsMaestro
+    LinkedFields = 'PRODUCTO_ID'
+    left = 432
+    top = 8
+    ParamData = <    
+      item
+        DataType = ftUnknown
+        Name = 'PRODUCTO_ID'
+        ParamType = ptUnknown
+      end>
+    object zRelacionesPRODUCTO_ID: TLongintField
+      DisplayWidth = 10
+      FieldKind = fkData
+      FieldName = 'PRODUCTO_ID'
+      Index = 0
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = True
+    end
+    object zRelacionesTIPO_TAREA_ID: TLongintField
+      DisplayWidth = 10
+      FieldKind = fkData
+      FieldName = 'TIPO_TAREA_ID'
+      Index = 1
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = True
+    end
+    object zRelacionesORDEN: TSmallintField
+      DisplayWidth = 10
+      FieldKind = fkData
+      FieldName = 'ORDEN'
+      Index = 2
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+    end
+  end
+  object dsMaestro: TDatasource
+    DataSet = zTrabajos
+    left = 48
+    top = 128
+  end
+  object zTiposTareas: TZReadOnlyQuery
+    Connection = dmConexion.ZConnection1
+    SQL.Strings = (
+      'SELECT a.ID_TIPO_TAREA, a.DESCRIPCION, a.TIEMPO_ESTIMADO, a.TIENE_FECHA_SALIDA'
+      'FROM TIPOS_TAREAS a '
+      'WHERE'
+      '    a.ID_TIPO_TAREA = :REGISTRO'
+    )
+    Params = <    
+      item
+        DataType = ftUnknown
+        Name = 'REGISTRO'
+        ParamType = ptUnknown
+      end>
+    left = 432
+    top = 64
+    ParamData = <    
+      item
+        DataType = ftUnknown
+        Name = 'REGISTRO'
+        ParamType = ptUnknown
+      end>
+    object zTiposTareasID_TIPO_TAREA: TLongintField
+      DisplayWidth = 10
+      FieldKind = fkData
+      FieldName = 'ID_TIPO_TAREA'
+      Index = 0
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = True
+    end
+    object zTiposTareasDESCRIPCION: TStringField
+      DisplayWidth = 80
+      FieldKind = fkData
+      FieldName = 'DESCRIPCION'
+      Index = 1
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+      Size = 80
+    end
+    object zTiposTareasTIEMPO_ESTIMADO: TFloatField
+      DisplayWidth = 10
+      FieldKind = fkData
+      FieldName = 'TIEMPO_ESTIMADO'
+      Index = 2
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+      MaxValue = 0
+      MinValue = 0
+      Precision = 2
+    end
+    object zTiposTareasTIENE_FECHA_SALIDA: TStringField
+      DisplayWidth = 1
+      FieldKind = fkData
+      FieldName = 'TIENE_FECHA_SALIDA'
+      Index = 3
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+      Size = 1
+    end
+  end
+  object zTareasParaVer: TZReadOnlyQuery
+    Connection = dmConexion.ZConnection1
+    Filtered = True
+    SQL.Strings = (
+      'SELECT a.ID_TAREA, a.TRABAJO_ID, b.DESCRIPCION, a.TIPO_TAREA_ID, a.OBSERVACION_DENTISTA,'
+      '    a.FECHA_INGRESO, a.ESTIMADO_SALIDA, a.TERMINADO, a.FECHA_SALIDA,'
+      '    a.DATO_REMITO, a.ORDEN'
+      'FROM TAREAS a, TIPOS_TAREAS b'
+      'WHERE a.TIPO_TAREA_ID = b.ID_TIPO_TAREA order by a.ORDEN'
+    )
+    Params = <>
+    left = 520
+    top = 128
+    object zTareasParaVerID_TAREA: TLongintField
+      DisplayLabel = 'ID'
+      DisplayWidth = 4
+      FieldKind = fkData
+      FieldName = 'ID_TAREA'
+      Index = 0
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = True
+      Visible = False
+    end
+    object zTareasParaVerTRABAJO_ID: TLongintField
+      DisplayLabel = 'TRAB'
+      DisplayWidth = 4
+      FieldKind = fkData
+      FieldName = 'TRABAJO_ID'
+      Index = 1
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+      Visible = False
+    end
+    object zTareasParaVerDESCRIPCION: TStringField
+      DisplayWidth = 10
+      FieldKind = fkData
+      FieldName = 'DESCRIPCION'
+      Index = 2
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+      Size = 80
+    end
+    object zTareasParaVerORDEN: TSmallintField
+      DisplayLabel = 'ORD.'
+      DisplayWidth = 4
+      FieldKind = fkData
+      FieldName = 'ORDEN'
+      Index = 3
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+    end
+    object zTareasParaVerOBSERVACION_DENTISTA: TStringField
+      DisplayWidth = 15
+      FieldKind = fkData
+      FieldName = 'OBSERVACION_DENTISTA'
+      Index = 4
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+      Size = 160
+    end
+    object zTareasParaVerFECHA_INGRESO: TDateTimeField
+      DisplayLabel = 'INGRESO'
+      DisplayWidth = 6
+      FieldKind = fkData
+      FieldName = 'FECHA_INGRESO'
+      Index = 5
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+    end
+    object zTareasParaVerESTIMADO_SALIDA: TDateField
+      DisplayLabel = 'PLAZO'
+      DisplayWidth = 10
+      FieldKind = fkData
+      FieldName = 'ESTIMADO_SALIDA'
+      Index = 6
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+    end
+    object zTareasParaVerFECHA_SALIDA: TDateTimeField
+      DisplayLabel = 'SALIDA'
+      DisplayWidth = 10
+      FieldKind = fkData
+      FieldName = 'FECHA_SALIDA'
+      Index = 7
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+    end
+    object zTareasParaVerTERMINADO: TDateTimeField
+      DisplayLabel = 'FIN'
+      DisplayWidth = 3
+      FieldKind = fkData
+      FieldName = 'TERMINADO'
+      Index = 8
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+    end
+    object zTareasParaVerDATO_REMITO: TStringField
+      DisplayWidth = 15
+      FieldKind = fkData
+      FieldName = 'DATO_REMITO'
+      Index = 9
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+      Size = 160
+    end
+    object zTareasParaVerTIPO_TAREA_ID: TLongintField
+      DisplayWidth = 10
+      FieldKind = fkData
+      FieldName = 'TIPO_TAREA_ID'
+      Index = 10
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+      Visible = False
+    end
+  end
+  object zCategorias: TZReadOnlyQuery
+    Connection = dmConexion.ZConnection1
+    SQL.Strings = (
+      'SELECT a.ID_CAT_PROD, a.DESCRIPCION'
+      'FROM CATEGORIA_PRODUCTOS a ;'
+    )
+    Params = <>
+    left = 224
+    top = 8
+    object zCategoriasID_CAT_PROD: TLongintField
+      DisplayWidth = 10
+      FieldKind = fkData
+      FieldName = 'ID_CAT_PROD'
+      Index = 0
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = True
+    end
+    object zCategoriasDESCRIPCION: TStringField
+      DisplayWidth = 30
+      FieldKind = fkData
+      FieldName = 'DESCRIPCION'
+      Index = 1
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+      Size = 160
+    end
+  end
+  object upTareasSinFinalizar: TZUpdateSQL
+    DeleteSQL.Strings = (
+      'DELETE FROM TAREAS'
+      'WHERE'
+      '  TAREAS.ID_TAREA = :OLD_ID_TAREA'
+    )
+    InsertSQL.Strings = (
+      'INSERT INTO TAREAS'
+      '  (ID_TAREA, TRABAJO_ID, TIPO_TAREA_ID, ORDEN, OBSERVACION_DENTISTA, FECHA_INGRESO, '
+      '   TERMINADO, ESTIMADO_SALIDA, FECHA_SALIDA, DATO_REMITO)'
+      'VALUES'
+      '  (:ID_TAREA, :TRABAJO_ID, :TIPO_TAREA_ID, :ORDEN, :OBSERVACION_DENTISTA, '
+      '   :FECHA_INGRESO, :TERMINADO, :ESTIMADO_SALIDA, :FECHA_SALIDA, :DATO_REMITO)'
+    )
+    ModifySQL.Strings = (
+      'UPDATE TAREAS SET'
+      '  ID_TAREA = :ID_TAREA,'
+      '  TRABAJO_ID = :TRABAJO_ID,'
+      '  TIPO_TAREA_ID = :TIPO_TAREA_ID,'
+      '  ORDEN = :ORDEN,'
+      '  OBSERVACION_DENTISTA = :OBSERVACION_DENTISTA,'
+      '  FECHA_INGRESO = :FECHA_INGRESO,'
+      '  TERMINADO = :TERMINADO,'
+      '  ESTIMADO_SALIDA = :ESTIMADO_SALIDA,'
+      '  FECHA_SALIDA = :FECHA_SALIDA,'
+      '  DATO_REMITO = :DATO_REMITO'
+      'WHERE'
+      '  TAREAS.ID_TAREA = :OLD_ID_TAREA'
+    )
+    UseSequenceFieldForRefreshSQL = False
+    left = 224
+    top = 344
+    ParamData = <    
+      item
+        DataType = ftUnknown
+        Name = 'ID_TAREA'
+        ParamType = ptUnknown
+      end    
+      item
+        DataType = ftUnknown
+        Name = 'TRABAJO_ID'
+        ParamType = ptUnknown
+      end    
+      item
+        DataType = ftUnknown
+        Name = 'TIPO_TAREA_ID'
+        ParamType = ptUnknown
+      end    
+      item
+        DataType = ftUnknown
+        Name = 'ORDEN'
+        ParamType = ptUnknown
+      end    
+      item
+        DataType = ftUnknown
+        Name = 'OBSERVACION_DENTISTA'
+        ParamType = ptUnknown
+      end    
+      item
+        DataType = ftUnknown
+        Name = 'FECHA_INGRESO'
+        ParamType = ptUnknown
+      end    
+      item
+        DataType = ftUnknown
+        Name = 'TERMINADO'
+        ParamType = ptUnknown
+      end    
+      item
+        DataType = ftUnknown
+        Name = 'ESTIMADO_SALIDA'
+        ParamType = ptUnknown
+      end    
+      item
+        DataType = ftUnknown
+        Name = 'FECHA_SALIDA'
+        ParamType = ptUnknown
+      end    
+      item
+        DataType = ftUnknown
+        Name = 'DATO_REMITO'
+        ParamType = ptUnknown
+      end    
+      item
+        DataType = ftUnknown
+        Name = 'OLD_ID_TAREA'
+        ParamType = ptUnknown
+      end>
+  end
+  object zTareasSinFinalizar: TZQuery
+    Connection = dmConexion.ZConnection1
+    UpdateObject = upTareasSinFinalizar
+    SQL.Strings = (
+      'SELECT a.ID_TAREA, a.TRABAJO_ID, a.TIPO_TAREA_ID, a.ORDEN,'
+      '    a.OBSERVACION_DENTISTA, a.FECHA_INGRESO, a.TERMINADO, a.ESTIMADO_SALIDA,'
+      '    a.FECHA_SALIDA, a.DATO_REMITO'
+      'FROM TAREAS a'
+      'WHERE'
+      '    a.TERMINADO = ''N'''
+    )
+    Params = <>
+    left = 224
+    top = 288
+    object zTareasSinFinalizarID_TAREA: TLongintField
+      DisplayWidth = 10
+      FieldKind = fkData
+      FieldName = 'ID_TAREA'
+      Index = 0
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = True
+      Visible = False
+    end
+    object zTareasSinFinalizarTRABAJO_ID: TLongintField
+      DisplayWidth = 10
+      FieldKind = fkData
+      FieldName = 'TRABAJO_ID'
+      Index = 1
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+      Visible = False
+    end
+    object zTareasSinFinalizarTIPO_TAREA_ID: TLongintField
+      DisplayWidth = 10
+      FieldKind = fkData
+      FieldName = 'TIPO_TAREA_ID'
+      Index = 2
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+      Visible = False
+    end
+    object StringField3: TStringField
+      DisplayLabel = 'Descripcion'
+      DisplayWidth = 15
+      FieldKind = fkLookup
+      FieldName = 'DESCRIPCION'
+      Index = 3
+      KeyFields = 'TIPO_TAREA_ID'
+      LookupCache = False
+      LookupDataSet = zTiposTareasBusqueda
+      LookupKeyFields = 'ID_TIPO_TAREA'
+      LookupResultField = 'DESCRIPCION'
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+      Size = 80
+    end
+    object StringField1: TStringField
+      DisplayLabel = 'Dentista'
+      DisplayWidth = 15
+      FieldKind = fkLookup
+      FieldName = 'DENTISTA'
+      Index = 4
+      KeyFields = 'TRABAJO_ID'
+      LookupCache = False
+      LookupDataSet = zTrabajosBusqueda
+      LookupKeyFields = 'ID_TRABAJOS'
+      LookupResultField = 'DENTISTA'
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+      Size = 408
+    end
+    object StringField2: TStringField
+      DisplayLabel = 'Paciente'
+      DisplayWidth = 10
+      FieldKind = fkLookup
+      FieldName = 'PACIENTE'
+      Index = 5
+      KeyFields = 'TRABAJO_ID'
+      LookupCache = False
+      LookupDataSet = zTrabajosBusqueda
+      LookupKeyFields = 'ID_TRABAJOS'
+      LookupResultField = 'PACIENTE'
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+      Size = 200
+    end
+    object zTareasSinFinalizarORDEN: TSmallintField
+      DisplayWidth = 10
+      FieldKind = fkData
+      FieldName = 'ORDEN'
+      Index = 6
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+      Visible = False
+    end
+    object zTareasSinFinalizarTERMINADO: TStringField
+      DisplayLabel = 'T'
+      DisplayWidth = 2
+      FieldKind = fkData
+      FieldName = 'TERMINADO'
+      Index = 7
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+      Size = 1
+    end
+    object zTareasSinFinalizarOBSERVACION_DENTISTA: TStringField
+      DisplayLabel = 'Observacion'
+      DisplayWidth = 10
+      FieldKind = fkData
+      FieldName = 'OBSERVACION_DENTISTA'
+      Index = 8
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+      Size = 160
+    end
+    object zTareasSinFinalizarFECHA_INGRESO: TDateTimeField
+      DisplayLabel = 'Ingreso'
+      DisplayWidth = 6
+      FieldKind = fkData
+      FieldName = 'FECHA_INGRESO'
+      Index = 9
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+    end
+    object zTareasSinFinalizarESTIMADO_SALIDA: TDateField
+      DisplayLabel = 'Plazo'
+      DisplayWidth = 6
+      FieldKind = fkData
+      FieldName = 'ESTIMADO_SALIDA'
+      Index = 10
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+    end
+    object zTareasSinFinalizarFECHA_SALIDA: TDateTimeField
+      DisplayLabel = 'Salida'
+      DisplayWidth = 6
+      FieldKind = fkData
+      FieldName = 'FECHA_SALIDA'
+      Index = 11
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+    end
+    object zTareasSinFinalizarDATO_REMITO: TStringField
+      DisplayLabel = 'Guia Remito'
+      DisplayWidth = 15
+      FieldKind = fkData
+      FieldName = 'DATO_REMITO'
+      Index = 12
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+      Size = 160
+    end
+  end
+  object zTrabajosBusqueda: TZTable
+    Connection = dmConexion.ZConnection1
+    TableName = 'TRABAJOS_BUSQUEDA'
+    left = 48
+    top = 344
+    object zTrabajosBusquedaID_TRABAJOS: TLongintField
+      DisplayWidth = 10
+      FieldKind = fkData
+      FieldName = 'ID_TRABAJOS'
+      Index = 0
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+    end
+    object zTrabajosBusquedaDENTISTA_ID: TLongintField
+      DisplayWidth = 10
+      FieldKind = fkData
+      FieldName = 'DENTISTA_ID'
+      Index = 1
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+    end
+    object zTrabajosBusquedaDENTISTA: TStringField
+      DisplayWidth = 408
+      FieldKind = fkData
+      FieldName = 'DENTISTA'
+      Index = 2
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+      Size = 408
+    end
+    object zTrabajosBusquedaPACIENTE: TStringField
+      DisplayWidth = 200
+      FieldKind = fkData
+      FieldName = 'PACIENTE'
+      Index = 3
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+      Size = 200
+    end
+    object zTrabajosBusquedaFECHA_ENTRADA: TDateTimeField
+      DisplayWidth = 10
+      FieldKind = fkData
+      FieldName = 'FECHA_ENTRADA'
+      Index = 4
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+    end
+  end
+  object zTiposTareasBusqueda: TZTable
+    Connection = dmConexion.ZConnection1
+    TableName = 'TIPOS_TAREAS'
+    left = 48
+    top = 288
+    object zTiposTareasBusquedaID_TIPO_TAREA: TLongintField
+      DisplayWidth = 10
+      FieldKind = fkData
+      FieldName = 'ID_TIPO_TAREA'
+      Index = 0
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = True
+    end
+    object zTiposTareasBusquedaDESCRIPCION: TStringField
+      DisplayWidth = 80
+      FieldKind = fkData
+      FieldName = 'DESCRIPCION'
+      Index = 1
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+      Size = 80
+    end
+    object zTiposTareasBusquedaTIEMPO_ESTIMADO: TFloatField
+      DisplayWidth = 10
+      FieldKind = fkData
+      FieldName = 'TIEMPO_ESTIMADO'
+      Index = 2
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+      MaxValue = 0
+      MinValue = 0
+      Precision = 2
+    end
+    object zTiposTareasBusquedaTIENE_FECHA_SALIDA: TStringField
+      DisplayWidth = 1
+      FieldKind = fkData
+      FieldName = 'TIENE_FECHA_SALIDA'
+      Index = 3
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+      Size = 1
+    end
+  end
+end

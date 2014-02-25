@@ -1,0 +1,317 @@
+inherited DentistasInput: TDentistasInput
+  Left = 618
+  Height = 585
+  Top = 124
+  Width = 379
+  Caption = 'Odontologos'
+  ClientHeight = 585
+  ClientWidth = 379
+  inherited GroupBox1: TGroupBox
+    Left = 8
+    Height = 512
+    ClientHeight = 493
+    object Label1: TLabel[0]
+      Left = 7
+      Height = 18
+      Top = 3
+      Width = 54
+      Caption = 'Apellido'
+      ParentColor = False
+    end
+    object Nombre: TLabel[1]
+      Left = 7
+      Height = 18
+      Top = 47
+      Width = 51
+      Caption = 'Nombre'
+      ParentColor = False
+    end
+    object CUIT: TLabel[2]
+      Left = 7
+      Height = 18
+      Top = 95
+      Width = 35
+      Caption = 'CUIT'
+      ParentColor = False
+    end
+    object DNI: TLabel[3]
+      Left = 7
+      Height = 18
+      Top = 143
+      Width = 27
+      Caption = 'DNI'
+      ParentColor = False
+    end
+    object Label4: TLabel[4]
+      Left = 215
+      Height = 18
+      Top = 143
+      Width = 87
+      Caption = 'Codigo Postal'
+      ParentColor = False
+    end
+    object Label5: TLabel[5]
+      Left = 7
+      Height = 18
+      Top = 183
+      Width = 61
+      Caption = 'Direccion'
+      ParentColor = False
+    end
+    object Label6: TLabel[6]
+      Left = 7
+      Height = 18
+      Top = 247
+      Width = 45
+      Caption = 'Ciudad'
+      ParentColor = False
+    end
+    object Label8: TLabel[7]
+      Left = 7
+      Height = 18
+      Top = 287
+      Width = 45
+      Caption = 'Celular'
+      ParentColor = False
+    end
+    object Label9: TLabel[8]
+      Left = 169
+      Height = 18
+      Top = 287
+      Width = 55
+      Caption = 'Telefono'
+      ParentColor = False
+    end
+    object Label10: TLabel[9]
+      Left = 7
+      Height = 18
+      Top = 327
+      Width = 36
+      Caption = 'Email'
+      ParentColor = False
+    end
+    object DBEdit1: TDBEdit[10]
+      Left = 8
+      Height = 30
+      Top = 18
+      Width = 302
+      DataField = 'APELLIDO'
+      DataSource = dsInput
+      CharCase = ecNormal
+      MaxLength = 0
+      TabOrder = 0
+    end
+    object DBEdit2: TDBEdit[11]
+      Left = 8
+      Height = 30
+      Top = 63
+      Width = 302
+      DataField = 'NOMBRE'
+      DataSource = dsInput
+      CharCase = ecNormal
+      MaxLength = 0
+      TabOrder = 1
+    end
+    object DBEdit13: TDBEdit[12]
+      Left = 7
+      Height = 30
+      Top = 111
+      Width = 303
+      DataField = 'CUIT'
+      DataSource = dsInput
+      CharCase = ecNormal
+      MaxLength = 0
+      TabOrder = 14
+    end
+    object DBEdit3: TDBEdit[13]
+      Left = 9
+      Height = 30
+      Top = 159
+      Width = 200
+      DataField = 'DNI'
+      DataSource = dsInput
+      CharCase = ecNormal
+      MaxLength = 0
+      TabOrder = 2
+    end
+    object DBEdit4: TDBEdit[14]
+      Left = 214
+      Height = 30
+      Top = 159
+      Width = 95
+      DataField = 'CP'
+      DataSource = dsInput
+      CharCase = ecNormal
+      MaxLength = 0
+      TabOrder = 3
+    end
+    object DBEdit5: TDBEdit[15]
+      Left = 8
+      Height = 30
+      Top = 199
+      Width = 302
+      DataField = 'DIRECCION'
+      DataSource = dsInput
+      CharCase = ecNormal
+      MaxLength = 0
+      TabOrder = 4
+    end
+    object DBEdit6: TDBEdit[16]
+      Left = 8
+      Height = 30
+      Top = 223
+      Width = 302
+      DataField = 'DIRECCION2'
+      DataSource = dsInput
+      CharCase = ecNormal
+      MaxLength = 0
+      TabOrder = 5
+    end
+    object DBEdit7: TDBEdit[17]
+      Left = 8
+      Height = 30
+      Top = 303
+      Width = 146
+      DataField = 'MOVIL'
+      DataSource = dsInput
+      CharCase = ecNormal
+      MaxLength = 0
+      TabOrder = 7
+    end
+    object DBEdit8: TDBEdit[18]
+      Left = 163
+      Height = 30
+      Top = 303
+      Width = 146
+      DataField = 'TELEFONO'
+      DataSource = dsInput
+      CharCase = ecNormal
+      MaxLength = 0
+      TabOrder = 8
+    end
+    object DBLookupComboBox1: TDBLookupComboBox[19]
+      Left = 8
+      Height = 30
+      Top = 263
+      Width = 302
+      DataField = 'LOCALIDAD_ID'
+      DataSource = dsInput
+      KeyField = 'ID_LOCALIDAD'
+      ListField = 'COMPLETO'
+      ListFieldIndex = 0
+      ListSource = dsCiudades
+      LookupCache = False
+      TabOrder = 6
+    end
+    object DBEdit9: TDBEdit[20]
+      Left = 8
+      Height = 30
+      Top = 343
+      Width = 302
+      DataField = 'EMAIL'
+      DataSource = dsInput
+      CharCase = ecNormal
+      MaxLength = 0
+      TabOrder = 9
+    end
+    object Label2: TLabel[21]
+      Left = 7
+      Height = 18
+      Top = 367
+      Width = 44
+      Caption = 'Clinica'
+      ParentColor = False
+    end
+    object Label3: TLabel[22]
+      Left = 7
+      Height = 18
+      Top = 407
+      Width = 106
+      Caption = 'Tipo Facturacion'
+      ParentColor = False
+    end
+    object Label11: TLabel[23]
+      Left = 7
+      Height = 18
+      Top = 447
+      Width = 102
+      Caption = 'Credito Maximo'
+      ParentColor = False
+    end
+    object Label12: TLabel[24]
+      Left = 169
+      Height = 18
+      Top = 447
+      Width = 140
+      Caption = 'Porcentaje Incremento'
+      ParentColor = False
+    end
+    object DBEdit10: TDBEdit[25]
+      Left = 8
+      Height = 30
+      Top = 383
+      Width = 302
+      DataField = 'CLINICA'
+      DataSource = dsInput
+      CharCase = ecNormal
+      MaxLength = 0
+      TabOrder = 10
+    end
+    object DBLookupComboBox2: TDBLookupComboBox[26]
+      Left = 8
+      Height = 30
+      Top = 423
+      Width = 302
+      DataField = 'TIPOIVA_ID'
+      DataSource = dsInput
+      KeyField = 'ID_TIPO'
+      ListField = 'NOMBRE'
+      ListFieldIndex = 0
+      ListSource = dsTI
+      LookupCache = False
+      TabOrder = 11
+    end
+    object DBEdit11: TDBEdit[27]
+      Left = 8
+      Height = 30
+      Top = 463
+      Width = 146
+      DataField = 'CREDITO_MAX'
+      DataSource = dsInput
+      CharCase = ecNormal
+      MaxLength = 0
+      TabOrder = 12
+    end
+    object DBEdit12: TDBEdit[28]
+      Left = 163
+      Height = 30
+      Top = 463
+      Width = 146
+      DataField = 'PORCENTAJE'
+      DataSource = dsInput
+      CharCase = ecNormal
+      MaxLength = 0
+      TabOrder = 13
+    end
+  end
+  inherited Panel1: TPanel
+    Top = 520
+  end
+  inherited dsInput: TDataSource
+    DataSet = dmDentistas.zDentistas
+    left = 216
+  end
+  inherited Configuracion: TXMLPropStorage
+    left = 288
+  end
+  object dsTI: TDataSource[4]
+    DataSet = dmDentistas.zTipoIva
+    left = 168
+    top = 16
+  end
+  object dsCiudades: TDataSource[5]
+    DataSet = dmDentistas.zCiudades
+    left = 120
+    top = 16
+  end
+end

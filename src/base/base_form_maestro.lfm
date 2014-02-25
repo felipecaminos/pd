@@ -1,0 +1,10 @@
+object FormMaestro: TFormMaestro
+  Left = 310
+  Height = 240
+  Top = 213
+  Width = 320
+  Caption = 'FormMaestro'
+  Font.Height = -15
+  Font.Name = 'Times New Roman'
+  LCLVersion = '1.3'
+end

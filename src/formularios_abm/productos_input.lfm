@@ -1,0 +1,249 @@
+inherited ProductosInput: TProductosInput
+  Left = 484
+  Height = 465
+  Top = 153
+  Width = 359
+  Caption = 'PRODUCTOS'
+  ClientHeight = 465
+  ClientWidth = 359
+  inherited GroupBox1: TGroupBox
+    Height = 360
+    ClientHeight = 341
+    object Label1: TLabel[0]
+      Left = 6
+      Height = 18
+      Top = -1
+      Width = 79
+      Caption = 'Cod. Interno'
+      ParentColor = False
+    end
+    object Label2: TLabel[1]
+      Left = 102
+      Height = 18
+      Top = -1
+      Width = 60
+      Caption = 'Categoria'
+      ParentColor = False
+    end
+    object Label3: TLabel[2]
+      Left = 6
+      Height = 18
+      Top = 47
+      Width = 75
+      Caption = 'Descripcion'
+      ParentColor = False
+    end
+    object Label4: TLabel[3]
+      Left = 6
+      Height = 18
+      Top = 95
+      Width = 114
+      Caption = 'Datos Adicionales'
+      ParentColor = False
+    end
+    object Label5: TLabel[4]
+      Left = 6
+      Height = 18
+      Top = 143
+      Width = 56
+      Caption = 'Paralelos'
+      ParentColor = False
+    end
+    object Label6: TLabel[5]
+      Left = 110
+      Height = 18
+      Top = 143
+      Width = 35
+      Caption = 'Pasos'
+      ParentColor = False
+    end
+    object Label7: TLabel[6]
+      Left = 214
+      Height = 18
+      Top = 143
+      Width = 86
+      Caption = 'Tiempo (min)'
+      ParentColor = False
+    end
+    object Label8: TLabel[7]
+      Left = 6
+      Height = 18
+      Top = 191
+      Width = 64
+      Caption = 'Materiales'
+      ParentColor = False
+    end
+    object Label9: TLabel[8]
+      Left = 7
+      Height = 18
+      Top = 239
+      Width = 104
+      Caption = 'Costo Materiales'
+      ParentColor = False
+    end
+    object Label10: TLabel[9]
+      Left = 162
+      Height = 18
+      Top = 239
+      Width = 86
+      Caption = 'Cantidad IVA'
+      ParentColor = False
+    end
+    object Label11: TLabel[10]
+      Left = 7
+      Height = 18
+      Top = 287
+      Width = 96
+      Caption = 'Precio con IVA'
+      ParentColor = False
+    end
+    object DBEdit1: TDBEdit[11]
+      Left = 6
+      Height = 30
+      Top = 15
+      Width = 89
+      DataField = 'CODIGO_INTERNO'
+      DataSource = dsInput
+      CharCase = ecNormal
+      MaxLength = 0
+      TabOrder = 0
+    end
+    object DBLookupComboBox1: TDBLookupComboBox[12]
+      Left = 103
+      Height = 30
+      Top = 15
+      Width = 210
+      DataField = 'CAT_PROD_ID'
+      DataSource = dsInput
+      KeyField = 'ID_CAT_PROD'
+      ListField = 'DESCRIPCION'
+      ListFieldIndex = 0
+      ListSource = dsCategorias
+      LookupCache = False
+      TabOrder = 1
+    end
+    object DBEdit2: TDBEdit[13]
+      Left = 6
+      Height = 30
+      Top = 63
+      Width = 299
+      DataField = 'DESCRIPCION'
+      DataSource = dsInput
+      CharCase = ecNormal
+      MaxLength = 200
+      TabOrder = 2
+    end
+    object DBEdit3: TDBEdit[14]
+      Left = 6
+      Height = 30
+      Top = 111
+      Width = 302
+      DataField = 'DATO_ADICIONAL'
+      DataSource = dsInput
+      CharCase = ecNormal
+      MaxLength = 320
+      TabOrder = 3
+    end
+    object DBEdit4: TDBEdit[15]
+      Left = 6
+      Height = 30
+      Top = 159
+      Width = 96
+      DataField = 'CANT_PARALELO'
+      DataSource = dsInput
+      CharCase = ecNormal
+      MaxLength = 0
+      TabOrder = 4
+    end
+    object DBEdit5: TDBEdit[16]
+      Left = 110
+      Height = 30
+      Top = 159
+      Width = 96
+      DataField = 'CANTIDAD_PASOS'
+      DataSource = dsInput
+      CharCase = ecNormal
+      MaxLength = 0
+      TabOrder = 5
+    end
+    object DBEdit6: TDBEdit[17]
+      Left = 214
+      Height = 30
+      Top = 159
+      Width = 96
+      DataField = 'TIEMPO'
+      DataSource = dsInput
+      CharCase = ecNormal
+      EditMask = '######;1; '
+      MaxLength = 6
+      TabOrder = 6
+    end
+    object DBEdit7: TDBEdit[18]
+      Left = 7
+      Height = 30
+      Top = 207
+      Width = 290
+      DataField = 'MATERIALES'
+      DataSource = dsInput
+      CharCase = ecNormal
+      MaxLength = 200
+      TabOrder = 7
+    end
+    object DBEdit8: TDBEdit[19]
+      Left = 5
+      Height = 30
+      Top = 255
+      Width = 145
+      DataField = 'COSTO'
+      DataSource = dsInput
+      CharCase = ecNormal
+      EditMask = '##########.##;1; '
+      MaxLength = 13
+      TabOrder = 8
+    end
+    object DBLookupComboBox2: TDBLookupComboBox[20]
+      Left = 159
+      Height = 30
+      Top = 255
+      Width = 146
+      DataField = 'TIPO_IVA_ID'
+      DataSource = dsInput
+      KeyField = 'ID_TIPO'
+      ListField = 'PORCENTAJE'
+      ListFieldIndex = 0
+      ListSource = dsIVA
+      LookupCache = False
+      TabOrder = 9
+    end
+    object DBEdit9: TDBEdit[21]
+      Left = 7
+      Height = 30
+      Top = 303
+      Width = 143
+      DataField = 'PRECIO_FINAL'
+      DataSource = dsInput
+      CharCase = ecNormal
+      MaxLength = 0
+      TabOrder = 10
+    end
+  end
+  inherited Panel1: TPanel
+    Top = 360
+  end
+  inherited dsInput: TDataSource
+    DataSet = dmProductos.zProductos
+  end
+  inherited Configuracion: TXMLPropStorage
+    left = 144
+  end
+  object dsCategorias: TDataSource[4]
+    DataSet = dmProductos.zCategoria
+    left = 281
+    top = 24
+  end
+  object dsIVA: TDataSource[5]
+    DataSet = dmProductos.zIVA
+    left = 281
+    top = 273
+  end
+end

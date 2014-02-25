@@ -1,0 +1,295 @@
+object dmCiudades: TdmCiudades
+  OnCreate = DataModuleCreate
+  OnDestroy = DataModuleDestroy
+  OldCreateOrder = False
+  Height = 194
+  HorizontalOffset = 340
+  VerticalOffset = 151
+  Width = 307
+  object dsProvincias: TDataSource
+    DataSet = zProvincias
+    left = 72
+    top = 96
+  end
+  object zCiudades: TZQuery
+    Connection = dmConexion.ZConnection1
+    UpdateObject = upCiudades
+    SQL.Strings = (
+      'select * from ciudades'
+    )
+    Params = <>
+    left = 51
+    top = 8
+    object zCiudadesID_CIUDAD: TLongintField
+      DisplayLabel = 'Codigo'
+      DisplayWidth = 6
+      FieldKind = fkData
+      FieldName = 'ID_CIUDAD'
+      Index = 0
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+      Visible = False
+    end
+    object zCiudadesDEPARTAMENTO_ID: TLongintField
+      DisplayWidth = 6
+      FieldKind = fkData
+      FieldName = 'DEPARTAMENTO_ID'
+      Index = 1
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+      Visible = False
+    end
+    object zCiudadesNOMBRE: TStringField
+      DisplayWidth = 33
+      FieldKind = fkData
+      FieldName = 'NOMBRE'
+      Index = 2
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+      Size = 320
+    end
+    object zCiudadesFECHA_BAJA: TDateField
+      DisplayWidth = 10
+      FieldKind = fkData
+      FieldName = 'FECHA_BAJA'
+      Index = 3
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+      Visible = False
+    end
+    object StringField1: TStringField
+      DisplayLabel = 'Departamento'
+      DisplayWidth = 15
+      FieldKind = fkLookup
+      FieldName = 'DEPARTAMENTO'
+      Index = 4
+      KeyFields = 'DEPARTAMENTO_ID'
+      LookupCache = False
+      LookupDataSet = zDepProv
+      LookupKeyFields = 'ID_DEPARTAMENTO'
+      LookupResultField = 'NOMBRE'
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+      Size = 240
+    end
+    object StringField2: TStringField
+      DisplayLabel = 'Provincia'
+      DisplayWidth = 15
+      FieldKind = fkLookup
+      FieldName = 'PROVINCIA'
+      Index = 5
+      KeyFields = 'DEPARTAMENTO_ID'
+      LookupCache = False
+      LookupDataSet = zDepProv
+      LookupKeyFields = 'ID_DEPARTAMENTO'
+      LookupResultField = 'NOMBRE_1'
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+      Size = 100
+    end
+  end
+  object upCiudades: TZUpdateSQL
+    DeleteSQL.Strings = (
+      'DELETE FROM ciudades'
+      'WHERE'
+      '  ciudades.ID_CIUDAD = :OLD_ID_CIUDAD'
+    )
+    InsertSQL.Strings = (
+      'INSERT INTO ciudades'
+      '  (ID_CIUDAD, DEPARTAMENTO_ID, NOMBRE, FECHA_BAJA)'
+      'VALUES'
+      '  (:ID_CIUDAD, :DEPARTAMENTO_ID, :NOMBRE, :FECHA_BAJA)'
+    )
+    ModifySQL.Strings = (
+      'UPDATE ciudades SET'
+      '  ID_CIUDAD = :ID_CIUDAD,'
+      '  DEPARTAMENTO_ID = :DEPARTAMENTO_ID,'
+      '  NOMBRE = :NOMBRE,'
+      '  FECHA_BAJA = :FECHA_BAJA'
+      'WHERE'
+      '  ciudades.ID_CIUDAD = :OLD_ID_CIUDAD'
+    )
+    UseSequenceFieldForRefreshSQL = False
+    left = 128
+    top = 8
+    ParamData = <    
+      item
+        DataType = ftUnknown
+        Name = 'ID_CIUDAD'
+        ParamType = ptUnknown
+      end    
+      item
+        DataType = ftUnknown
+        Name = 'DEPARTAMENTO_ID'
+        ParamType = ptUnknown
+      end    
+      item
+        DataType = ftUnknown
+        Name = 'NOMBRE'
+        ParamType = ptUnknown
+      end    
+      item
+        DataType = ftUnknown
+        Name = 'FECHA_BAJA'
+        ParamType = ptUnknown
+      end    
+      item
+        DataType = ftUnknown
+        Name = 'OLD_ID_CIUDAD'
+        ParamType = ptUnknown
+      end>
+  end
+  object zProvincias: TZQuery
+    Connection = dmConexion.ZConnection1
+    SQL.Strings = (
+      'select * from provincias'
+    )
+    Params = <>
+    left = 131
+    top = 120
+    object zProvinciasID_PROVINCIA: TLongintField
+      DisplayWidth = 10
+      FieldKind = fkData
+      FieldName = 'ID_PROVINCIA'
+      Index = 0
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = True
+      Visible = False
+    end
+    object zProvinciasNOMBRE: TStringField
+      DisplayLabel = 'Provincias'
+      DisplayWidth = 100
+      FieldKind = fkData
+      FieldName = 'NOMBRE'
+      Index = 1
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+      Size = 100
+    end
+  end
+  object zDepartamentos: TZQuery
+    Connection = dmConexion.ZConnection1
+    SQL.Strings = (
+      'select * from departamentos'
+      ''
+      ''
+    )
+    Params = <>
+    left = 8
+    top = 120
+    object zDepartamentosID_DEPARTAMENTO: TLongintField
+      DisplayWidth = 10
+      FieldKind = fkData
+      FieldName = 'ID_DEPARTAMENTO'
+      Index = 0
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = True
+      Visible = False
+    end
+    object zDepartamentosPROVINCIA_ID: TLongintField
+      DisplayWidth = 10
+      FieldKind = fkData
+      FieldName = 'PROVINCIA_ID'
+      Index = 1
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+      Visible = False
+    end
+    object zDepartamentosNOMBRE: TStringField
+      DisplayLabel = 'Departamentos'
+      DisplayWidth = 240
+      FieldKind = fkData
+      FieldName = 'NOMBRE'
+      Index = 2
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+      Size = 240
+    end
+  end
+  object zDepProv: TZReadOnlyQuery
+    Connection = dmConexion.ZConnection1
+    SQL.Strings = (
+      'select * from departamentos, provincias '
+      'where '
+      'departamentos.provincia_id = provincias.id_provincia'
+    )
+    Params = <>
+    left = 232
+    top = 8
+    object zDepProvID_DEPARTAMENTO: TLongintField
+      DisplayWidth = 10
+      FieldKind = fkData
+      FieldName = 'ID_DEPARTAMENTO'
+      Index = 0
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = True
+      Visible = False
+    end
+    object zDepProvPROVINCIA_ID: TLongintField
+      DisplayWidth = 10
+      FieldKind = fkData
+      FieldName = 'PROVINCIA_ID'
+      Index = 1
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+      Visible = False
+    end
+    object zDepProvNOMBRE: TStringField
+      DisplayWidth = 40
+      FieldKind = fkData
+      FieldName = 'NOMBRE'
+      Index = 2
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+      Size = 240
+    end
+    object zDepProvID_PROVINCIA: TLongintField
+      DisplayWidth = 10
+      FieldKind = fkData
+      FieldName = 'ID_PROVINCIA'
+      Index = 3
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = True
+      Visible = False
+    end
+    object zDepProvNOMBRE_1: TStringField
+      DisplayWidth = 30
+      FieldKind = fkData
+      FieldName = 'NOMBRE_1'
+      Index = 4
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+      Size = 100
+    end
+  end
+end

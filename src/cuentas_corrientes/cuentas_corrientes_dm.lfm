@@ -1,0 +1,1161 @@
+object dmCuentasCorrientes: TdmCuentasCorrientes
+  OnCreate = DataModuleCreate
+  OldCreateOrder = False
+  Height = 391
+  HorizontalOffset = 602
+  VerticalOffset = 320
+  Width = 714
+  object zCuentasCorrientes: TZQuery
+    Connection = dmConexion.ZConnection1
+    UpdateObject = upCuentasCorrientes
+    SQL.Strings = (
+      'SELECT a.ID, a.CLIENTE_ID, a.COMPR_DEBITO_ID, a.IMPORTE_COMPR_DEB,'
+      '    a.FECHA_HORA, a.SALDO, a.FECHA_BAJA, a.FACTURADO'
+      'FROM CUENTAS_CORRIENTES a '
+      'WHERE'
+      '    a.CLIENTE_ID = :ID_DENTISTA '
+      'AND'
+      '    a.FECHA_BAJA IS NULL'
+      '    ORDER BY a.FECHA_HORA'
+    )
+    Params = <    
+      item
+        DataType = ftUnknown
+        Name = 'ID_DENTISTA'
+        ParamType = ptUnknown
+      end>
+    left = 80
+    top = 8
+    ParamData = <    
+      item
+        DataType = ftUnknown
+        Name = 'ID_DENTISTA'
+        ParamType = ptUnknown
+      end>
+    object zCuentasCorrientesID: TLongintField
+      DisplayWidth = 10
+      FieldKind = fkData
+      FieldName = 'ID'
+      Index = 0
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = True
+      Visible = False
+    end
+    object zCuentasCorrientesCLIENTE_ID: TLongintField
+      DisplayWidth = 10
+      FieldKind = fkData
+      FieldName = 'CLIENTE_ID'
+      Index = 1
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+      Visible = False
+    end
+    object zCuentasCorrientesCOMPR_DEBITO_ID: TLongintField
+      DisplayLabel = 'C ID'
+      DisplayWidth = 5
+      FieldKind = fkData
+      FieldName = 'COMPR_DEBITO_ID'
+      Index = 2
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+    end
+    object zCuentasCorrientesIMPORTE_COMPR_DEB: TFloatField
+      DisplayLabel = 'Importe'
+      DisplayWidth = 10
+      FieldKind = fkData
+      FieldName = 'IMPORTE_COMPR_DEB'
+      Index = 3
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+      Currency = True
+      MaxValue = 0
+      MinValue = 0
+      Precision = 2
+    end
+    object zCuentasCorrientesFECHA_HORA: TDateTimeField
+      DisplayLabel = 'Fecha-Hora'
+      DisplayWidth = 10
+      FieldKind = fkData
+      FieldName = 'FECHA_HORA'
+      Index = 4
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+    end
+    object zCuentasCorrientesSALDO: TFloatField
+      DisplayLabel = 'Saldo'
+      DisplayWidth = 6
+      FieldKind = fkData
+      FieldName = 'SALDO'
+      Index = 5
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+      Visible = False
+      Currency = True
+      MaxValue = 0
+      MinValue = 0
+      Precision = 2
+    end
+    object zCuentasCorrientesFECHA_BAJA: TDateField
+      DisplayWidth = 10
+      FieldKind = fkData
+      FieldName = 'FECHA_BAJA'
+      Index = 6
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+      Visible = False
+    end
+    object zCuentasCorrientesFACTURADO: TStringField
+      DisplayLabel = 'F'
+      DisplayWidth = 2
+      FieldKind = fkData
+      FieldName = 'FACTURADO'
+      Index = 7
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+      Size = 1
+    end
+  end
+  object upCuentasCorrientes: TZUpdateSQL
+    DeleteSQL.Strings = (
+      'DELETE FROM CUENTAS_CORRIENTES'
+      'WHERE'
+      '  CUENTAS_CORRIENTES.ID = :OLD_ID'
+    )
+    InsertSQL.Strings = (
+      'INSERT INTO CUENTAS_CORRIENTES'
+      '  (ID, CLIENTE_ID, COMPR_DEBITO_ID, IMPORTE_COMPR_DEB, FECHA_HORA, SALDO, '
+      '   FECHA_BAJA, FACTURADO)'
+      'VALUES'
+      '  (:ID, :CLIENTE_ID, :COMPR_DEBITO_ID, :IMPORTE_COMPR_DEB, :FECHA_HORA, '
+      '   :SALDO, :FECHA_BAJA, :FACTURADO)'
+    )
+    ModifySQL.Strings = (
+      'UPDATE CUENTAS_CORRIENTES SET'
+      '  ID = :ID,'
+      '  CLIENTE_ID = :CLIENTE_ID,'
+      '  COMPR_DEBITO_ID = :COMPR_DEBITO_ID,'
+      '  IMPORTE_COMPR_DEB = :IMPORTE_COMPR_DEB,'
+      '  FECHA_HORA = :FECHA_HORA,'
+      '  SALDO = :SALDO,'
+      '  FECHA_BAJA = :FECHA_BAJA,'
+      '  FACTURADO = :FACTURADO'
+      'WHERE'
+      '  CUENTAS_CORRIENTES.ID = :OLD_ID'
+    )
+    UseSequenceFieldForRefreshSQL = False
+    left = 80
+    top = 64
+    ParamData = <    
+      item
+        DataType = ftUnknown
+        Name = 'ID'
+        ParamType = ptUnknown
+      end    
+      item
+        DataType = ftUnknown
+        Name = 'CLIENTE_ID'
+        ParamType = ptUnknown
+      end    
+      item
+        DataType = ftUnknown
+        Name = 'COMPR_DEBITO_ID'
+        ParamType = ptUnknown
+      end    
+      item
+        DataType = ftUnknown
+        Name = 'IMPORTE_COMPR_DEB'
+        ParamType = ptUnknown
+      end    
+      item
+        DataType = ftUnknown
+        Name = 'FECHA_HORA'
+        ParamType = ptUnknown
+      end    
+      item
+        DataType = ftUnknown
+        Name = 'SALDO'
+        ParamType = ptUnknown
+      end    
+      item
+        DataType = ftUnknown
+        Name = 'FECHA_BAJA'
+        ParamType = ptUnknown
+      end    
+      item
+        DataType = ftUnknown
+        Name = 'FACTURADO'
+        ParamType = ptUnknown
+      end    
+      item
+        DataType = ftUnknown
+        Name = 'OLD_ID'
+        ParamType = ptUnknown
+      end>
+  end
+  object dsDentistas: TDataSource
+    DataSet = zDentistas
+    left = 232
+    top = 64
+  end
+  object zDentistas: TZQuery
+    Connection = dmConexion.ZConnection1
+    SQL.Strings = (
+      'SELECT a.ID_DENTISTA, a.DENTISTA, a.MOVIL, a.CLINICA, a.PORCENTAJE'
+      'FROM BUSQUEDA_DENTISTAS a ;'
+    )
+    Params = <>
+    left = 232
+    top = 8
+    object zDentistasID_DENTISTA: TLongintField
+      DisplayWidth = 10
+      FieldKind = fkData
+      FieldName = 'ID_DENTISTA'
+      Index = 0
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+    end
+    object zDentistasDENTISTA: TStringField
+      DisplayWidth = 40
+      FieldKind = fkData
+      FieldName = 'DENTISTA'
+      Index = 1
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+      Size = 580
+    end
+    object zDentistasMOVIL: TStringField
+      DisplayWidth = 60
+      FieldKind = fkData
+      FieldName = 'MOVIL'
+      Index = 2
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+      Size = 60
+    end
+    object zDentistasCLINICA: TStringField
+      DisplayWidth = 160
+      FieldKind = fkData
+      FieldName = 'CLINICA'
+      Index = 3
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+      Size = 160
+    end
+    object zDentistasPORCENTAJE: TFloatField
+      DisplayWidth = 10
+      FieldKind = fkData
+      FieldName = 'PORCENTAJE'
+      Index = 4
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+      MaxValue = 0
+      MinValue = 0
+      Precision = 2
+    end
+  end
+  object zSaldoCuentaCorriente: TZReadOnlyQuery
+    Connection = dmConexion.ZConnection1
+    SQL.Strings = (
+      'SELECT p.SALDO'
+      'FROM SALDO_CUENTA_CORRIENTE (:ID) p;'
+    )
+    Params = <    
+      item
+        DataType = ftUnknown
+        Name = 'ID'
+        ParamType = ptUnknown
+      end>
+    left = 80
+    top = 120
+    ParamData = <    
+      item
+        DataType = ftUnknown
+        Name = 'ID'
+        ParamType = ptUnknown
+      end>
+    object zSaldoCuentaCorrienteSALDO: TFloatField
+      DisplayWidth = 10
+      FieldKind = fkData
+      FieldName = 'SALDO'
+      Index = 0
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = True
+      Required = False
+      Currency = True
+      MaxValue = 0
+      MinValue = 0
+      Precision = 2
+    end
+  end
+  object zRemitos: TZReadOnlyQuery
+    Connection = dmConexion.ZConnection1
+    SQL.Strings = (
+      'SELECT r.COMPROBANTE_ID, r.DENTISTA_ID, r.PACIENTE, r.PRODUCTO, r.FECHA_ENTRADA,'
+      '    r.FECHA_SALIDA, r.LABORATORISTA_ID, r.NUMERO_COMPROBANTE, r.FECHA,'
+      '    r.IMPORTE_TOTAL'
+      'FROM BUSQUEDA_REMITOS r'
+    )
+    Params = <>
+    left = 232
+    top = 120
+  end
+  object zComprobantes: TZQuery
+    Connection = dmConexion.ZConnection1
+    UpdateObject = upComprobantes
+    SQL.Strings = (
+      'SELECT a.ID, a.NUMERO_COMPROBANTE, a.TIPO, a.FECHA, a.CLIENTE_ID, a.PUNTO_VENTA,'
+      '    a.CAJERO, a.FORMA_PAGO, a.TRABAJO_ID, a.PORCENTAJE, a.IMPORTE_TOTAL,'
+      '    a.FECHA_BAJA, a.CONCEPTO'
+      'FROM COMPROBANTES a ;'
+    )
+    Params = <>
+    left = 336
+    top = 8
+    object zComprobantesID: TLongintField
+      DisplayWidth = 10
+      FieldKind = fkData
+      FieldName = 'ID'
+      Index = 0
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = True
+    end
+    object zComprobantesNUMERO_COMPROBANTE: TLongintField
+      DisplayWidth = 10
+      FieldKind = fkData
+      FieldName = 'NUMERO_COMPROBANTE'
+      Index = 1
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = True
+    end
+    object zComprobantesTIPO: TLongintField
+      DisplayWidth = 10
+      FieldKind = fkData
+      FieldName = 'TIPO'
+      Index = 2
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+    end
+    object zComprobantesFECHA: TDateTimeField
+      DisplayWidth = 10
+      FieldKind = fkData
+      FieldName = 'FECHA'
+      Index = 3
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+    end
+    object zComprobantesCLIENTE_ID: TLongintField
+      DisplayWidth = 10
+      FieldKind = fkData
+      FieldName = 'CLIENTE_ID'
+      Index = 4
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+    end
+    object zComprobantesPUNTO_VENTA: TLongintField
+      DisplayWidth = 10
+      FieldKind = fkData
+      FieldName = 'PUNTO_VENTA'
+      Index = 5
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+    end
+    object zComprobantesTRABAJO_ID: TLongintField
+      DisplayWidth = 10
+      FieldKind = fkData
+      FieldName = 'TRABAJO_ID'
+      Index = 6
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+    end
+    object zComprobantesCAJERO: TLongintField
+      DisplayWidth = 10
+      FieldKind = fkData
+      FieldName = 'CAJERO'
+      Index = 7
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+    end
+    object zComprobantesFORMA_PAGO: TLongintField
+      DisplayWidth = 10
+      FieldKind = fkData
+      FieldName = 'FORMA_PAGO'
+      Index = 8
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+    end
+    object zComprobantesPORCENTAJE: TFloatField
+      DisplayWidth = 10
+      FieldKind = fkData
+      FieldName = 'PORCENTAJE'
+      Index = 9
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+      MaxValue = 0
+      MinValue = 0
+      Precision = 2
+    end
+    object zComprobantesIMPORTE_TOTAL: TFloatField
+      DisplayWidth = 10
+      FieldKind = fkData
+      FieldName = 'IMPORTE_TOTAL'
+      Index = 10
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+      Currency = True
+      MaxValue = 0
+      MinValue = 0
+      Precision = 2
+    end
+    object zComprobantesCONCEPTO: TStringField
+      DisplayWidth = 200
+      FieldKind = fkData
+      FieldName = 'CONCEPTO'
+      Index = 11
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+      Size = 200
+    end
+    object zComprobantesFECHA_BAJA: TDateField
+      DisplayWidth = 10
+      FieldKind = fkData
+      FieldName = 'FECHA_BAJA'
+      Index = 12
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+    end
+    object StringField1: TStringField
+      DisplayWidth = 580
+      FieldKind = fkLookup
+      FieldName = 'DENTISTA'
+      Index = 13
+      KeyFields = 'CLIENTE_ID'
+      LookupCache = False
+      LookupDataSet = zDentistas
+      LookupKeyFields = 'ID_DENTISTA'
+      LookupResultField = 'DENTISTA'
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+      Size = 580
+    end
+  end
+  object upComprobantes: TZUpdateSQL
+    DeleteSQL.Strings = (
+      'DELETE FROM COMPROBANTES'
+      'WHERE'
+      '  COMPROBANTES.ID = :OLD_ID'
+    )
+    InsertSQL.Strings = (
+      'INSERT INTO COMPROBANTES'
+      '  (ID, NUMERO_COMPROBANTE, TIPO, FECHA, CLIENTE_ID, PUNTO_VENTA, CAJERO, '
+      '   FORMA_PAGO, TRABAJO_ID, PORCENTAJE, IMPORTE_TOTAL, FECHA_BAJA, CONCEPTO)'
+      'VALUES'
+      '  (:ID, :NUMERO_COMPROBANTE, :TIPO, :FECHA, :CLIENTE_ID, :PUNTO_VENTA, '
+      '   :CAJERO, :FORMA_PAGO, :TRABAJO_ID, :PORCENTAJE, :IMPORTE_TOTAL, :FECHA_BAJA, '
+      '   :CONCEPTO)'
+    )
+    ModifySQL.Strings = (
+      'UPDATE COMPROBANTES SET'
+      '  ID = :ID,'
+      '  NUMERO_COMPROBANTE = :NUMERO_COMPROBANTE,'
+      '  TIPO = :TIPO,'
+      '  FECHA = :FECHA,'
+      '  CLIENTE_ID = :CLIENTE_ID,'
+      '  PUNTO_VENTA = :PUNTO_VENTA,'
+      '  CAJERO = :CAJERO,'
+      '  FORMA_PAGO = :FORMA_PAGO,'
+      '  TRABAJO_ID = :TRABAJO_ID,'
+      '  PORCENTAJE = :PORCENTAJE,'
+      '  IMPORTE_TOTAL = :IMPORTE_TOTAL,'
+      '  FECHA_BAJA = :FECHA_BAJA,'
+      '  CONCEPTO = :CONCEPTO'
+      'WHERE'
+      '  COMPROBANTES.ID = :OLD_ID'
+    )
+    UseSequenceFieldForRefreshSQL = False
+    left = 336
+    top = 64
+    ParamData = <    
+      item
+        DataType = ftUnknown
+        Name = 'ID'
+        ParamType = ptUnknown
+      end    
+      item
+        DataType = ftUnknown
+        Name = 'NUMERO_COMPROBANTE'
+        ParamType = ptUnknown
+      end    
+      item
+        DataType = ftUnknown
+        Name = 'TIPO'
+        ParamType = ptUnknown
+      end    
+      item
+        DataType = ftUnknown
+        Name = 'FECHA'
+        ParamType = ptUnknown
+      end    
+      item
+        DataType = ftUnknown
+        Name = 'CLIENTE_ID'
+        ParamType = ptUnknown
+      end    
+      item
+        DataType = ftUnknown
+        Name = 'PUNTO_VENTA'
+        ParamType = ptUnknown
+      end    
+      item
+        DataType = ftUnknown
+        Name = 'CAJERO'
+        ParamType = ptUnknown
+      end    
+      item
+        DataType = ftUnknown
+        Name = 'FORMA_PAGO'
+        ParamType = ptUnknown
+      end    
+      item
+        DataType = ftUnknown
+        Name = 'TRABAJO_ID'
+        ParamType = ptUnknown
+      end    
+      item
+        DataType = ftUnknown
+        Name = 'PORCENTAJE'
+        ParamType = ptUnknown
+      end    
+      item
+        DataType = ftUnknown
+        Name = 'IMPORTE_TOTAL'
+        ParamType = ptUnknown
+      end    
+      item
+        DataType = ftUnknown
+        Name = 'FECHA_BAJA'
+        ParamType = ptUnknown
+      end    
+      item
+        DataType = ftUnknown
+        Name = 'CONCEPTO'
+        ParamType = ptUnknown
+      end    
+      item
+        DataType = ftUnknown
+        Name = 'OLD_ID'
+        ParamType = ptUnknown
+      end>
+  end
+  object seqIdComprobante: TZSequence
+    Connection = dmConexion.ZConnection1
+    SequenceName = 'GEN_COMPROBANTES_ID'
+    left = 336
+    top = 120
+  end
+  object seqNumeroFactura: TZSequence
+    Connection = dmConexion.ZConnection1
+    SequenceName = 'GEN_NUMERO_FACTURA'
+    left = 336
+    top = 184
+  end
+  object zLineasComprobantes: TZQuery
+    Connection = dmConexion.ZConnection1
+    UpdateObject = upLineasComprobantes
+    SQL.Strings = (
+      'SELECT a.ID, a.COMPROBANTE_ID, a.CANTIDAD, a.REMITO_ID, a.PRODUCTO_ID,'
+      '    a.PORCENTAJE_IVA, a.PRECIO_UNITARIO, a.FECHA_BAJA'
+      'FROM LINEAS_COMPROBANTES a ;'
+    )
+    Params = <>
+    left = 80
+    top = 240
+    object zLineasComprobantesID: TLongintField
+      DisplayWidth = 10
+      FieldKind = fkData
+      FieldName = 'ID'
+      Index = 0
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = True
+      Visible = False
+    end
+    object zLineasComprobantesCOMPROBANTE_ID: TLongintField
+      DisplayLabel = 'Comp.#'
+      DisplayWidth = 5
+      FieldKind = fkData
+      FieldName = 'COMPROBANTE_ID'
+      Index = 1
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+      Visible = False
+    end
+    object zLineasComprobantesCANTIDAD: TLongintField
+      Alignment = taCenter
+      DisplayLabel = 'Cant.'
+      DisplayWidth = 3
+      FieldKind = fkData
+      FieldName = 'CANTIDAD'
+      Index = 2
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+    end
+    object zLineasComprobantesREMITO_ID: TLongintField
+      Alignment = taCenter
+      DisplayLabel = '# Remito'
+      DisplayWidth = 5
+      FieldKind = fkData
+      FieldName = 'REMITO_ID'
+      Index = 3
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+      Visible = False
+    end
+    object StringField2: TStringField
+      DisplayLabel = 'Descripcion'
+      DisplayWidth = 25
+      FieldKind = fkLookup
+      FieldName = 'DESCRIPCION'
+      Index = 4
+      KeyFields = 'PRODUCTO_ID'
+      LookupCache = False
+      LookupDataSet = zProductos
+      LookupKeyFields = 'ID_PRODUCTO'
+      LookupResultField = 'DESCRIPCION'
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+      Size = 200
+    end
+    object zLineasComprobantesPRODUCTO_ID: TLongintField
+      Alignment = taCenter
+      DisplayLabel = 'Prod.'
+      DisplayWidth = 5
+      FieldKind = fkData
+      FieldName = 'PRODUCTO_ID'
+      Index = 5
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+    end
+    object zLineasComprobantesPORCENTAJE_IVA: TFloatField
+      Alignment = taCenter
+      DisplayLabel = '% IVA'
+      DisplayWidth = 5
+      FieldKind = fkData
+      FieldName = 'PORCENTAJE_IVA'
+      Index = 6
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+      DisplayFormat = '%#0.00'
+      MaxValue = 0
+      MinValue = 0
+      Precision = 2
+    end
+    object zLineasComprobantesPRECIO_UNITARIO: TFloatField
+      DisplayLabel = 'Precio'
+      DisplayWidth = 6
+      FieldKind = fkData
+      FieldName = 'PRECIO_UNITARIO'
+      Index = 7
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+      Currency = True
+      MaxValue = 0
+      MinValue = 0
+      Precision = 2
+    end
+    object zLineasComprobantesFECHA_BAJA: TDateField
+      DisplayWidth = 10
+      FieldKind = fkData
+      FieldName = 'FECHA_BAJA'
+      Index = 8
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+      Visible = False
+    end
+  end
+  object upLineasComprobantes: TZUpdateSQL
+    DeleteSQL.Strings = (
+      'DELETE FROM LINEAS_COMPROBANTES'
+      'WHERE'
+      '  LINEAS_COMPROBANTES.ID = :OLD_ID'
+    )
+    InsertSQL.Strings = (
+      'INSERT INTO LINEAS_COMPROBANTES'
+      '  (ID, COMPROBANTE_ID, CANTIDAD, REMITO_ID, PRODUCTO_ID, PORCENTAJE_IVA, '
+      '   PRECIO_UNITARIO, FECHA_BAJA)'
+      'VALUES'
+      '  (:ID, :COMPROBANTE_ID, :CANTIDAD, :REMITO_ID, :PRODUCTO_ID, :PORCENTAJE_IVA, '
+      '   :PRECIO_UNITARIO, :FECHA_BAJA)'
+    )
+    ModifySQL.Strings = (
+      'UPDATE LINEAS_COMPROBANTES SET'
+      '  ID = :ID,'
+      '  COMPROBANTE_ID = :COMPROBANTE_ID,'
+      '  CANTIDAD = :CANTIDAD,'
+      '  REMITO_ID = :REMITO_ID,'
+      '  PRODUCTO_ID = :PRODUCTO_ID,'
+      '  PORCENTAJE_IVA = :PORCENTAJE_IVA,'
+      '  PRECIO_UNITARIO = :PRECIO_UNITARIO,'
+      '  FECHA_BAJA = :FECHA_BAJA'
+      'WHERE'
+      '  LINEAS_COMPROBANTES.ID = :OLD_ID'
+    )
+    UseSequenceFieldForRefreshSQL = False
+    left = 80
+    top = 304
+    ParamData = <    
+      item
+        DataType = ftUnknown
+        Name = 'ID'
+        ParamType = ptUnknown
+      end    
+      item
+        DataType = ftUnknown
+        Name = 'COMPROBANTE_ID'
+        ParamType = ptUnknown
+      end    
+      item
+        DataType = ftUnknown
+        Name = 'CANTIDAD'
+        ParamType = ptUnknown
+      end    
+      item
+        DataType = ftUnknown
+        Name = 'REMITO_ID'
+        ParamType = ptUnknown
+      end    
+      item
+        DataType = ftUnknown
+        Name = 'PRODUCTO_ID'
+        ParamType = ptUnknown
+      end    
+      item
+        DataType = ftUnknown
+        Name = 'PORCENTAJE_IVA'
+        ParamType = ptUnknown
+      end    
+      item
+        DataType = ftUnknown
+        Name = 'PRECIO_UNITARIO'
+        ParamType = ptUnknown
+      end    
+      item
+        DataType = ftUnknown
+        Name = 'FECHA_BAJA'
+        ParamType = ptUnknown
+      end    
+      item
+        DataType = ftUnknown
+        Name = 'OLD_ID'
+        ParamType = ptUnknown
+      end>
+  end
+  object zPorcentajeIVA: TZReadOnlyQuery
+    Connection = dmConexion.ZConnection1
+    SQL.Strings = (
+      'SELECT p.PORCENTAJE'
+      'FROM BUSCAR_PORCENTAJE_IVA (:ID) p;'
+    )
+    Params = <    
+      item
+        DataType = ftUnknown
+        Name = 'ID'
+        ParamType = ptUnknown
+      end>
+    left = 336
+    top = 240
+    ParamData = <    
+      item
+        DataType = ftUnknown
+        Name = 'ID'
+        ParamType = ptUnknown
+      end>
+    object zPorcentajeIVAPORCENTAJE: TLongintField
+      DisplayWidth = 10
+      FieldKind = fkData
+      FieldName = 'PORCENTAJE'
+      Index = 0
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = True
+      Required = False
+    end
+  end
+  object zCCFacturado: TZQuery
+    Connection = dmConexion.ZConnection1
+    UpdateObject = upCCFacturado
+    SQL.Strings = (
+      'SELECT a.ID, a.CLIENTE_ID, a.COMPR_DEBITO_ID, a.IMPORTE_COMPR_DEB,'
+      '    a.FECHA_HORA, a.SALDO, a.FECHA_BAJA, a.FACTURADO'
+      'FROM CUENTAS_CORRIENTES a '
+    )
+    Params = <>
+    left = 232
+    top = 240
+    object zCCFacturadoID: TLongintField
+      DisplayWidth = 10
+      FieldKind = fkData
+      FieldName = 'ID'
+      Index = 0
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = True
+    end
+    object zCCFacturadoCLIENTE_ID: TLongintField
+      DisplayWidth = 10
+      FieldKind = fkData
+      FieldName = 'CLIENTE_ID'
+      Index = 1
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+    end
+    object zCCFacturadoCOMPR_DEBITO_ID: TLongintField
+      DisplayWidth = 10
+      FieldKind = fkData
+      FieldName = 'COMPR_DEBITO_ID'
+      Index = 2
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+    end
+    object zCCFacturadoIMPORTE_COMPR_DEB: TFloatField
+      DisplayWidth = 10
+      FieldKind = fkData
+      FieldName = 'IMPORTE_COMPR_DEB'
+      Index = 3
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+      MaxValue = 0
+      MinValue = 0
+      Precision = 2
+    end
+    object zCCFacturadoFECHA_HORA: TDateTimeField
+      DisplayWidth = 10
+      FieldKind = fkData
+      FieldName = 'FECHA_HORA'
+      Index = 4
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+    end
+    object zCCFacturadoSALDO: TFloatField
+      DisplayWidth = 10
+      FieldKind = fkData
+      FieldName = 'SALDO'
+      Index = 5
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+      MaxValue = 0
+      MinValue = 0
+      Precision = 2
+    end
+    object zCCFacturadoFECHA_BAJA: TDateField
+      DisplayWidth = 10
+      FieldKind = fkData
+      FieldName = 'FECHA_BAJA'
+      Index = 6
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+    end
+    object zCCFacturadoFACTURADO: TStringField
+      DisplayWidth = 1
+      FieldKind = fkData
+      FieldName = 'FACTURADO'
+      Index = 7
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+      Size = 1
+    end
+  end
+  object upCCFacturado: TZUpdateSQL
+    DeleteSQL.Strings = (
+      'DELETE FROM CUENTAS_CORRIENTES'
+      'WHERE'
+      '  CUENTAS_CORRIENTES.ID = :OLD_ID'
+    )
+    InsertSQL.Strings = (
+      'INSERT INTO CUENTAS_CORRIENTES'
+      '  (ID, CLIENTE_ID, COMPR_DEBITO_ID, IMPORTE_COMPR_DEB, RECIBO_PAGO_ID, '
+      '   IMPORTE_RECIBO_PAGO, FECHA_HORA, SALDO, FECHA_BAJA, FACTURADO)'
+      'VALUES'
+      '  (:ID, :CLIENTE_ID, :COMPR_DEBITO_ID, :IMPORTE_COMPR_DEB, :RECIBO_PAGO_ID, '
+      '   :IMPORTE_RECIBO_PAGO, :FECHA_HORA, :SALDO, :FECHA_BAJA, :FACTURADO)'
+    )
+    ModifySQL.Strings = (
+      'UPDATE CUENTAS_CORRIENTES SET'
+      '  FACTURADO = :FACTURADO'
+      'WHERE'
+      '  CUENTAS_CORRIENTES.ID = :OLD_ID'
+    )
+    UseSequenceFieldForRefreshSQL = False
+    left = 232
+    top = 304
+    ParamData = <    
+      item
+        DataType = ftUnknown
+        Name = 'FACTURADO'
+        ParamType = ptUnknown
+      end    
+      item
+        DataType = ftUnknown
+        Name = 'OLD_ID'
+        ParamType = ptUnknown
+      end    
+      item
+        DataType = ftUnknown
+        Name = 'ID'
+        ParamType = ptUnknown
+      end    
+      item
+        DataType = ftUnknown
+        Name = 'CLIENTE_ID'
+        ParamType = ptUnknown
+      end    
+      item
+        DataType = ftUnknown
+        Name = 'COMPR_DEBITO_ID'
+        ParamType = ptUnknown
+      end    
+      item
+        DataType = ftUnknown
+        Name = 'IMPORTE_COMPR_DEB'
+        ParamType = ptUnknown
+      end    
+      item
+        DataType = ftUnknown
+        Name = 'RECIBO_PAGO_ID'
+        ParamType = ptUnknown
+      end    
+      item
+        DataType = ftUnknown
+        Name = 'IMPORTE_RECIBO_PAGO'
+        ParamType = ptUnknown
+      end    
+      item
+        DataType = ftUnknown
+        Name = 'FECHA_HORA'
+        ParamType = ptUnknown
+      end    
+      item
+        DataType = ftUnknown
+        Name = 'SALDO'
+        ParamType = ptUnknown
+      end    
+      item
+        DataType = ftUnknown
+        Name = 'FECHA_BAJA'
+        ParamType = ptUnknown
+      end>
+  end
+  object zProductoDeComprobante: TZQuery
+    Connection = dmConexion.ZConnection1
+    SQL.Strings = (
+      'SELECT p.PRODUCTO_ID'
+      'FROM BUSCAR_PRODUCTO_DE_COMPROBANTE (:ID) p;'
+    )
+    Params = <    
+      item
+        DataType = ftUnknown
+        Name = 'ID'
+        ParamType = ptUnknown
+      end>
+    left = 336
+    top = 304
+    ParamData = <    
+      item
+        DataType = ftUnknown
+        Name = 'ID'
+        ParamType = ptUnknown
+      end>
+    object zProductoDeComprobantePRODUCTO_ID: TLongintField
+      DisplayWidth = 10
+      FieldKind = fkData
+      FieldName = 'PRODUCTO_ID'
+      Index = 0
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = True
+      Required = False
+    end
+  end
+  object zProductos: TZTable
+    Connection = dmConexion.ZConnection1
+    TableName = 'PRODUCTOS'
+    left = 80
+    top = 184
+    object zProductosID_PRODUCTO: TLongintField
+      DisplayWidth = 10
+      FieldKind = fkData
+      FieldName = 'ID_PRODUCTO'
+      Index = 0
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = True
+    end
+    object zProductosCODIGO_INTERNO: TLongintField
+      DisplayWidth = 10
+      FieldKind = fkData
+      FieldName = 'CODIGO_INTERNO'
+      Index = 1
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+    end
+    object zProductosDESCRIPCION: TStringField
+      DisplayWidth = 25
+      FieldKind = fkData
+      FieldName = 'DESCRIPCION'
+      Index = 2
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+      Size = 200
+    end
+    object zProductosPRECIO_FINAL: TFloatField
+      DisplayWidth = 10
+      FieldKind = fkData
+      FieldName = 'PRECIO_FINAL'
+      Index = 3
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+      MaxValue = 0
+      MinValue = 0
+      Precision = 2
+    end
+  end
+  object zPorcentajeDentista: TZStoredProc
+    Connection = dmConexion.ZConnection1
+    SortedFields = 'PORCENTAJE'
+    Params = <    
+      item
+        DataType = ftInteger
+        Name = 'DEN_ID'
+        ParamType = ptInput
+      end    
+      item
+        DataType = ftFloat
+        Name = 'PORCENTAJE'
+        ParamType = ptOutput
+      end>
+    StoredProcName = 'PORCENTAJE_DE_DENTISTA'
+    left = 496
+    top = 8
+    ParamData = <    
+      item
+        DataType = ftInteger
+        Name = 'DEN_ID'
+        ParamType = ptInput
+      end    
+      item
+        DataType = ftFloat
+        Name = 'PORCENTAJE'
+        ParamType = ptOutput
+      end>
+    object zPorcentajeDentistaPORCENTAJE: TFloatField
+      DisplayWidth = 10
+      FieldKind = fkData
+      FieldName = 'PORCENTAJE'
+      Index = 0
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = True
+      Required = False
+      MaxValue = 0
+      MinValue = 0
+      Precision = 2
+    end
+  end
+  object seqNumeroRecibo: TZSequence
+    Connection = dmConexion.ZConnection1
+    SequenceName = 'GEN_NUMERO_RECIBO'
+    left = 232
+    top = 184
+  end
+end

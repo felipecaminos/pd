@@ -1,0 +1,40 @@
+inherited CiudadesABM: TCiudadesABM
+  Left = 482
+  Top = 305
+  Caption = 'Listado de Ciudades'
+  OnCreate = FormCreate
+  OnDestroy = FormDestroy
+  inherited RxDBGrid1: TRxDBGrid
+    OnDblClick = nil
+  end
+  inherited btnNuevo: TBitBtn
+    OnClick = btnNuevoClick
+  end
+  inherited btnBorrar: TBitBtn
+    OnClick = btnBorrarClick
+  end
+  inherited btnModificar: TBitBtn
+    OnClick = btnModificarClick
+  end
+  object SpeedButton3: TSpeedButton[6]
+    Left = 336
+    Height = 30
+    Top = 384
+    Width = 40
+    Caption = 'Prim.'
+    OnClick = SpeedButton3Click
+  end
+  object SpeedButton4: TSpeedButton[7]
+    Left = 384
+    Height = 30
+    Top = 384
+    Width = 40
+    Caption = 'Ultim'
+    OnClick = SpeedButton4Click
+  end
+  inherited dsABM: TDataSource[8]
+    DataSet = dmCiudades.zCiudades
+  end
+  inherited Configuracion: TXMLPropStorage[9]
+  end
+end

@@ -1,0 +1,68 @@
+unit trabajo_finalizartarea;
+
+{$mode objfpc}{$H+}
+
+interface
+
+uses
+  Classes, SysUtils, db, FileUtil, Forms, Controls, Graphics, Dialogs, DBGrids,
+  Buttons, trabajo_dm;
+
+type
+
+  { TTrabajoFinalizar }
+
+  TTrabajoFinalizar = class(TForm)
+    BitBtn1: TBitBtn;
+    BitBtn2: TBitBtn;
+    BitBtn3: TBitBtn;
+    Datasource1: TDatasource;
+    DBGrid2: TDBGrid;
+    dsTareasSinFinalizar: TDatasource;
+    DBGrid1: TDBGrid;
+    procedure BitBtn1Click(Sender: TObject);
+    procedure BitBtn3Click(Sender: TObject);
+    procedure FormCreate(Sender: TObject);
+    procedure FormDestroy(Sender: TObject);
+  private
+    { private declarations }
+  public
+    { public declarations }
+  end;
+
+var
+  TrabajoFinalizar: TTrabajoFinalizar;
+  dmTrabajo: TdmTrabajo;
+
+
+implementation
+
+
+{$R *.lfm}
+
+{ TTrabajoFinalizar }
+
+procedure TTrabajoFinalizar.FormCreate(Sender: TObject);
+begin
+  dmTrabajo:= TdmTrabajo.Create(self);
+end;
+
+procedure TTrabajoFinalizar.BitBtn1Click(Sender: TObject);
+begin
+  {se cierra una tarea con el campo terminado en S}
+  dmTrabajo.FinalizarTarea;
+  // CERRAMOS ??
+end;
+
+procedure TTrabajoFinalizar.BitBtn3Click(Sender: TObject);
+begin
+  dmTrabajo.CargarTareasDeTrabajo;
+end;
+
+procedure TTrabajoFinalizar.FormDestroy(Sender: TObject);
+begin
+  dmTrabajo.Free;
+end;
+
+end.
+

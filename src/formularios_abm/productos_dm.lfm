@@ -1,0 +1,310 @@
+object dmProductos: TdmProductos
+  OnCreate = DataModuleCreate
+  OnDestroy = DataModuleDestroy
+  OldCreateOrder = False
+  Height = 194
+  HorizontalOffset = 315
+  VerticalOffset = 512
+  Width = 259
+  object zProductos: TZQuery
+    Connection = dmConexion.ZConnection1
+    UpdateObject = upProductos
+    SQL.Strings = (
+      'SELECT a.ID_PRODUCTO, a.CODIGO_INTERNO, a.CAT_PROD_ID, a.DESCRIPCION,'
+      '    a.DATO_ADICIONAL, a.CANT_PARALELO, a.CANTIDAD_PASOS, a.MATERIALES, a.TIEMPO,'
+      '    a.COSTO, a.TIPO_IVA_ID, a.PRECIO_FINAL'
+      'FROM PRODUCTOS a'
+      'WHERE'
+      '    a.FECHA_BAJA  is null'
+    )
+    Params = <>
+    left = 40
+    top = 8
+    object zProductosID_PRODUCTO: TLongintField
+      DisplayWidth = 10
+      FieldKind = fkData
+      FieldName = 'ID_PRODUCTO'
+      Index = 0
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = True
+      Visible = False
+    end
+    object zProductosCODIGO_INTERNO: TLongintField
+      DisplayLabel = 'Codigo'
+      DisplayWidth = 7
+      FieldKind = fkData
+      FieldName = 'CODIGO_INTERNO'
+      Index = 1
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+      DisplayFormat = '#0'
+    end
+    object zProductosCAT_PROD_ID: TLongintField
+      DisplayWidth = 10
+      FieldKind = fkData
+      FieldName = 'CAT_PROD_ID'
+      Index = 2
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+      Visible = False
+    end
+    object zProductosDESCRIPCION: TStringField
+      DisplayLabel = 'Descripcion'
+      DisplayWidth = 20
+      FieldKind = fkData
+      FieldName = 'DESCRIPCION'
+      Index = 3
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+      Size = 200
+    end
+    object zProductosDATO_ADICIONAL: TStringField
+      DisplayWidth = 20
+      FieldKind = fkData
+      FieldName = 'DATO_ADICIONAL'
+      Index = 4
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+      Visible = False
+      Size = 320
+    end
+    object zProductosCANT_PARALELO: TLongintField
+      DisplayLabel = 'Paral.'
+      DisplayWidth = 3
+      FieldKind = fkData
+      FieldName = 'CANT_PARALELO'
+      Index = 5
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+    end
+    object zProductosCANTIDAD_PASOS: TLongintField
+      DisplayLabel = 'Pasos'
+      DisplayWidth = 3
+      FieldKind = fkData
+      FieldName = 'CANTIDAD_PASOS'
+      Index = 6
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+    end
+    object zProductosMATERIALES: TStringField
+      DisplayLabel = 'Materiales'
+      DisplayWidth = 200
+      FieldKind = fkData
+      FieldName = 'MATERIALES'
+      Index = 7
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+      Visible = False
+      Size = 200
+    end
+    object zProductosTIEMPO: TFloatField
+      DisplayLabel = 'Tiempo'
+      DisplayWidth = 3
+      FieldKind = fkData
+      FieldName = 'TIEMPO'
+      Index = 8
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+      DisplayFormat = '#0.0'
+      MaxValue = 0
+      MinValue = 0
+      Precision = 2
+    end
+    object zProductosCOSTO: TFloatField
+      DisplayWidth = 10
+      FieldKind = fkData
+      FieldName = 'COSTO'
+      Index = 9
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+      Currency = True
+      MaxValue = 0
+      MinValue = 0
+      Precision = 2
+    end
+    object zProductosPRECIO_FINAL: TFloatField
+      DisplayWidth = 10
+      FieldKind = fkData
+      FieldName = 'PRECIO_FINAL'
+      Index = 10
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+      Currency = True
+      MaxValue = 0
+      MinValue = 0
+      Precision = 2
+    end
+    object zProductosTIPO_IVA_ID: TLongintField
+      DisplayWidth = 10
+      FieldKind = fkData
+      FieldName = 'TIPO_IVA_ID'
+      Index = 11
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+      Visible = False
+    end
+    object FloatField1: TFloatField
+      DisplayLabel = '% IVA'
+      DisplayWidth = 3
+      FieldKind = fkLookup
+      FieldName = 'PORCENTAJE'
+      Index = 12
+      KeyFields = 'TIPO_IVA_ID'
+      LookupCache = False
+      LookupDataSet = zIVA
+      LookupKeyFields = 'ID_TIPO'
+      LookupResultField = 'PORCENTAJE'
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+      MaxValue = 0
+      MinValue = 0
+    end
+  end
+  object upProductos: TZUpdateSQL
+    DeleteSQL.Strings = (
+      'DELETE FROM PRODUCTOS'
+      'WHERE'
+      '  PRODUCTOS.ID_PRODUCTO = :OLD_ID_PRODUCTO'
+    )
+    InsertSQL.Strings = (
+      'INSERT INTO PRODUCTOS'
+      '  (ID_PRODUCTO, CODIGO_INTERNO, CAT_PROD_ID, DESCRIPCION, DATO_ADICIONAL, '
+      '   CANT_PARALELO, CANTIDAD_PASOS, MATERIALES, TIEMPO, COSTO, TIPO_IVA_ID, '
+      '   PRECIO_FINAL)'
+      'VALUES'
+      '  (:ID_PRODUCTO, :CODIGO_INTERNO, :CAT_PROD_ID, :DESCRIPCION, :DATO_ADICIONAL, '
+      '   :CANT_PARALELO, :CANTIDAD_PASOS, :MATERIALES, :TIEMPO, :COSTO, :TIPO_IVA_ID, '
+      '   :PRECIO_FINAL)'
+    )
+    ModifySQL.Strings = (
+      'UPDATE PRODUCTOS SET'
+      '  ID_PRODUCTO = :ID_PRODUCTO,'
+      '  CODIGO_INTERNO = :CODIGO_INTERNO,'
+      '  CAT_PROD_ID = :CAT_PROD_ID,'
+      '  DESCRIPCION = :DESCRIPCION,'
+      '  DATO_ADICIONAL = :DATO_ADICIONAL,'
+      '  CANT_PARALELO = :CANT_PARALELO,'
+      '  CANTIDAD_PASOS = :CANTIDAD_PASOS,'
+      '  MATERIALES = :MATERIALES,'
+      '  TIEMPO = :TIEMPO,'
+      '  COSTO = :COSTO,'
+      '  TIPO_IVA_ID = :TIPO_IVA_ID,'
+      '  PRECIO_FINAL = :PRECIO_FINAL'
+      'WHERE'
+      '  PRODUCTOS.ID_PRODUCTO = :OLD_ID_PRODUCTO'
+    )
+    UseSequenceFieldForRefreshSQL = False
+    left = 40
+    top = 64
+    ParamData = <    
+      item
+        DataType = ftUnknown
+        Name = 'ID_PRODUCTO'
+        ParamType = ptUnknown
+      end    
+      item
+        DataType = ftUnknown
+        Name = 'CODIGO_INTERNO'
+        ParamType = ptUnknown
+      end    
+      item
+        DataType = ftUnknown
+        Name = 'CAT_PROD_ID'
+        ParamType = ptUnknown
+      end    
+      item
+        DataType = ftUnknown
+        Name = 'DESCRIPCION'
+        ParamType = ptUnknown
+      end    
+      item
+        DataType = ftUnknown
+        Name = 'DATO_ADICIONAL'
+        ParamType = ptUnknown
+      end    
+      item
+        DataType = ftUnknown
+        Name = 'CANT_PARALELO'
+        ParamType = ptUnknown
+      end    
+      item
+        DataType = ftUnknown
+        Name = 'CANTIDAD_PASOS'
+        ParamType = ptUnknown
+      end    
+      item
+        DataType = ftUnknown
+        Name = 'MATERIALES'
+        ParamType = ptUnknown
+      end    
+      item
+        DataType = ftUnknown
+        Name = 'TIEMPO'
+        ParamType = ptUnknown
+      end    
+      item
+        DataType = ftUnknown
+        Name = 'COSTO'
+        ParamType = ptUnknown
+      end    
+      item
+        DataType = ftUnknown
+        Name = 'TIPO_IVA_ID'
+        ParamType = ptUnknown
+      end    
+      item
+        DataType = ftUnknown
+        Name = 'PRECIO_FINAL'
+        ParamType = ptUnknown
+      end    
+      item
+        DataType = ftUnknown
+        Name = 'OLD_ID_PRODUCTO'
+        ParamType = ptUnknown
+      end>
+  end
+  object zCategoria: TZReadOnlyQuery
+    Connection = dmConexion.ZConnection1
+    SQL.Strings = (
+      'select * from categoria_productos'
+    )
+    Params = <>
+    left = 168
+    top = 8
+  end
+  object zIVA: TZReadOnlyQuery
+    Connection = dmConexion.ZConnection1
+    SQL.Strings = (
+      'SELECT a.ID_TIPO, a.DESCRIPCION, a.PORCENTAJE'
+      'FROM TIPOS_IVAS a ;'
+    )
+    Params = <>
+    left = 168
+    top = 72
+  end
+end

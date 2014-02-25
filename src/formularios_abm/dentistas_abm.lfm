@@ -1,0 +1,23 @@
+inherited DentistasABM: TDentistasABM
+  Left = 645
+  Top = 197
+  Caption = 'Listado de Odontologos'
+  OnCreate = FormCreate
+  OnDestroy = FormDestroy
+  inherited RxDBGrid1: TRxDBGrid
+    Top = 40
+    OnDblClick = RxDBGrid1DblClick
+  end
+  inherited btnNuevo: TBitBtn
+    OnClick = btnNuevoClick
+  end
+  inherited btnBorrar: TBitBtn
+    OnClick = btnBorrarClick
+  end
+  inherited btnModificar: TBitBtn
+    OnClick = btnModificarClick
+  end
+  inherited dsABM: TDataSource
+    DataSet = dmDentistas.zDentistas
+  end
+end

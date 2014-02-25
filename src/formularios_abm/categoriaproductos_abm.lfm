@@ -1,0 +1,22 @@
+inherited CatProductosABM: TCatProductosABM
+  Left = 354
+  Top = 264
+  Caption = 'Listado de Categoria de Productos'
+  OnCreate = FormCreate
+  OnDestroy = FormDestroy
+  inherited RxDBGrid1: TRxDBGrid
+    OnDblClick = RxDBGrid1DblClick
+  end
+  inherited btnNuevo: TBitBtn
+    OnClick = btnNuevoClick
+  end
+  inherited btnBorrar: TBitBtn
+    OnClick = btnBorrarClick
+  end
+  inherited btnModificar: TBitBtn
+    OnClick = btnModificarClick
+  end
+  inherited dsABM: TDataSource
+    DataSet = dmCategoriaProductos.zCategoriaProductos
+  end
+end

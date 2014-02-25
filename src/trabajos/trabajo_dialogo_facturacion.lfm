@@ -1,0 +1,228 @@
+inherited DialogoFactura: TDialogoFactura
+  Left = 723
+  Height = 344
+  Top = 300
+  Width = 583
+  AutoSize = True
+  BorderStyle = bsSingle
+  BorderWidth = 4
+  Caption = 'Facturación'
+  ClientHeight = 344
+  ClientWidth = 583
+  object Numero: TLabel[0]
+    Left = 8
+    Height = 16
+    Top = 8
+    Width = 50
+    Caption = 'Numero'
+    ParentColor = False
+  end
+  object PuntoVenta: TLabel[1]
+    Left = 224
+    Height = 16
+    Top = 8
+    Width = 81
+    Caption = 'Punto Venta'
+    ParentColor = False
+  end
+  object Cajero: TLabel[2]
+    Left = 8
+    Height = 16
+    Top = 48
+    Width = 41
+    Caption = 'Cajero'
+    ParentColor = False
+  end
+  object Odontologo: TLabel[3]
+    Left = 8
+    Height = 16
+    Top = 88
+    Width = 73
+    Caption = 'Odontologo'
+    ParentColor = False
+  end
+  object FormaPago: TLabel[4]
+    Left = 7
+    Height = 16
+    Top = 128
+    Width = 95
+    Caption = 'Forma de Pago'
+    ParentColor = False
+  end
+  object DBEdit1: TDBEdit[5]
+    Left = 64
+    Height = 20
+    Top = 8
+    Width = 152
+    DataField = 'NUMERO_COMPROBANTE'
+    DataSource = dsComprobante
+    BorderStyle = bsNone
+    CharCase = ecNormal
+    MaxLength = 0
+    TabOrder = 0
+  end
+  object DBEdit2: TDBEdit[6]
+    Left = 312
+    Height = 20
+    Top = 8
+    Width = 112
+    DataField = 'PUNTO_VENTA'
+    DataSource = dsComprobante
+    ReadOnly = True
+    BorderStyle = bsNone
+    CharCase = ecNormal
+    MaxLength = 0
+    TabOrder = 1
+  end
+  object DBEdit3: TDBEdit[7]
+    Left = 56
+    Height = 26
+    Top = 48
+    Width = 216
+    DataField = 'CAJERO'
+    DataSource = dsComprobante
+    ReadOnly = True
+    BorderStyle = bsNone
+    CharCase = ecNormal
+    MaxLength = 0
+    TabOrder = 2
+  end
+  object DBEdit4: TDBEdit[8]
+    Left = 320
+    Height = 26
+    Top = 48
+    Width = 104
+    DataField = 'FECHA'
+    DataSource = dsComprobante
+    ReadOnly = True
+    BorderStyle = bsNone
+    CharCase = ecNormal
+    MaxLength = 0
+    TabOrder = 3
+  end
+  object DBEdit5: TDBEdit[9]
+    Left = 104
+    Height = 26
+    Top = 128
+    Width = 320
+    DataField = 'FORMA_PAGO'
+    DataSource = dsComprobante
+    ReadOnly = True
+    BorderStyle = bsNone
+    CharCase = ecNormal
+    MaxLength = 0
+    TabOrder = 4
+  end
+  object Fecha: TLabel[10]
+    Left = 280
+    Height = 16
+    Top = 48
+    Width = 39
+    Caption = 'Fecha'
+    ParentColor = False
+  end
+  object DBEdit6: TDBEdit[11]
+    Left = 88
+    Height = 26
+    Top = 88
+    Width = 336
+    DataField = 'CLIENTE_ID'
+    DataSource = dsComprobante
+    ReadOnly = True
+    BorderStyle = bsNone
+    CharCase = ecNormal
+    MaxLength = 0
+    TabOrder = 5
+  end
+  object Panel1: TPanel[12]
+    Left = 7
+    Height = 50
+    Top = 160
+    Width = 418
+    BevelWidth = 2
+    ClientHeight = 50
+    ClientWidth = 418
+    TabOrder = 6
+    object Porcentaje: TLabel
+      Left = 9
+      Height = 16
+      Top = 8
+      Width = 69
+      Caption = 'Porcentaje'
+      ParentColor = False
+    end
+    object ImporteTotal: TLabel
+      Left = 193
+      Height = 16
+      Top = 8
+      Width = 85
+      Caption = 'Importe Total'
+      ParentColor = False
+    end
+    object DBEdit7: TDBEdit
+      Left = 81
+      Height = 26
+      Top = 8
+      Width = 96
+      DataField = 'PORCENTAJE'
+      DataSource = dsComprobante
+      ReadOnly = True
+      BorderStyle = bsNone
+      CharCase = ecNormal
+      MaxLength = 0
+      TabOrder = 0
+    end
+    object DBEdit8: TDBEdit
+      Left = 281
+      Height = 26
+      Top = 8
+      Width = 128
+      DataField = 'IMPORTE_TOTAL'
+      DataSource = dsComprobante
+      ReadOnly = True
+      BorderStyle = bsNone
+      CharCase = ecNormal
+      EditMask = '#########0.00;0; '
+      MaxLength = 13
+      TabOrder = 1
+    end
+  end
+  object Panel2: TPanel[13]
+    Left = 7
+    Height = 50
+    Top = 216
+    Width = 418
+    BevelOuter = bvLowered
+    BevelWidth = 2
+    ClientHeight = 50
+    ClientWidth = 418
+    TabOrder = 7
+    object BitBtn1: TBitBtn
+      Left = 289
+      Height = 30
+      Top = 8
+      Width = 123
+      Default = True
+      DefaultCaption = True
+      Kind = bkOK
+      ModalResult = 1
+      TabOrder = 1
+    end
+    object BitBtn2: TBitBtn
+      Left = 153
+      Height = 30
+      Top = 8
+      Width = 123
+      Cancel = True
+      DefaultCaption = True
+      Kind = bkCancel
+      ModalResult = 2
+      TabOrder = 0
+    end
+  end
+  object dsComprobante: TDataSource[14]
+    DataSet = dmTrabajo.zComprobantes
+    left = 440
+    top = 8
+  end
+end

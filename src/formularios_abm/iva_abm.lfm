@@ -1,0 +1,71 @@
+inherited IVAABM: TIVAABM
+  Left = 523
+  Height = 258
+  Top = 252
+  Width = 619
+  HelpType = htKeyword
+  HelpKeyword = 'HTML/index.html'
+  Caption = 'Listado de IVAs'
+  ClientHeight = 258
+  ClientWidth = 619
+  OnCreate = FormCreate
+  OnDestroy = FormDestroy
+  inherited RxDBGrid1: TRxDBGrid
+    Left = 24
+    Height = 160
+    Width = 568
+    ParentShowHint = False
+    OnEnter = RxDBGrid1Enter
+  end
+  inherited btnNuevo: TBitBtn
+    Top = 216
+    OnClick = btnNuevoClick
+  end
+  inherited btnBorrar: TBitBtn
+    Top = 216
+    OnClick = btnBorrarClick
+  end
+  inherited btnModificar: TBitBtn
+    Top = 216
+    OnClick = btnModificarClick
+  end
+  inherited BitBtn1: TBitBtn
+    Left = 464
+    Top = 216
+  end
+  inherited PanelBusqueda: TPanel
+    Width = 600
+    Caption = ''
+    ClientWidth = 600
+    inherited Edit1: TEdit
+      Left = 80
+    end
+    inherited Edit2: TEdit
+      Left = 368
+    end
+    inherited Label1: TLabel
+      Width = 72
+    end
+    inherited SpeedButton1: TSpeedButton
+      Left = 248
+      Top = 4
+    end
+    inherited SpeedButton2: TSpeedButton
+      Left = 552
+      Top = 4
+    end
+    inherited Label2: TLabel
+      Left = 296
+      Width = 64
+    end
+  end
+  inherited dsABM: TDataSource
+    DataSet = dmIVA.zTiposIVA
+    left = 488
+    top = 64
+  end
+  inherited Configuracion: TXMLPropStorage
+    left = 584
+    top = 64
+  end
+end

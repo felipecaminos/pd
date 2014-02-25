@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<CONFIG>
+  <TApplication>
+    <FormPrincipal FormPrincipal_Top="215" FormPrincipal_Left="565" FormPrincipal_Position="poDesigned">
+      <DentistasABM DentistasABM_Top="291" DentistasABM_Left="314">
+        <DentistasInput DentistasInput_Top="133" DentistasInput_Left="618"/>
+      </DentistasABM>
+      <IVAABM IVAABM_Top="252" IVAABM_Left="523">
+        <IVAInput IVAInput_Top="342" IVAInput_Left="752"/>
+      </IVAABM>
+      <ProductosABM ProductosABM_Top="224" ProductosABM_Left="312">
+        <ProductosInput ProductosInput_Top="153" ProductosInput_Left="484"/>
+      </ProductosABM>
+      <CiudadesABM CiudadesABM_Top="305" CiudadesABM_Left="482">
+        <CiudadesInput CiudadesInput_Top="143" CiudadesInput_Left="537"/>
+      </CiudadesABM>
+      <ProvinciasABM ProvinciasABM_Top="252" ProvinciasABM_Left="441"/>
+      <ListadoContactos ListadoContactos_Top="312" ListadoContactos_Left="349"/>
+      <Agenda>
+        <AgendaInputFecha AgendaInputFecha_Top="174" AgendaInputFecha_Left="309"/>
+      </Agenda>
+      <CatProductosABM CatProductosABM_Top="264" CatProductosABM_Left="354">
+        <CatProductosInput CatProductosInput_Top="264" CatProductosInput_Left="415"/>
+      </CatProductosABM>
+      <ContactosABM ContactosABM_Top="266" ContactosABM_Left="304">
+        <ContactosInput ContactosInput_Top="181" ContactosInput_Left="358"/>
+      </ContactosABM>
+    </FormPrincipal>
+  </TApplication>
+  <IVAABM IVAABM_Top="252" IVAABM_Left="523"/>
+  <ProductosABM ProductosABM_Top="225" ProductosABM_Left="313"/>
+</CONFIG>

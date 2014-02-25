@@ -1,0 +1,245 @@
+inherited DialogoRecibo: TDialogoRecibo
+  Left = 675
+  Height = 354
+  Top = 242
+  Width = 447
+  AutoSize = True
+  BorderStyle = bsDialog
+  BorderWidth = 4
+  Caption = 'DialogoRecibo'
+  ClientHeight = 354
+  ClientWidth = 447
+  object DBText1: TDBText[0]
+    Left = 104
+    Height = 18
+    Top = 0
+    Width = 56
+    DataField = 'ID'
+    DataSource = dsRecibo
+    ParentColor = False
+  end
+  object DBText2: TDBText[1]
+    Left = 104
+    Height = 18
+    Top = 64
+    Width = 56
+    DataField = 'FECHA'
+    DataSource = dsRecibo
+    ParentColor = False
+  end
+  object DBLookupComboBox1: TDBLookupComboBox[2]
+    Left = 168
+    Height = 30
+    Top = 88
+    Width = 256
+    DataField = 'CLIENTE_ID'
+    DataSource = dsRecibo
+    KeyField = 'ID_DENTISTA'
+    ListField = 'DENTISTA'
+    ListFieldIndex = 0
+    ListSource = dsDentista
+    LookupCache = False
+    TabOrder = 1
+  end
+  object DBText3: TDBText[3]
+    Left = 104
+    Height = 18
+    Top = 96
+    Width = 56
+    DataField = 'CLIENTE_ID'
+    DataSource = dsRecibo
+    ParentColor = False
+  end
+  object DBEdit1: TDBEdit[4]
+    Left = 104
+    Height = 30
+    Top = 27
+    Width = 80
+    DataField = 'NUMERO_COMPROBANTE'
+    DataSource = dsRecibo
+    CharCase = ecNormal
+    MaxLength = 0
+    TabOrder = 0
+  end
+  object DBEdit2: TDBEdit[5]
+    Left = 104
+    Height = 30
+    Top = 128
+    Width = 64
+    DataField = 'CAJERO'
+    DataSource = dsRecibo
+    CharCase = ecNormal
+    MaxLength = 0
+    TabOrder = 2
+  end
+  object DBLookupComboBox2: TDBLookupComboBox[6]
+    Left = 168
+    Height = 30
+    Top = 168
+    Width = 256
+    DataSource = dsRecibo
+    Enabled = False
+    ListFieldIndex = 0
+    LookupCache = False
+    TabOrder = 3
+  end
+  object DBText4: TDBText[7]
+    Left = 104
+    Height = 18
+    Top = 176
+    Width = 56
+    DataField = 'FORMA_PAGO'
+    DataSource = dsRecibo
+    ParentColor = False
+  end
+  object JDBLabeledCurrencyEdit1: TJDBLabeledCurrencyEdit[8]
+    Left = 104
+    Height = 30
+    Top = 208
+    Width = 80
+    DataField = 'IMPORTE_TOTAL'
+    DataSource = dsRecibo
+    Decimals = 0
+    EditLabel.AnchorSideTop.Control = JDBLabeledCurrencyEdit1
+    EditLabel.AnchorSideTop.Side = asrCenter
+    EditLabel.AnchorSideRight.Control = JDBLabeledCurrencyEdit1
+    EditLabel.AnchorSideBottom.Control = JDBLabeledCurrencyEdit1
+    EditLabel.AnchorSideBottom.Side = asrBottom
+    EditLabel.Left = 52
+    EditLabel.Height = 18
+    EditLabel.Top = 214
+    EditLabel.Width = 49
+    EditLabel.Caption = 'Importe'
+    EditLabel.ParentColor = False
+    LabelPosition = lpLeft
+    TabOrder = 4
+  end
+  object DBEdit3: TDBEdit[9]
+    Left = 104
+    Height = 30
+    Top = 248
+    Width = 320
+    DataField = 'CONCEPTO'
+    DataSource = dsRecibo
+    CharCase = ecNormal
+    MaxLength = 0
+    TabOrder = 5
+  end
+  object Label1: TLabel[10]
+    Left = 8
+    Height = 18
+    Top = 0
+    Width = 93
+    Alignment = taRightJustify
+    AutoSize = False
+    Caption = 'id'
+    ParentColor = False
+  end
+  object Label2: TLabel[11]
+    Left = 8
+    Height = 18
+    Top = 33
+    Width = 93
+    Alignment = taRightJustify
+    AutoSize = False
+    Caption = 'Nº Recibo'
+    ParentColor = False
+  end
+  object Label3: TLabel[12]
+    Left = 8
+    Height = 18
+    Top = 64
+    Width = 93
+    Alignment = taRightJustify
+    AutoSize = False
+    Caption = 'Fecha'
+    ParentColor = False
+  end
+  object Label4: TLabel[13]
+    Left = 8
+    Height = 18
+    Top = 96
+    Width = 93
+    Alignment = taRightJustify
+    AutoSize = False
+    Caption = 'Cliente'
+    ParentColor = False
+  end
+  object Label5: TLabel[14]
+    Left = 8
+    Height = 18
+    Top = 136
+    Width = 93
+    Alignment = taRightJustify
+    AutoSize = False
+    Caption = 'Cajero'
+    ParentColor = False
+  end
+  object Label6: TLabel[15]
+    Left = 8
+    Height = 18
+    Top = 176
+    Width = 93
+    Alignment = taRightJustify
+    AutoSize = False
+    Caption = 'Forma Pago'
+    ParentColor = False
+  end
+  object Label7: TLabel[16]
+    Left = 8
+    Height = 18
+    Top = 256
+    Width = 93
+    Alignment = taRightJustify
+    AutoSize = False
+    Caption = 'Concepto'
+    ParentColor = False
+  end
+  object Panel1: TPanel[17]
+    Left = 8
+    Height = 50
+    Top = 288
+    Width = 418
+    BevelOuter = bvLowered
+    BevelWidth = 2
+    ClientHeight = 50
+    ClientWidth = 418
+    TabOrder = 6
+    object BitBtn1: TBitBtn
+      Left = 288
+      Height = 32
+      Top = 8
+      Width = 123
+      Default = True
+      DefaultCaption = True
+      Kind = bkOK
+      ModalResult = 1
+      TabOrder = 0
+    end
+    object BitBtn2: TBitBtn
+      Left = 160
+      Height = 32
+      Top = 8
+      Width = 123
+      Cancel = True
+      DefaultCaption = True
+      Kind = bkCancel
+      ModalResult = 2
+      TabOrder = 1
+    end
+  end
+  object dsDentista: TDataSource[18]
+    DataSet = dmCuentasCorrientes.zDentistas
+    left = 352
+    top = 88
+  end
+  object dsRecibo: TDataSource[19]
+    DataSet = dmCuentasCorrientes.zComprobantes
+    left = 208
+    top = 8
+  end
+  object dsFormaPago: TDataSource[20]
+    left = 352
+    top = 168
+  end
+end

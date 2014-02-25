@@ -1,0 +1,60 @@
+inherited ProvinciasInput: TProvinciasInput
+  Left = 317
+  Height = 259
+  Top = 202
+  Caption = 'Provincias'
+  ClientHeight = 259
+  KeyPreview = True
+  OnKeyPress = FormKeyPress
+  inherited GroupBox1: TGroupBox
+    Height = 120
+    ClientHeight = 101
+    object DBEdit1: TDBEdit[0]
+      Left = 6
+      Height = 30
+      Top = 23
+      Width = 80
+      DataField = 'ID_PROVINCIA'
+      DataSource = dsInput
+      CharCase = ecNormal
+      MaxLength = 0
+      TabOrder = 0
+      OnKeyPress = FormKeyPress
+    end
+    object Label2: TLabel[1]
+      Left = 6
+      Height = 18
+      Top = 55
+      Width = 59
+      Caption = 'Provincia'
+      ParentColor = False
+    end
+    object Label1: TLabel[2]
+      Left = 6
+      Height = 18
+      Top = 7
+      Width = 46
+      Caption = 'Codigo'
+      ParentColor = False
+    end
+    object DBEdit2: TDBEdit[3]
+      Left = 6
+      Height = 30
+      Top = 71
+      Width = 304
+      DataField = 'NOMBRE'
+      DataSource = dsInput
+      CharCase = ecNormal
+      MaxLength = 100
+      TabOrder = 1
+      OnKeyPress = FormKeyPress
+    end
+  end
+  inherited Panel1: TPanel
+    Left = 1
+    Top = 128
+  end
+  inherited dsInput: TDataSource
+    DataSet = dmProvincias.zProvincias
+  end
+end

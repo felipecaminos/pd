@@ -1,0 +1,76 @@
+object DialogoRemitoGuia: TDialogoRemitoGuia
+  Left = 578
+  Height = 131
+  Top = 551
+  Width = 540
+  AutoSize = True
+  BorderStyle = bsSingle
+  BorderWidth = 4
+  Caption = 'Edicion Remito o Guia'
+  ClientHeight = 131
+  ClientWidth = 540
+  LCLVersion = '1.3'
+  object DBEdit1: TDBEdit
+    Left = 8
+    Height = 29
+    Top = 40
+    Width = 520
+    DataField = 'DATO_REMITO'
+    DataSource = dsRemito
+    CharCase = ecNormal
+    MaxLength = 0
+    TabOrder = 0
+  end
+  object Label1: TLabel
+    Left = 8
+    Height = 17
+    Top = 16
+    Width = 221
+    Caption = 'Ingrese los datos del remito/guia'
+    ParentColor = False
+  end
+  object BitBtn1: TBitBtn
+    Left = 384
+    Height = 32
+    Top = 72
+    Width = 144
+    Caption = '&Aceptar'
+    Default = True
+    Kind = bkOK
+    ModalResult = 1
+    TabOrder = 1
+  end
+  object BitBtn2: TBitBtn
+    Left = 232
+    Height = 32
+    Top = 72
+    Width = 144
+    Cancel = True
+    Caption = '&Cancelar'
+    Kind = bkCancel
+    ModalResult = 2
+    TabOrder = 2
+  end
+  object DBLookupComboBox1: TDBLookupComboBox
+    Left = 272
+    Height = 29
+    Top = 4
+    Width = 256
+    KeyField = 'ID'
+    ListField = 'DESCRIPCION'
+    ListFieldIndex = 0
+    ListSource = dsTipos
+    LookupCache = False
+    OnChange = DBLookupComboBox1Change
+    TabOrder = 3
+  end
+  object dsRemito: TDataSource
+    DataSet = dmTrabajo.zTareasDespacho
+    left = 24
+    top = 24
+  end
+  object dsTipos: TDataSource
+    DataSet = dmTrabajo.zTiposRemitos
+    left = 488
+  end
+end

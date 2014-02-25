@@ -1,0 +1,518 @@
+object dmContactos: TdmContactos
+  OnCreate = DataModuleCreate
+  OnDestroy = DataModuleDestroy
+  OldCreateOrder = False
+  Height = 168
+  HorizontalOffset = 312
+  VerticalOffset = 149
+  Width = 221
+  object zContactos: TZQuery
+    Connection = dmConexion.ZConnection1
+    UpdateObject = upContactos
+    SQL.Strings = (
+      'SELECT a.ID_CONTACTOS, a.APELLIDO, a.NOMBRE, a.CUIT, a.DIRECCION, a.DIRECCION2,'
+      '    a.LOCALIDAD_ID, a.CP, a.MOVIL, a.MOVIL2, a.TELEFONO, a.TELEFONO2, a.EMAIL,'
+      '    a.WEB, a.FECHA_BAJA'
+      'FROM CONTACTOS a '
+      'WHERE'
+      '    a.FECHA_BAJA is null'
+    )
+    Params = <>
+    left = 32
+    top = 8
+    object zContactosID_CONTACTOS: TLongintField
+      DisplayWidth = 10
+      FieldKind = fkData
+      FieldName = 'ID_CONTACTOS'
+      Index = 0
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = True
+      Visible = False
+    end
+    object zContactosAPELLIDO: TStringField
+      DisplayLabel = 'Apellido/Razon social'
+      DisplayWidth = 20
+      FieldKind = fkData
+      FieldName = 'APELLIDO'
+      Index = 1
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+      Size = 200
+    end
+    object zContactosNOMBRE: TStringField
+      DisplayLabel = 'Nombre'
+      DisplayWidth = 10
+      FieldKind = fkData
+      FieldName = 'NOMBRE'
+      Index = 2
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+      Size = 200
+    end
+    object zContactosCUIT: TStringField
+      DisplayWidth = 10
+      FieldKind = fkData
+      FieldName = 'CUIT'
+      Index = 3
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+      Visible = False
+      Size = 52
+    end
+    object zContactosDIRECCION: TStringField
+      DisplayLabel = 'Direccion'
+      DisplayWidth = 15
+      FieldKind = fkData
+      FieldName = 'DIRECCION'
+      Index = 4
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+      Size = 200
+    end
+    object zContactosDIRECCION2: TStringField
+      DisplayWidth = 200
+      FieldKind = fkData
+      FieldName = 'DIRECCION2'
+      Index = 5
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+      Visible = False
+      Size = 200
+    end
+    object zContactosLOCALIDAD_ID: TLongintField
+      DisplayWidth = 10
+      FieldKind = fkData
+      FieldName = 'LOCALIDAD_ID'
+      Index = 6
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+      Visible = False
+    end
+    object zContactosCP: TStringField
+      DisplayWidth = 36
+      FieldKind = fkData
+      FieldName = 'CP'
+      Index = 7
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+      Visible = False
+      Size = 36
+    end
+    object zContactosMOVIL: TStringField
+      DisplayLabel = 'Celular'
+      DisplayWidth = 8
+      FieldKind = fkData
+      FieldName = 'MOVIL'
+      Index = 8
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+      Size = 60
+    end
+    object zContactosMOVIL2: TStringField
+      DisplayWidth = 60
+      FieldKind = fkData
+      FieldName = 'MOVIL2'
+      Index = 9
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+      Visible = False
+      Size = 60
+    end
+    object zContactosTELEFONO: TStringField
+      DisplayLabel = 'Telefono'
+      DisplayWidth = 8
+      FieldKind = fkData
+      FieldName = 'TELEFONO'
+      Index = 10
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+      Size = 60
+    end
+    object zContactosTELEFONO2: TStringField
+      DisplayWidth = 60
+      FieldKind = fkData
+      FieldName = 'TELEFONO2'
+      Index = 11
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+      Visible = False
+      Size = 60
+    end
+    object zContactosEMAIL: TStringField
+      DisplayWidth = 240
+      FieldKind = fkData
+      FieldName = 'EMAIL'
+      Index = 12
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+      Visible = False
+      Size = 240
+    end
+    object zContactosWEB: TStringField
+      DisplayWidth = 240
+      FieldKind = fkData
+      FieldName = 'WEB'
+      Index = 13
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+      Visible = False
+      Size = 240
+    end
+    object zContactosFECHA_BAJA: TDateField
+      DisplayWidth = 10
+      FieldKind = fkData
+      FieldName = 'FECHA_BAJA'
+      Index = 14
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+      Visible = False
+    end
+  end
+  object upContactos: TZUpdateSQL
+    DeleteSQL.Strings = (
+      'DELETE FROM CONTACTOS'
+      'WHERE'
+      '  CONTACTOS.ID_CONTACTOS = :OLD_ID_CONTACTOS'
+    )
+    InsertSQL.Strings = (
+      'INSERT INTO CONTACTOS'
+      '  (ID_CONTACTOS, APELLIDO, NOMBRE, CUIT, DIRECCION, DIRECCION2, LOCALIDAD_ID, '
+      '   CP, MOVIL, MOVIL2, TELEFONO, TELEFONO2, EMAIL, WEB)'
+      'VALUES'
+      '  (:ID_CONTACTOS, :APELLIDO, :NOMBRE, :CUIT, :DIRECCION, :DIRECCION2, :LOCALIDAD_ID, '
+      '   :CP, :MOVIL, :MOVIL2, :TELEFONO, :TELEFONO2, :EMAIL, :WEB)'
+    )
+    ModifySQL.Strings = (
+      'UPDATE CONTACTOS SET'
+      '  ID_CONTACTOS = :ID_CONTACTOS,'
+      '  APELLIDO = :APELLIDO,'
+      '  NOMBRE = :NOMBRE,'
+      '  CUIT = :CUIT,'
+      '  DIRECCION = :DIRECCION,'
+      '  DIRECCION2 = :DIRECCION2,'
+      '  LOCALIDAD_ID = :LOCALIDAD_ID,'
+      '  CP = :CP,'
+      '  MOVIL = :MOVIL,'
+      '  MOVIL2 = :MOVIL2,'
+      '  TELEFONO = :TELEFONO,'
+      '  TELEFONO2 = :TELEFONO2,'
+      '  EMAIL = :EMAIL,'
+      '  WEB = :WEB'
+      'WHERE'
+      '  CONTACTOS.ID_CONTACTOS = :OLD_ID_CONTACTOS'
+    )
+    UseSequenceFieldForRefreshSQL = False
+    left = 32
+    top = 72
+    ParamData = <    
+      item
+        DataType = ftUnknown
+        Name = 'ID_CONTACTOS'
+        ParamType = ptUnknown
+      end    
+      item
+        DataType = ftUnknown
+        Name = 'APELLIDO'
+        ParamType = ptUnknown
+      end    
+      item
+        DataType = ftUnknown
+        Name = 'NOMBRE'
+        ParamType = ptUnknown
+      end    
+      item
+        DataType = ftUnknown
+        Name = 'CUIT'
+        ParamType = ptUnknown
+      end    
+      item
+        DataType = ftUnknown
+        Name = 'DIRECCION'
+        ParamType = ptUnknown
+      end    
+      item
+        DataType = ftUnknown
+        Name = 'DIRECCION2'
+        ParamType = ptUnknown
+      end    
+      item
+        DataType = ftUnknown
+        Name = 'LOCALIDAD_ID'
+        ParamType = ptUnknown
+      end    
+      item
+        DataType = ftUnknown
+        Name = 'CP'
+        ParamType = ptUnknown
+      end    
+      item
+        DataType = ftUnknown
+        Name = 'MOVIL'
+        ParamType = ptUnknown
+      end    
+      item
+        DataType = ftUnknown
+        Name = 'MOVIL2'
+        ParamType = ptUnknown
+      end    
+      item
+        DataType = ftUnknown
+        Name = 'TELEFONO'
+        ParamType = ptUnknown
+      end    
+      item
+        DataType = ftUnknown
+        Name = 'TELEFONO2'
+        ParamType = ptUnknown
+      end    
+      item
+        DataType = ftUnknown
+        Name = 'EMAIL'
+        ParamType = ptUnknown
+      end    
+      item
+        DataType = ftUnknown
+        Name = 'WEB'
+        ParamType = ptUnknown
+      end    
+      item
+        DataType = ftUnknown
+        Name = 'OLD_ID_CONTACTOS'
+        ParamType = ptUnknown
+      end>
+  end
+  object zUnificados: TZTable
+    Connection = dmConexion.ZConnection1
+    TableName = 'LISTADO_CONTACTOS'
+    left = 144
+    top = 8
+    object zUnificadosID_AGENDA: TLongintField
+      DisplayWidth = 10
+      FieldKind = fkData
+      FieldName = 'ID_AGENDA'
+      Index = 0
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+      Visible = False
+    end
+    object zUnificadosAPELLIDO: TStringField
+      DisplayLabel = 'Apellido/Razon Social'
+      DisplayWidth = 15
+      FieldKind = fkData
+      FieldName = 'APELLIDO'
+      Index = 1
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+      Size = 200
+    end
+    object zUnificadosNOMBRE: TStringField
+      DisplayLabel = 'Nombre'
+      DisplayWidth = 10
+      FieldKind = fkData
+      FieldName = 'NOMBRE'
+      Index = 2
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+      Size = 200
+    end
+    object zUnificadosTELEFONO: TStringField
+      DisplayLabel = 'Telefono'
+      DisplayWidth = 10
+      FieldKind = fkData
+      FieldName = 'TELEFONO'
+      Index = 3
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+      Size = 60
+    end
+    object zUnificadosMOVIL: TStringField
+      DisplayLabel = 'Celular'
+      DisplayWidth = 10
+      FieldKind = fkData
+      FieldName = 'MOVIL'
+      Index = 4
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+      Size = 60
+    end
+    object zUnificadosDIRECCION: TStringField
+      DisplayLabel = 'Direccion'
+      DisplayWidth = 15
+      FieldKind = fkData
+      FieldName = 'DIRECCION'
+      Index = 5
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+      Size = 200
+    end
+    object zUnificadosDIRECCION2: TStringField
+      DisplayLabel = 'Direccion 2'
+      DisplayWidth = 5
+      FieldKind = fkData
+      FieldName = 'DIRECCION2'
+      Index = 6
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+      Size = 200
+    end
+    object zUnificadosLOCALIDAD_ID: TLongintField
+      DisplayWidth = 10
+      FieldKind = fkData
+      FieldName = 'LOCALIDAD_ID'
+      Index = 7
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+      Visible = False
+    end
+    object StringField1: TStringField
+      DisplayLabel = 'Ciudad'
+      DisplayWidth = 10
+      FieldKind = fkLookup
+      FieldName = 'COMPLETO'
+      Index = 8
+      KeyFields = 'LOCALIDAD_ID'
+      LookupCache = False
+      LookupDataSet = zCiudades
+      LookupKeyFields = 'ID_LOCALIDAD'
+      LookupResultField = 'COMPLETO'
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+      Size = 372
+    end
+    object zUnificadosCP: TStringField
+      DisplayLabel = 'C.P.'
+      DisplayWidth = 4
+      FieldKind = fkData
+      FieldName = 'CP'
+      Index = 9
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+      Size = 36
+    end
+    object zUnificadosEMAIL: TStringField
+      DisplayLabel = 'Correo Electronico'
+      DisplayWidth = 15
+      FieldKind = fkData
+      FieldName = 'EMAIL'
+      Index = 10
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+      Size = 240
+    end
+  end
+  object zCiudades: TZReadOnlyQuery
+    Connection = dmConexion.ZConnection1
+    SQL.Strings = (
+      'SELECT a.ID_LOCALIDAD, a.LOCALIDAD, a.DEPARTAMENTO, a.PROVINCIA, a.LOCALIDAD||'' (''||a.PROVINCIA||'')'' as COMPLETO'
+      'FROM LOCALIDADES a ;'
+    )
+    Params = <>
+    left = 144
+    top = 72
+    object zCiudadesID_LOCALIDAD: TLongintField
+      DisplayWidth = 10
+      FieldKind = fkData
+      FieldName = 'ID_LOCALIDAD'
+      Index = 0
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = True
+    end
+    object zCiudadesLOCALIDAD: TStringField
+      DisplayWidth = 200
+      FieldKind = fkData
+      FieldName = 'LOCALIDAD'
+      Index = 1
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+      Size = 200
+    end
+    object zCiudadesDEPARTAMENTO: TStringField
+      DisplayWidth = 160
+      FieldKind = fkData
+      FieldName = 'DEPARTAMENTO'
+      Index = 2
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+      Size = 160
+    end
+    object zCiudadesPROVINCIA: TStringField
+      DisplayWidth = 160
+      FieldKind = fkData
+      FieldName = 'PROVINCIA'
+      Index = 3
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+      Size = 160
+    end
+    object zCiudadesCOMPLETO: TStringField
+      DisplayWidth = 372
+      FieldKind = fkData
+      FieldName = 'COMPLETO'
+      Index = 4
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = True
+      Required = False
+      Size = 372
+    end
+  end
+end

@@ -1,0 +1,294 @@
+unit principal;
+
+{$mode objfpc}{$H+}
+
+interface
+
+uses
+  Classes, SysUtils, FileUtil, PrintersDlgs, indGnouMeter, LSControls,
+  WizardControls, Forms, Controls, Graphics, Dialogs, Menus, ComCtrls, ExtCtrls,
+  Buttons, StdCtrls, XMLPropStorage, EditBtn, LazHelpHTML, HelpIntfs,
+  dentistas_abm, productos_abm, contactos_abm, contactos_listado, iva_abm,
+  categoriaproductos_abm, trabajo_nuevo, agenda_seleccion,
+  trabajo_finalizartarea, trabajo_tareas, HtmlHelp2Viewer;
+
+type
+
+  { TFormPrincipal }
+
+  TFormPrincipal = class(TForm)
+    BitBtn10: TBitBtn;
+    BitBtn2: TBitBtn;
+    BitBtn1: TBitBtn;
+    BitBtn3: TBitBtn;
+    BitBtn4: TBitBtn;
+    BitBtn5: TBitBtn;
+    BitBtn6: TBitBtn;
+    HTMLBrowserHelpViewer1: THTMLBrowserHelpViewer;
+    HTMLHelpDatabase1: THTMLHelpDatabase;
+    ImageList1: TImageList;
+    ImagenFondo: TImage;
+    Label1: TLabel;
+    MenuArchivo: TMenuItem;
+    MenuAyuda: TMenuItem;
+    Itemsalir: TMenuItem;
+    ItemAcercade: TMenuItem;
+    ItemAyuda: TMenuItem;
+    ItemIVA: TMenuItem;
+    ItemABMCiudades: TMenuItem;
+    ItemABMProvincias: TMenuItem;
+    ItemABMContactos: TMenuItem;
+    ItemABMDentistas: TMenuItem;
+    ItemABMProductos: TMenuItem;
+    MenuImpresion: TMenuItem;
+    ItemListadoContactos: TMenuItem;
+    ItemConfigImpresora: TMenuItem;
+    ItemSeleccionarImpresora: TMenuItem;
+    ItemCatProductos: TMenuItem;
+    MenuItem1: TMenuItem;
+    MenuItem2: TMenuItem;
+    ItemNuevoTrabajo: TMenuItem;
+    ItemAgenda: TMenuItem;
+    ItemTrabajosTareas: TMenuItem;
+    MenuItem4: TMenuItem;
+    temNuevaTareaTrabajo: TMenuItem;
+    ItemFinalizarTarea: TMenuItem;
+    MenuItemAgenda: TMenuItem;
+    MenuVer: TMenuItem;
+    MenuGestionDatos: TMenuItem;
+    MenuPrincipal: TMainMenu;
+    PrintDialog1: TPrintDialog;
+    PrinterSetupDialog1: TPrinterSetupDialog;
+    StatusBar1: TStatusBar;
+    Timer1: TTimer;
+    Configuracion: TXMLPropStorage;
+    procedure FormCreate(Sender: TObject);
+    procedure ItemABMProductosClick(Sender: TObject);
+    procedure ItemABMCiudadesClick(Sender: TObject);
+    procedure ItemABMProvinciasClick(Sender: TObject);
+    procedure ItemAcercadeClick(Sender: TObject);
+    procedure ItemAgendaClick(Sender: TObject);
+    procedure ItemAyudaClick(Sender: TObject);
+    procedure ItemCatProductosClick(Sender: TObject);
+    procedure ItemConfigImpresoraClick(Sender: TObject);
+    procedure ItemFinalizarTareaClick(Sender: TObject);
+    procedure ItemListadoContactosClick(Sender: TObject);
+    procedure ItemNuevoTrabajoClick(Sender: TObject);
+    procedure ItemsalirClick(Sender: TObject);
+    procedure ItemABMDentistasClick(Sender: TObject);
+    procedure ItemABMContactosClick(Sender: TObject);
+    procedure ItemIVAClick(Sender: TObject);
+    procedure ItemSeleccionarImpresoraClick(Sender: TObject);
+    procedure ItemTrabajosTareasClick(Sender: TObject);
+    procedure Timer1Timer(Sender: TObject);
+  private
+    { private declarations }
+  public
+    { public declarations }
+  end;
+
+var
+  FormPrincipal: TFormPrincipal;
+
+implementation
+
+uses provincias_abm, acercade, ciudades_abm;
+
+{$R *.lfm}
+
+{ TFormPrincipal }
+
+function DimeDirectorio(): string;
+var
+   directorio:string;
+begin
+  directorio:=GetCurrentDir;
+  {$IFDEF WIN32}
+  Result:=directorio+'\';
+  {$ENDIF}
+
+  {$IFDEF LINUX}
+  Result:=directorio+'/';
+  {$ENDIF}
+
+  {$IFDEF WINCE}
+  Result:=copy(Application.ExeName,1,pos(ExtractFileNameOnly(application.ExeName)+'.exe',Application.ExeName)-1)
+  {$ENDIF}
+end;
+
+procedure TFormPrincipal.FormCreate(Sender: TObject);
+begin
+  HtmlHelp2Viewer.RegisterHelpViewer;  // This registers the help viewer
+                                       // using the iPro viewer
+  //if DateToStr(Date) = '27-8-13' then
+  Timer1Timer(self);
+  case DayOfWeek(date) of
+       2: Label1.Caption:='lunes';
+       3: Label1.Caption:='martes';
+       4: Label1.Caption:='miercoles';
+       5: Label1.Caption:='jueves';
+       6: Label1.Caption:='viernes';
+       7: Label1.Caption:='sabado';
+       1: Label1.Caption:='domingo';
+  end;
+  //Caption:=IntToStr(DayOfWeek(date));
+
+  if DateToStr(Date) = '24-12-13' then
+     Caption:='¡¡¡ FELIZ NAVIDAD !!!';
+  if DateToStr(Date) = '31-12-13' then
+     Caption:='¡¡¡ FELIZ AÑO NUEVO !!!';
+  if DateToStr(Date) = '24-12-13' then
+     Caption:='AÑO NUEVO, VIDA NUEVA!!!!';
+  if DateToStr(Date) = '6-5-14' then
+     Label1.Caption:='¡Comprar regalo a tu hermana!';
+  if DateToStr(Date) = '7-5-14' then
+     Label1.Caption:='¡¡¡¡ CUMPLE DE LAS GORDIS !!!';
+  if DateToStr(Date) = '25-2-14' then
+     Caption:='¡¡HAY QUE COMPRAR REGALO A FELIPE!!';
+  if DateToStr(Date) = '26-2-14' then
+     Label1.Caption:='¡¡Cumpleaños de Felipe!!';
+end;
+
+procedure TFormPrincipal.ItemABMProductosClick(Sender: TObject);
+var
+   VentanaProductos: TProductosABM;
+begin
+   VentanaProductos:= TProductosABM.Create(self);
+   VentanaProductos.ShowModal;
+   VentanaProductos.Release;
+end;
+
+procedure TFormPrincipal.ItemABMCiudadesClick(Sender: TObject);
+var
+   VentanaCiudades: TCiudadesABM;
+begin
+   VentanaCiudades:= TCiudadesABM.Create(self);
+   VentanaCiudades.ShowModal;
+   VentanaCiudades.Release;
+end;
+
+procedure TFormPrincipal.ItemABMProvinciasClick(Sender: TObject);
+var
+   VentanaProvincias: TProvinciasABM;
+begin
+   VentanaProvincias:= TProvinciasABM.Create(self);
+   VentanaProvincias.ShowModal;
+   VentanaProvincias.Release;
+end;
+
+procedure TFormPrincipal.ItemAcercadeClick(Sender: TObject);
+var
+   VentanaAcercaDe: TFAcercaDe;
+begin
+     VentanaAcercaDe:= TFAcercaDe.Create(self);
+     VentanaAcercaDe.ShowModal;
+     VentanaAcercaDe.Release;
+end;
+
+procedure TFormPrincipal.ItemAgendaClick(Sender: TObject);
+var
+   VentanaAgenda: TAgenda;
+begin
+   VentanaAgenda:= TAgenda.Create(self);
+   VentanaAgenda.ShowModal;
+   VentanaAgenda.Release;
+end;
+
+procedure TFormPrincipal.ItemAyudaClick(Sender: TObject);
+begin
+    ShowHelpOrErrorForKeyword('','HTML/index.html');
+end;
+
+procedure TFormPrincipal.ItemCatProductosClick(Sender: TObject);
+var
+   VentanaCatProductos: TCatProductosABM;
+begin
+   VentanaCatProductos:= TCatProductosABM.Create(self);
+   VentanaCatProductos.ShowModal;
+   VentanaCatProductos.Release;   end;
+
+procedure TFormPrincipal.ItemConfigImpresoraClick(Sender: TObject);
+begin
+     PrinterSetupDialog1.Execute;
+end;
+
+procedure TFormPrincipal.ItemFinalizarTareaClick(Sender: TObject);
+var
+   FinTarea: TFinalizarTrabajo;
+begin
+   FinTarea:= TFinalizarTrabajo.Create(self);
+   FinTarea.ShowModal;
+   FinTarea.Release;
+end;
+
+procedure TFormPrincipal.ItemListadoContactosClick(Sender: TObject);
+var
+   ListadoContactos: TListadoContactos;
+begin
+   ListadoContactos:= TListadoContactos.Create(self);
+   ListadoContactos.ShowModal;
+   ListadoContactos.Release;
+end;
+
+procedure TFormPrincipal.ItemNuevoTrabajoClick(Sender: TObject);
+var
+   NuevoTrabajo: TTrabajoNuevo;
+begin
+   NuevoTrabajo:= TTrabajoNuevo.Create(self);
+   NuevoTrabajo.ShowModal;
+   NuevoTrabajo.Release;
+end;
+
+procedure TFormPrincipal.ItemsalirClick(Sender: TObject);
+begin
+     Close;
+end;
+
+procedure TFormPrincipal.ItemABMDentistasClick(Sender: TObject);
+var
+   VentanaDentistas: TDentistasABM;
+begin
+   VentanaDentistas:= TDentistasABM.Create(self);
+   VentanaDentistas.ShowModal;
+   VentanaDentistas.Release;
+end;
+
+procedure TFormPrincipal.ItemABMContactosClick(Sender: TObject);
+var
+   VentanaContactos: TContactosABM;
+begin
+   VentanaContactos:= TContactosABM.Create(self);
+   VentanaContactos.ShowModal;
+   VentanaContactos.Release;
+end;
+
+procedure TFormPrincipal.ItemIVAClick(Sender: TObject);
+var
+   VentanaIVA: TIVAABM;
+begin
+   VentanaIVA:= TIVAABM.Create(self);
+   VentanaIVA.ShowModal;
+   VentanaIVA.Release;
+end;
+
+procedure TFormPrincipal.ItemSeleccionarImpresoraClick(Sender: TObject);
+begin
+     PrintDialog1.Execute;
+end;
+
+procedure TFormPrincipal.ItemTrabajosTareasClick(Sender: TObject);
+var
+   VentanaTrabajosTareas: TTrabajosYTareas;
+begin
+   VentanaTrabajosTareas:= TTrabajosYTareas.Create(self);
+   VentanaTrabajosTareas.ShowModal;
+   VentanaTrabajosTareas.Release;
+end;
+
+procedure TFormPrincipal.Timer1Timer(Sender: TObject);
+begin
+   StatusBar1.Panels[1].Text:=FormatDateTime('ddddd --- hh:mm:ss ',Now);
+end;
+
+end.
+

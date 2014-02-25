@@ -1,0 +1,149 @@
+[Box:  - ::acercade]
+X=3008
+Y=125
+
+[Box:  - ::agenda_dm]
+X=751
+Y=295
+
+[Box:  - ::agenda_fecha_input]
+X=561
+Y=295
+
+[Box:  - ::agenda_seleccion]
+X=828
+Y=125
+
+[Box:  - ::agenda_tarea_input]
+X=20
+Y=210
+
+[Box:  - ::base_abm]
+X=2651
+Y=295
+
+[Box:  - ::base_input]
+X=2249
+Y=380
+
+[Box:  - ::categoriaproductos_abm]
+X=1835
+Y=125
+
+[Box:  - ::categoriaproductos_dm]
+X=1785
+Y=295
+
+[Box:  - ::categoriaproductos_input]
+X=2130
+Y=210
+
+[Box:  - ::ciudades_abm]
+X=3456
+Y=125
+
+[Box:  - ::ciudades_dm]
+X=3740
+Y=210
+
+[Box:  - ::ciudades_input]
+X=3930
+Y=210
+
+[Box:  - ::conexion_dm]
+X=1691
+Y=380
+
+[Box:  - ::contactos_abm]
+X=4186
+Y=125
+
+[Box:  - ::contactos_dm]
+X=5028
+Y=295
+
+[Box:  - ::contactos_input]
+X=4750
+Y=210
+
+[Box:  - ::contactos_listado]
+X=5380
+Y=210
+
+[Box:  - ::dentistas_abm]
+X=1644
+Y=125
+
+[Box:  - ::dentistas_dm]
+X=1368
+Y=295
+
+[Box:  - ::dentistas_input]
+X=1720
+Y=210
+
+[Box:  - ::iva_abm]
+X=2628
+Y=125
+
+[Box:  - ::iva_dm]
+X=3140
+Y=210
+
+[Box:  - ::iva_input]
+X=2730
+Y=210
+
+[Box:  - ::principal]
+X=2621
+Y=40
+
+[Box:  - ::productos_abm]
+X=3910
+Y=125
+
+[Box:  - ::productos_dm]
+X=3867
+Y=295
+
+[Box:  - ::productos_input]
+X=4340
+Y=210
+
+[Box:  - ::provincias_abm]
+X=1308
+Y=125
+
+[Box:  - ::provincias_dm]
+X=1169
+Y=295
+
+[Box:  - ::provincias_input]
+X=870
+Y=210
+
+[Box:  - ::trabajo_dm]
+X=2540
+Y=210
+
+[Box:  - ::trabajo_finalizartarea]
+X=2437
+Y=125
+
+[Box:  - ::trabajo_nuevo]
+X=2027
+Y=125
+
+[Box:  - ::trabajo_tareas]
+X=2818
+Y=125
+
+[Box:  - ::trabajo_tareas_dm]
+X=3330
+Y=210
+
+[Diagram: ]
+OffsetX=0
+OffsetY=2517
+Visibility=0
+ShowAssoc=1

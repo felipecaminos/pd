@@ -1,0 +1,65 @@
+inherited FormBaseInput: TFormBaseInput
+  Left = 343
+  Height = 268
+  Top = 276
+  Width = 369
+  AutoSize = True
+  BorderStyle = bsSingle
+  BorderWidth = 4
+  Caption = 'FormBaseInput'
+  ClientHeight = 268
+  ClientWidth = 369
+  SessionProperties = 'Top;Left'
+  object GroupBox1: TGroupBox[0]
+    Left = 0
+    Height = 192
+    Top = 0
+    Width = 321
+    Caption = 'Ingrese los datos'
+    TabOrder = 0
+  end
+  object Panel1: TPanel[1]
+    Left = 0
+    Height = 48
+    Top = 192
+    Width = 320
+    BevelOuter = bvLowered
+    BevelWidth = 2
+    Caption = 'Panel1'
+    ClientHeight = 48
+    ClientWidth = 320
+    TabOrder = 1
+    object BitBtn1: TBitBtn
+      Left = 216
+      Height = 30
+      Top = 8
+      Width = 99
+      Caption = '&Aceptar'
+      Default = True
+      Kind = bkOK
+      ModalResult = 1
+      TabOrder = 0
+    end
+    object BitBtn2: TBitBtn
+      Left = 104
+      Height = 30
+      Top = 8
+      Width = 99
+      Cancel = True
+      Caption = '&Cancelar'
+      Kind = bkCancel
+      ModalResult = 2
+      TabOrder = 1
+    end
+  end
+  object dsInput: TDataSource[2]
+    left = 176
+    top = 16
+  end
+  object Configuracion: TXMLPropStorage[3]
+    StoredValues = <>
+    FileName = 'config.xml'
+    left = 256
+    top = 16
+  end
+end

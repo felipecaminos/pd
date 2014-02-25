@@ -1,0 +1,82 @@
+object dmCategoriaProductos: TdmCategoriaProductos
+  OnCreate = DataModuleCreate
+  OnDestroy = DataModuleDestroy
+  OldCreateOrder = False
+  Height = 192
+  HorizontalOffset = 795
+  VerticalOffset = 273
+  Width = 206
+  object zCategoriaProductos: TZQuery
+    Connection = dmConexion.ZConnection1
+    UpdateObject = upCategoriaProductos
+    SQL.Strings = (
+      'SELECT a.ID_CAT_PROD, a.DESCRIPCION'
+      'FROM CATEGORIA_PRODUCTOS a ;'
+    )
+    Params = <>
+    left = 56
+    top = 11
+    object zCategoriaProductosID_CAT_PROD: TLongintField
+      DisplayWidth = 10
+      FieldKind = fkData
+      FieldName = 'ID_CAT_PROD'
+      Index = 0
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+      Visible = False
+    end
+    object zCategoriaProductosDESCRIPCION: TStringField
+      DisplayLabel = 'Categoria De Productos'
+      DisplayWidth = 50
+      FieldKind = fkData
+      FieldName = 'DESCRIPCION'
+      Index = 1
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+      Size = 160
+    end
+  end
+  object upCategoriaProductos: TZUpdateSQL
+    DeleteSQL.Strings = (
+      'DELETE FROM CATEGORIA_PRODUCTOS'
+      'WHERE'
+      '  CATEGORIA_PRODUCTOS.ID_CAT_PROD = :OLD_ID_CAT_PROD'
+    )
+    InsertSQL.Strings = (
+      'INSERT INTO CATEGORIA_PRODUCTOS'
+      '  (ID_CAT_PROD, DESCRIPCION)'
+      'VALUES'
+      '  (:ID_CAT_PROD, :DESCRIPCION)'
+    )
+    ModifySQL.Strings = (
+      'UPDATE CATEGORIA_PRODUCTOS SET'
+      '  ID_CAT_PROD = :ID_CAT_PROD,'
+      '  DESCRIPCION = :DESCRIPCION'
+      'WHERE'
+      '  CATEGORIA_PRODUCTOS.ID_CAT_PROD = :OLD_ID_CAT_PROD'
+    )
+    UseSequenceFieldForRefreshSQL = False
+    left = 56
+    top = 80
+    ParamData = <    
+      item
+        DataType = ftUnknown
+        Name = 'ID_CAT_PROD'
+        ParamType = ptUnknown
+      end    
+      item
+        DataType = ftUnknown
+        Name = 'DESCRIPCION'
+        ParamType = ptUnknown
+      end    
+      item
+        DataType = ftUnknown
+        Name = 'OLD_ID_CAT_PROD'
+        ParamType = ptUnknown
+      end>
+  end
+end

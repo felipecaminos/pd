@@ -1,0 +1,62 @@
+unit trabajo_tareas_dm;
+
+{$mode objfpc}{$H+}
+
+interface
+
+uses
+  Classes, SysUtils, db, FileUtil, ZDataset, ZSqlUpdate;
+
+type
+
+  { TdmTrabajosTareas }
+
+  TdmTrabajosTareas = class(TDataModule)
+    dsTrabajos: TDatasource;
+    zTareasDATO_REMITO: TStringField;
+    zTareasESTIMADO_SALIDA: TDateField;
+    zTareasFECHA_INGRESO: TDateTimeField;
+    zTareasFECHA_SALIDA: TDateTimeField;
+    zTareasID_TAREA: TLongintField;
+    zTareasOBSERVACION_DENTISTA: TStringField;
+    zTareasORDEN: TSmallintField;
+    zTareasTERMINADO: TStringField;
+    zTareasTIPO_TAREA_ID: TLongintField;
+    zTareasTRABAJO_ID: TLongintField;
+    zTrabajos: TZQuery;
+    zTareas: TZQuery;
+    upTrabajos: TZUpdateSQL;
+    upTareas: TZUpdateSQL;
+    zTrabajosDENTISTA_ID: TLongintField;
+    zTrabajosFECHA_ENTRADA: TDateTimeField;
+    zTrabajosFECHA_SALIDA: TDateTimeField;
+    zTrabajosID_TRABAJOS: TLongintField;
+    zTrabajosPACIENTE: TStringField;
+    zTrabajosPAGADO: TSmallintField;
+    zTrabajosPRECIO: TFloatField;
+    zTrabajosPRODUCTO_ID: TLongintField;
+    zTrabajosPROXIMO_PLAZO: TDateField;
+    procedure DataModuleCreate(Sender: TObject);
+  private
+    { private declarations }
+  public
+    { public declarations }
+  end;
+
+var
+  dmTrabajosTareas: TdmTrabajosTareas;
+
+implementation
+
+{$R *.lfm}
+
+{ TdmTrabajosTareas }
+
+procedure TdmTrabajosTareas.DataModuleCreate(Sender: TObject);
+begin
+  zTrabajos.Open;
+  zTareas.Open;
+end;
+
+end.
+

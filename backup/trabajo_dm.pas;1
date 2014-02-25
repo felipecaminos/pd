@@ -1,0 +1,341 @@
+unit trabajo_dm;
+
+{$mode objfpc}{$H+}
+
+interface
+
+uses
+  Classes, SysUtils, FileUtil, conexion_dm,
+  DB, ZDataset, ZSqlUpdate, ZSequence, StdCtrls;
+
+type
+
+  { TdmTrabajo }
+
+  TdmTrabajo = class(TDataModule)
+    dsMaestro: TDatasource;
+    StringField1: TStringField;
+    StringField2: TStringField;
+    StringField3: TStringField;
+    zCategoriasDESCRIPCION: TStringField;
+    zCategoriasID_CAT_PROD: TLongintField;
+    zDentistas: TZReadOnlyQuery;
+    zDentistasCLINICA: TStringField;
+    zDentistasDENTISTA: TStringField;
+    zDentistasID_DENTISTA: TLongintField;
+    zDentistasMOVIL: TStringField;
+    zProductos: TZReadOnlyQuery;
+    zProductosCATEGORIA: TLongintField;
+    zProductosCODIGO_INTERNO: TLongintField;
+    zProductosID_PRODUCTO: TLongintField;
+    zProductosPRECIO: TFloatField;
+    zProductosPRODUCTO: TStringField;
+    genTrabajos: TZSequence;
+    zCategorias: TZReadOnlyQuery;
+    zTareasSinFinalizar: TZQuery;
+    zTareasParaVer: TZReadOnlyQuery;
+    zTareasParaVerDATO_REMITO: TStringField;
+    zTareasParaVerDESCRIPCION: TStringField;
+    zTareasParaVerESTIMADO_SALIDA: TDateField;
+    zTareasParaVerFECHA_INGRESO: TDateTimeField;
+    zTareasParaVerFECHA_SALIDA: TDateTimeField;
+    zTareasParaVerID_TAREA: TLongintField;
+    zTareasParaVerOBSERVACION_DENTISTA:
+    TStringField;
+    zTareasParaVerORDEN: TSmallintField;
+    zTareasParaVerTERMINADO: TDateTimeField;
+    zTareasParaVerTIPO_TAREA_ID: TLongintField;
+    zTareasParaVerTRABAJO_ID: TLongintField;
+    zTareasSinFinalizarDATO_REMITO: TStringField;
+    zTareasSinFinalizarESTIMADO_SALIDA:
+    TDateField;
+    zTareasSinFinalizarFECHA_INGRESO:
+    TDateTimeField;
+    zTareasSinFinalizarFECHA_SALIDA:
+    TDateTimeField;
+    zTareasSinFinalizarID_TAREA: TLongintField;
+    zTareasSinFinalizarOBSERVACION_DENTISTA:
+    TStringField;
+    zTareasSinFinalizarORDEN: TSmallintField;
+    zTareasSinFinalizarTERMINADO: TStringField;
+    zTareasSinFinalizarTIPO_TAREA_ID:
+    TLongintField;
+    zTareasSinFinalizarTRABAJO_ID: TLongintField;
+    zTiposTareas: TZReadOnlyQuery;
+    zRelaciones: TZReadOnlyQuery;
+    zRelacionesORDEN: TSmallintField;
+    zRelacionesPRODUCTO_ID: TLongintField;
+    zRelacionesTIPO_TAREA_ID: TLongintField;
+    zTareas: TZQuery;
+    zTareasDATO_REMITO: TStringField;
+    zTareasESTIMADO_SALIDA: TDateField;
+    zTareasFECHA_INGRESO: TDateTimeField;
+    zTareasFECHA_SALIDA: TDateTimeField;
+    zTareasID_TAREA: TLongintField;
+    zTareasOBSERVACION_DENTISTA: TStringField;
+    zTareasORDEN: TSmallintField;
+    zTareasTERMINADO: TDateTimeField;
+    zTareasTIPO_TAREA_ID: TLongintField;
+    zTareasTRABAJO_ID: TLongintField;
+    zTiposTareasBusqueda: TZTable;
+    zTiposTareasBusquedaDESCRIPCION:
+    TStringField;
+    zTiposTareasBusquedaID_TIPO_TAREA:
+    TLongintField;
+    zTiposTareasBusquedaTIEMPO_ESTIMADO:
+    TFloatField;
+    zTiposTareasBusquedaTIENE_FECHA_SALIDA:
+    TStringField;
+    zTiposTareasDESCRIPCION: TStringField;
+    zTiposTareasID_TIPO_TAREA: TLongintField;
+    zTiposTareasTIEMPO_ESTIMADO: TFloatField;
+    zTiposTareasTIENE_FECHA_SALIDA: TStringField;
+    zTrabajos: TZQuery;
+    upTrabajos: TZUpdateSQL;
+    zTrabajosBusqueda: TZTable;
+    zTrabajosBusquedaDENTISTA: TStringField;
+    zTrabajosBusquedaDENTISTA_ID: TLongintField;
+    zTrabajosBusquedaFECHA_ENTRADA:
+    TDateTimeField;
+    zTrabajosBusquedaID_TRABAJOS: TLongintField;
+    zTrabajosBusquedaPACIENTE: TStringField;
+    zTrabajosDENTISTA_ID: TLongintField;
+    zTrabajosFECHA_ENTRADA: TDateTimeField;
+    zTrabajosFECHA_SALIDA: TDateTimeField;
+    zTrabajosID_TRABAJOS: TLongintField;
+    zTrabajosPACIENTE: TStringField;
+    zTrabajosPAGADO: TSmallintField;
+    zTrabajosPRECIO: TFloatField;
+    zTrabajosPRODUCTO_ID: TLongintField;
+    zTrabajosPROXIMO_PLAZO: TDateField;
+    upTareas: TZUpdateSQL;
+    upTareasSinFinalizar: TZUpdateSQL;
+    procedure DataModuleCreate(Sender: TObject);
+  private
+    { private declarations }
+  public
+    { public declarations }
+    procedure Abrir;
+    procedure GrabarNuevoTrabajo;
+    procedure CompletarTareas;
+    procedure FinalizarTarea;
+    procedure CargarTareasDeTrabajo;
+  end;
+
+var
+  dmTrabajo: TdmTrabajo;
+
+implementation
+
+{$R *.lfm}
+
+{ TdmTrabajo }
+
+procedure TdmTrabajo.DataModuleCreate(
+  Sender: TObject);
+begin
+  Abrir;
+end;
+
+procedure TdmTrabajo.Abrir;
+begin
+  {se abre todo}
+  zProductos.Open;
+  zDentistas.Open;
+  zTrabajos.Open;
+  zCategorias.Open;
+  zTareasSinFinalizar.Open;
+end;
+
+procedure TdmTrabajo.GrabarNuevoTrabajo;
+var
+  reg: integer;
+  precio: double;
+begin
+  {se genera el nuevo numero de id de trabajo}
+  reg := genTrabajos.GetNextValue;
+  {se toma el precio actual del producto (solo
+  se utilizará para verificacion o control interno)}
+  precio := zProductosPRECIO.AsFloat;
+  {se almacenan los datos de los campos}
+  zTrabajosFECHA_ENTRADA.AsDateTime := Now;
+  zTrabajosID_TRABAJOS.AsInteger := reg;
+  zTrabajosPRECIO.AsFloat := precio;
+  {se aplican los datos}
+  zTrabajos.Post;
+  zTrabajos.ApplyUpdates;
+end;
+
+{carga la tabla de tareas con los nuevos trabajos que
+se deberán hacer para realizar este producto}
+procedure TdmTrabajo.CompletarTareas;
+var
+  trabajo: integer;
+  tarea: integer;
+  fecha: boolean;
+  primero: boolean;
+begin
+  {bandera que nos indica se se cargó la fecha de plazo}
+  fecha := False;
+  {bandera que indica que es la primera tarea, y se le
+  asigna la fecha de entrada}
+  primero := True;
+  {se verifica la tabla de relaciones y se abre}
+  {if dsMaestro.Enabled then
+     zTrabajos.Refresh
+  else zTrabajos.Open;}
+
+  if zRelaciones.Active then
+    zRelaciones.Refresh
+  else
+    zRelaciones.Open;
+  {se verifica la tabla de tareas y se abre}
+  if zTareas.Active then
+    zTareas.Refresh
+  else
+    zTareas.Open;
+  {se verifica que tipos tareas esté cerrado}
+  if zTiposTareas.Active then
+    zTiposTareas.Close;
+
+  {se guarda el numero de trabajo con el que operamos}
+  trabajo := genTrabajos.GetCurrentValue;
+  {se recorren todos los registros (que representan las
+  tareas necesarias que tiene este tipo producto)}
+  while not zRelaciones.EOF do
+    begin
+     {se guarda el tipo de tarea en una variable para
+     manipularla mejor}
+    tarea := zRelacionesTIPO_TAREA_ID.AsInteger;
+
+    {agrego un nuevo registro en las tareas}
+    zTareas.Append;
+    // se carga el numero de trabajo
+    zTareasTRABAJO_ID.AsInteger := trabajo;
+    // se carga el tipo de tarea
+    zTareasTIPO_TAREA_ID.AsInteger := tarea;
+    // se le asigna un orden de realización
+    zTareasORDEN.AsInteger :=
+      zRelacionesORDEN.AsInteger;
+    {se verifica que sea la primer tarea y se guarda fecha de ingreso}
+    if primero = True then
+      begin
+      zTareasFECHA_INGRESO.AsDateTime := Now;
+      primero := False;
+      end;
+     {se verifica si hay que asignar la fecha de entrega de la
+     tarea, si ya no se hizo}
+    if fecha = False then
+      begin
+          {se busca el registro con el tipo de tarea que se
+          procesa cargando el parámetro}
+      zTiposTareas.ParamByName(
+        'REGISTRO').AsInteger := tarea;
+      {se abre el query para tener el registro con el nuevo parametro}
+      zTiposTareas.Open;
+      {se busca si esta tarea tiene plazo de finalizacion}
+      if zTiposTareasTIENE_FECHA_SALIDA.
+        AsString = 'S' then
+        begin
+        { se carga el plazo de finalizacion}
+        zTareasESTIMADO_SALIDA.
+          AsDateTime :=
+          zTrabajosPROXIMO_PLAZO.AsDateTime;
+        { se cancela la carga de proximos plazos de finalizacion}
+        fecha := True;
+        end;
+      {se cierra tipo tareas para poder cargarle nuevamente el parametro}
+      zTiposTareas.Close;
+      end;
+
+    // falta recorrer para atrás y ver si no hay tareas anteriores
+    // a las que asignarles plazo de entrega (o sea ver si no hay
+    // tareas sin salida del laboratorio antes
+
+
+    {se graban los datos de la tarea}
+    zTareas.Post;
+    zTareas.ApplyUpdates;
+    {se pasa a la proxima relacion para agregar una nueva tarea}
+    zRelaciones.Next;
+    end;
+  {se abren los tipos de tareas para buscar la descripción
+  que se utilizará en la tabla de ver las tareas}
+  zTiposTareas.Open;
+  {se filtra la tabla de ver las tareas para el trabajo actual}
+  zTareasParaVer.Close;
+  zTareasParaVer.Filtered := True;
+  zTareasParaVer.Filter :=
+    'trabajo_id = ' + IntToStr(trabajo);
+  zTareasParaVer.Open;
+end;
+
+procedure TdmTrabajo.FinalizarTarea;
+var
+  { contador para ver cuantas tareas hay que
+   recorrer para atras y ponerles fecha}
+  tarea: integer;
+  contador: integer;
+begin
+  // ACáFinalizamos la tarea cambiando N a S en
+  zTareasSinFinalizar.Edit;
+  zTareasSinFinalizarTERMINADO.AsString := 'S';
+  zTareasSinFinalizar.Post;
+  zTareasSinFinalizar.ApplyUpdates;
+  zTareasSinFinalizar.Refresh;
+
+
+  //////// ------------------------------------------------
+  //////// ------------------------------------------------
+  // esta mal, la fecha no se establece al finalizar la
+  // tarea, sino al recibirla de nuevo
+
+  {cargamos las tareas del trabajo para poder recorrerlas y ponerles fecha}
+  CargarTareasDeTrabajo;
+  contador := 0;
+  zTiposTareas.Close;
+  {recorremos las tareas del trabajo para encontrar la que }
+  while not zTareas.EOF do
+    begin
+    tarea := zTareasTIPO_TAREA_ID.AsInteger;
+
+     {se busca el registro con el tipo de tarea que se
+     procesa cargando el parámetro}
+    zTiposTareas.ParamByName(
+      'REGISTRO').AsInteger := tarea;
+    {se abre el query para tener el registro con el nuevo parametro}
+    zTiposTareas.Open;
+    {se busca si esta tarea tiene plazo de finalizacion}
+    if zTiposTareasTIENE_FECHA_SALIDA.AsString
+      = 'S' then
+      begin
+      { se carga el plazo de finalizacion}
+
+      // hay que pedirle al usuario que ingrese la fecha
+      // o que la ingrese antes
+
+      { se cancela la carga de proximos plazos de finalizacion}
+      fecha := True;
+      // o ir al final de la tabla ...
+      end;
+    {se cierra tipo tareas para poder cargarle nuevamente el parametro}
+    zTiposTareas.Close;
+    zTareas.Next;
+    end;
+
+  {acá falta todo la logica que busca las siguentes tareas
+  del trabajo y les asigna plazo de entrega}
+end;
+
+procedure TdmTrabajo.CargarTareasDeTrabajo;
+var
+  trabajo: string;
+begin
+  trabajo := zTareasSinFinalizarTRABAJO_ID.AsString;
+  zTareas.Close;
+  zTareas.Filter := 'TRABAJO_ID = ' + trabajo;
+  zTareas.Filtered := True;
+  zTareas.Open;
+end;
+
+end.

@@ -1,0 +1,28 @@
+inherited ProvinciasABM: TProvinciasABM
+  Left = 441
+  Top = 252
+  Caption = 'Listado de Provincias'
+  OnCreate = FormCreate
+  OnDestroy = FormDestroy
+  inherited RxDBGrid1: TRxDBGrid
+    AutoEdit = False
+    GridLineStyle = psDash
+    OnDblClick = RxDBGrid1DblClick
+  end
+  inherited btnNuevo: TBitBtn
+    OnClick = btnNuevoClick
+  end
+  inherited btnBorrar: TBitBtn
+    OnClick = btnBorrarClick
+  end
+  inherited btnModificar: TBitBtn
+    OnClick = btnModificarClick
+  end
+  inherited PanelBusqueda: TPanel
+    Visible = False
+  end
+  inherited dsABM: TDataSource
+    DataSet = dmProvincias.zProvincias
+    left = 232
+  end
+end

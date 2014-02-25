@@ -1,0 +1,312 @@
+object TrabajoNuevo: TTrabajoNuevo
+  Left = 494
+  Height = 329
+  Top = 224
+  Width = 712
+  AutoSize = True
+  BorderStyle = bsSingle
+  BorderWidth = 4
+  Caption = 'Trabajo Nuevo'
+  ClientHeight = 329
+  ClientWidth = 712
+  OnCreate = FormCreate
+  OnDestroy = FormDestroy
+  LCLVersion = '1.3'
+  object Dentista: TLabel
+    Left = 8
+    Height = 17
+    Top = 8
+    Width = 57
+    Caption = 'Dentista'
+    ParentColor = False
+  end
+  object DBLookupComboBox1: TDBLookupComboBox
+    Left = 72
+    Height = 29
+    Top = 8
+    Width = 352
+    DataField = 'DENTISTA_ID'
+    DataSource = dsTrabajos
+    KeyField = 'ID_DENTISTA'
+    ListField = 'DENTISTA'
+    ListFieldIndex = 0
+    ListSource = dsDentistas
+    LookupCache = False
+    TabOrder = 0
+  end
+  object Producto: TLabel
+    Left = 8
+    Height = 17
+    Top = 72
+    Width = 63
+    Caption = 'Producto'
+    ParentColor = False
+  end
+  object DBLookupComboBox2: TDBLookupComboBox
+    Left = 80
+    Height = 29
+    Top = 72
+    Width = 344
+    DataField = 'PRODUCTO_ID'
+    DataSource = dsTrabajos
+    KeyField = 'ID_PRODUCTO'
+    ListField = 'PRODUCTO'
+    ListFieldIndex = 0
+    ListSource = dsProductos
+    LookupCache = False
+    TabOrder = 2
+  end
+  object DBDateEdit1: TDBDateEdit
+    Left = 96
+    Height = 27
+    Top = 233
+    Width = 80
+    ButtonWidth = 40
+    CancelCaption = 'Cancelar'
+    CharCase = ecNormal
+    DefaultToday = True
+    DialogTitle = 'Seleccionar Fecha'
+    Enabled = False
+    MaxLength = 10
+    NumGlyphs = 2
+    OKCaption = 'Listo'
+    PopupColor = clWindow
+    TabOrder = 8
+    Text = '  /  /    '
+    Weekends = [Sun, Sat]
+    YearDigits = dyFour
+    DataField = 'PROXIMO_PLAZO'
+    DataSource = dsTrabajos
+  end
+  object FEntrega: TLabel
+    Left = 8
+    Height = 17
+    Top = 232
+    Width = 87
+    Caption = 'F. de Entrega'
+    ParentColor = False
+  end
+  object DBEdit1: TDBEdit
+    Left = 72
+    Height = 27
+    Top = 168
+    Width = 352
+    DataField = 'PACIENTE'
+    DataSource = dsTrabajos
+    CharCase = ecNormal
+    MaxLength = 200
+    TabOrder = 6
+  end
+  object Paciente: TLabel
+    Left = 8
+    Height = 17
+    Top = 168
+    Width = 58
+    Caption = 'Paciente'
+    ParentColor = False
+  end
+  object DBGrid2: TDBGrid
+    Left = 432
+    Height = 274
+    Top = 8
+    Width = 272
+    Color = clWindow
+    Columns = <>
+    DataSource = dsTareas
+    TabOrder = 10
+    Visible = False
+  end
+  object DBLookupComboBox3: TDBLookupComboBox
+    Left = 80
+    Height = 29
+    Top = 40
+    Width = 344
+    KeyField = 'ID_CAT_PROD'
+    ListField = 'DESCRIPCION'
+    ListFieldIndex = 0
+    ListSource = dsCategorias
+    LookupCache = False
+    OnChange = DBLookupComboBox3Change
+    TabOrder = 1
+  end
+  object Categoria: TLabel
+    Left = 8
+    Height = 16
+    Top = 40
+    Width = 74
+    AutoSize = False
+    Caption = 'Categoria'
+    ParentColor = False
+    WordWrap = True
+  end
+  object Observacion: TLabel
+    Left = 8
+    Height = 17
+    Top = 136
+    Width = 85
+    Caption = 'Observacion'
+    ParentColor = False
+  end
+  object DBEdit2: TDBEdit
+    Left = 104
+    Height = 27
+    Top = 136
+    Width = 320
+    DataField = 'OBSERVACION'
+    DataSource = dsTrabajos
+    CharCase = ecNormal
+    MaxLength = 320
+    TabOrder = 5
+  end
+  object LabelColor: TLabel
+    Left = 8
+    Height = 17
+    Top = 101
+    Width = 37
+    Caption = 'Color'
+    ParentColor = False
+  end
+  object Antagonista: TDBCheckBox
+    Left = 304
+    Height = 23
+    Top = 104
+    Width = 114
+    Caption = 'Antagonista'
+    DataField = 'ANTAGONISTA'
+    DataSource = dsTrabajos
+    TabOrder = 4
+    TabStop = True
+    ValueChecked = 'S'
+    ValueUnchecked = 'N'
+  end
+  object DBEdit3: TDBEdit
+    Left = 48
+    Height = 27
+    Top = 104
+    Width = 248
+    DataField = 'COLOR'
+    DataSource = dsTrabajos
+    CharCase = ecNormal
+    MaxLength = 40
+    TabOrder = 3
+  end
+  object Panel1: TPanel
+    Left = 8
+    Height = 50
+    Top = 264
+    Width = 416
+    BevelOuter = bvLowered
+    BevelWidth = 2
+    ClientHeight = 50
+    ClientWidth = 416
+    TabOrder = 9
+    object BitBtn3: TBitBtn
+      Left = 264
+      Height = 30
+      Top = 8
+      Width = 144
+      Caption = 'Iniciar Trabajo'
+      Default = True
+      Glyph.Data = {
+        36040000424D3604000000000000360000002800000010000000100000000100
+        2000000000000004000064000000640000000000000000000000000000000000
+        0000000000000000000000000000000000000000000000000000000000000000
+        000000000033000000330000002200000000000000000000000047A3EE000000
+        0033000000320000001000000019000000310000003300000033000000330000
+        002F009249FF00C783FF007B3CBB00000033008E4A00008F4E0046A2EE0045A2
+        EFFF40A4F3FC267CB274972C4396B13A5BF8B8395EFFBE365EFFC2355FFFCB2E
+        5DEE008E46FF00E5A5FF00BE7CFF209192FF00000021008F4E0048ABF30044AC
+        F6FB86E8FFFFA04A6DFFB84158FFC55360FF398053FF009346FF009146FF008D
+        45FF008641FF00D9A1FF00D89FFF00BB7EFF007C3FB70000002242BCFF00329E
+        D362A14C6EFFB94857FFC35E62FFE6737AFF008D41FF3CEAC1FF00D8A0FF00D8
+        A0FF00D69FFF00D09CFF00D09BFF00D39FFF00B980FF007E43BDBB3C4F009932
+        4395BA4A5CFFC6696EFFE37C7EFFF7D4DBFF008439FF6BE8CEFF00C899FF00C8
+        99FF00C899FF00C797FF00C898FF00CA9AFF63E6CDFF008A47FFB3475B00B043
+        58F8C66F7AFFDB7D7FFFE2CED0FFF0FFFFFF008135FF93EEE0FF4CE8D3FF4EE7
+        D2FF4DE6D1FF93E8D7FF00C397FF60E0C6FF00B381FF008B49ACB34A5D00B045
+        59FFD38993FFE78180FFD7FFFFFFE4FFFFFF117041FF00863AFF008238FF0080
+        37FF007F36FF80E4D5FF57DBC4FF00AF7EFF008B46A4008F4D00B54C5B00B147
+        57FFDB98A3FFEA8281FF809B9DFFD7FFFFFFBFD2DAFF6A5558FFC4CFD8FFEFFF
+        FFFF008137FF71E3D4FF00AD7CFF456E4BFF0094490000944B00BD485100B545
+        52FFE5A8B3FFED8383FFC4FFFFFFABCCD0FF5F5452FFAFCACFFFCEF8FFFFD4F8
+        FFFF008132FF00A97AFF4B986CFFCD4055FFD0425300D340510000000022B44A
+        55FFE5A1ADFFED9497FFD2C9CDFF5A5754FFA4C8CFFFC1F6FFFFBDF0F9FFBDF3
+        FEFFDCC6CDFFFF949BFFF2A1B0FFBB4A57FF0000002241B1FF003C9CE3BA7E79
+        A2FFCE6B71FFF6BECBFFF1898AFFCEC5CCFFB0F6FFFF65858AFFADF2FCFFCABF
+        C6FFF28688FFF8BDCBFFD06B71FF7F79A2FF3C9CE3BA47A9F30048AFF4FF51C5
+        FFFFAB5B65FFDC8C93FFFECDDAFFF5A0A3FFF28684FFF48684FFF28683FFF59F
+        A2FFFDCCDAFFDC8B93FFAB5B65FF51C5FFFF48AFF4FF4BAEF1004DB1F2FA67D7
+        FDFF68D7FBFFAF6165FFD37479FFF8C8D6FFFFE7F9FFFFE7F9FFFFE7F9FFF8C8
+        D6FFD37479FFAF6165FF68D7FBFF67D7FDFF4DB1F2FA4FB3F20050B8F45C5AC6
+        F7FF79F1FFFF7AFFFFFF858EA7FFB15658FFB65150FFB55251FFB65150FFB156
+        58FF858EA7FF7AFFFFFF79F1FFFF5AC6F7FF50B8F45C51B9F40050B8F40051BC
+        F55C51BCF5FA4EC0FBFF45C9FFA9B95A5B00BC595900BA5B5B00BC595900B95A
+        5B0045C9FFA94EC0FBFF51BCF5FA51BCF55C50B8F40051B9F400
+      }
+      OnClick = BitBtn3Click
+      TabOrder = 0
+    end
+    object BitBtn4: TBitBtn
+      Left = 8
+      Height = 30
+      Top = 8
+      Width = 144
+      DefaultCaption = True
+      Kind = bkCancel
+      ModalResult = 2
+      OnClick = BitBtn4Click
+      TabOrder = 1
+    end
+  end
+  object DBLookupComboBox4: TDBLookupComboBox
+    Left = 104
+    Height = 29
+    Top = 200
+    Width = 320
+    DataField = 'LABORATORISTA_ID'
+    DataSource = dsTrabajos
+    KeyField = 'ID_LABORATORISTA'
+    ListField = 'COMPLETO'
+    ListFieldIndex = 0
+    ListSource = dsLaboratoristas
+    LookupCache = False
+    TabOrder = 7
+  end
+  object Laboratorista: TLabel
+    Left = 8
+    Height = 17
+    Top = 200
+    Width = 94
+    Caption = 'Laboratorista'
+    ParentColor = False
+  end
+  object dsDentistas: TDataSource
+    DataSet = dmTrabajo.zDentistas
+    left = 368
+  end
+  object dsProductos: TDataSource
+    DataSet = dmTrabajo.zProductos
+    left = 368
+    top = 56
+  end
+  object dsTareas: TDataSource
+    DataSet = dmTrabajo.zTareas
+    left = 464
+    top = 40
+  end
+  object dsCategorias: TDataSource
+    DataSet = dmTrabajo.zCategorias
+    left = 304
+    top = 32
+  end
+  object dsTrabajos: TDataSource
+    DataSet = dmTrabajo.zTrabajos
+    left = 96
+    top = 48
+  end
+  object dsLaboratoristas: TDataSource
+    DataSet = dmTrabajo.zLaboratoristas
+    left = 376
+    top = 184
+  end
+end

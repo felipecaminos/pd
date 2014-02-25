@@ -1,0 +1,944 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CONFIG>
+  <ProjectSession>
+    <Version Value="9"/>
+    <BuildModes Active="Default"/>
+    <Units Count="75">
+      <Unit0>
+        <Filename Value="protesicodental.lpr"/>
+        <IsPartOfProject Value="True"/>
+        <UnitName Value="protesicodental"/>
+        <WindowIndex Value="0"/>
+        <TopLine Value="29"/>
+        <CursorPos X="1" Y="33"/>
+        <UsageCount Value="202"/>
+      </Unit0>
+      <Unit1>
+        <Filename Value="principal.pas"/>
+        <IsPartOfProject Value="True"/>
+        <ComponentName Value="FormPrincipal"/>
+        <HasResources Value="True"/>
+        <ResourceBaseClass Value="Form"/>
+        <UnitName Value="principal"/>
+        <EditorIndex Value="0"/>
+        <WindowIndex Value="0"/>
+        <TopLine Value="297"/>
+        <CursorPos X="28" Y="304"/>
+        <UsageCount Value="202"/>
+        <Loaded Value="True"/>
+        <LoadedDesigner Value="True"/>
+      </Unit1>
+      <Unit2>
+        <Filename Value="conexion_dm.pas"/>
+        <IsPartOfProject Value="True"/>
+        <ComponentName Value="dmConexion"/>
+        <HasResources Value="True"/>
+        <ResourceBaseClass Value="DataModule"/>
+        <UnitName Value="conexion_dm"/>
+        <WindowIndex Value="0"/>
+        <TopLine Value="46"/>
+        <CursorPos X="8" Y="57"/>
+        <UsageCount Value="202"/>
+      </Unit2>
+      <Unit3>
+        <Filename Value="src/base/base_input.pas"/>
+        <IsPartOfProject Value="True"/>
+        <ComponentName Value="FormBaseInput"/>
+        <HasResources Value="True"/>
+        <ResourceBaseClass Value="Form"/>
+        <UnitName Value="base_input"/>
+        <WindowIndex Value="0"/>
+        <TopLine Value="1"/>
+        <CursorPos X="1" Y="1"/>
+        <UsageCount Value="202"/>
+      </Unit3>
+      <Unit4>
+        <Filename Value="src/base/base_abm.pas"/>
+        <IsPartOfProject Value="True"/>
+        <ComponentName Value="FormBaseABM"/>
+        <HasResources Value="True"/>
+        <ResourceBaseClass Value="Form"/>
+        <UnitName Value="base_abm"/>
+        <WindowIndex Value="0"/>
+        <TopLine Value="37"/>
+        <CursorPos X="3" Y="54"/>
+        <UsageCount Value="202"/>
+      </Unit4>
+      <Unit5>
+        <Filename Value="src/formularios_abm/provincias_dm.pas"/>
+        <IsPartOfProject Value="True"/>
+        <ComponentName Value="dmProvincias"/>
+        <HasResources Value="True"/>
+        <ResourceBaseClass Value="DataModule"/>
+        <UnitName Value="provincias_dm"/>
+        <WindowIndex Value="0"/>
+        <TopLine Value="60"/>
+        <CursorPos X="50" Y="78"/>
+        <UsageCount Value="202"/>
+      </Unit5>
+      <Unit6>
+        <Filename Value="src/formularios_abm/provincias_abm.pas"/>
+        <IsPartOfProject Value="True"/>
+        <ComponentName Value="ProvinciasABM"/>
+        <HasResources Value="True"/>
+        <ResourceBaseClass Value="Form"/>
+        <UnitName Value="provincias_abm"/>
+        <WindowIndex Value="0"/>
+        <TopLine Value="74"/>
+        <CursorPos X="58" Y="89"/>
+        <UsageCount Value="202"/>
+      </Unit6>
+      <Unit7>
+        <Filename Value="src/varios/acercade.pas"/>
+        <IsPartOfProject Value="True"/>
+        <ComponentName Value="FAcercaDe"/>
+        <HasResources Value="True"/>
+        <ResourceBaseClass Value="Form"/>
+        <UnitName Value="acercade"/>
+        <WindowIndex Value="0"/>
+        <TopLine Value="5"/>
+        <CursorPos X="48" Y="23"/>
+        <UsageCount Value="217"/>
+      </Unit7>
+      <Unit8>
+        <Filename Value="src/formularios_abm/ciudades_dm.pas"/>
+        <IsPartOfProject Value="True"/>
+        <ComponentName Value="dmCiudades"/>
+        <HasResources Value="True"/>
+        <ResourceBaseClass Value="DataModule"/>
+        <UnitName Value="ciudades_dm"/>
+        <WindowIndex Value="0"/>
+        <TopLine Value="1"/>
+        <CursorPos X="48" Y="7"/>
+        <UsageCount Value="217"/>
+      </Unit8>
+      <Unit9>
+        <Filename Value="src/formularios_abm/ciudades_input.pas"/>
+        <IsPartOfProject Value="True"/>
+        <ComponentName Value="CiudadesInput"/>
+        <HasResources Value="True"/>
+        <ResourceBaseClass Value="Form"/>
+        <UnitName Value="ciudades_input"/>
+        <WindowIndex Value="0"/>
+        <TopLine Value="23"/>
+        <CursorPos X="55" Y="23"/>
+        <UsageCount Value="217"/>
+      </Unit9>
+      <Unit10>
+        <Filename Value="src/formularios_abm/ciudades_abm.pas"/>
+        <IsPartOfProject Value="True"/>
+        <ComponentName Value="CiudadesABM"/>
+        <HasResources Value="True"/>
+        <ResourceBaseClass Value="Form"/>
+        <UnitName Value="ciudades_abm"/>
+        <WindowIndex Value="0"/>
+        <TopLine Value="54"/>
+        <CursorPos X="34" Y="59"/>
+        <UsageCount Value="217"/>
+      </Unit10>
+      <Unit11>
+        <Filename Value="src/formularios_abm/dentistas_dm.pas"/>
+        <IsPartOfProject Value="True"/>
+        <ComponentName Value="dmDentistas"/>
+        <HasResources Value="True"/>
+        <ResourceBaseClass Value="DataModule"/>
+        <UnitName Value="dentistas_dm"/>
+        <WindowIndex Value="0"/>
+        <TopLine Value="77"/>
+        <CursorPos X="59" Y="82"/>
+        <UsageCount Value="210"/>
+      </Unit11>
+      <Unit12>
+        <Filename Value="src/formularios_abm/provincias_input.pas"/>
+        <IsPartOfProject Value="True"/>
+        <ComponentName Value="ProvinciasInput"/>
+        <HasResources Value="True"/>
+        <ResourceBaseClass Value="Form"/>
+        <UnitName Value="provincias_input"/>
+        <WindowIndex Value="0"/>
+        <TopLine Value="22"/>
+        <CursorPos X="46" Y="26"/>
+        <UsageCount Value="200"/>
+      </Unit12>
+      <Unit13>
+        <Filename Value="src/formularios_abm/dentistas_input.pas"/>
+        <IsPartOfProject Value="True"/>
+        <ComponentName Value="DentistasInput"/>
+        <HasResources Value="True"/>
+        <ResourceBaseClass Value="Form"/>
+        <UnitName Value="dentistas_input"/>
+        <WindowIndex Value="0"/>
+        <TopLine Value="3"/>
+        <CursorPos X="3" Y="15"/>
+        <UsageCount Value="220"/>
+      </Unit13>
+      <Unit14>
+        <Filename Value="src/formularios_abm/dentistas_abm.pas"/>
+        <IsPartOfProject Value="True"/>
+        <ComponentName Value="DentistasABM"/>
+        <HasResources Value="True"/>
+        <ResourceBaseClass Value="Form"/>
+        <UnitName Value="dentistas_abm"/>
+        <WindowIndex Value="0"/>
+        <TopLine Value="66"/>
+        <CursorPos X="3" Y="68"/>
+        <UsageCount Value="220"/>
+      </Unit14>
+      <Unit15>
+        <Filename Value="src/formularios_abm/productos_dm.pas"/>
+        <IsPartOfProject Value="True"/>
+        <ComponentName Value="dmProductos"/>
+        <HasResources Value="True"/>
+        <ResourceBaseClass Value="DataModule"/>
+        <UnitName Value="productos_dm"/>
+        <WindowIndex Value="0"/>
+        <TopLine Value="60"/>
+        <CursorPos X="4" Y="61"/>
+        <UsageCount Value="212"/>
+      </Unit15>
+      <Unit16>
+        <Filename Value="src/formularios_abm/productos_input.pas"/>
+        <IsPartOfProject Value="True"/>
+        <ComponentName Value="ProductosInput"/>
+        <HasResources Value="True"/>
+        <ResourceBaseClass Value="Form"/>
+        <UnitName Value="productos_input"/>
+        <WindowIndex Value="0"/>
+        <TopLine Value="25"/>
+        <CursorPos X="65" Y="28"/>
+        <UsageCount Value="212"/>
+      </Unit16>
+      <Unit17>
+        <Filename Value="src/formularios_abm/productos_abm.pas"/>
+        <IsPartOfProject Value="True"/>
+        <ComponentName Value="ProductosABM"/>
+        <HasResources Value="True"/>
+        <ResourceBaseClass Value="Form"/>
+        <UnitName Value="productos_abm"/>
+        <WindowIndex Value="0"/>
+        <TopLine Value="80"/>
+        <CursorPos X="1" Y="98"/>
+        <UsageCount Value="212"/>
+      </Unit17>
+      <Unit18>
+        <Filename Value="src/formularios_abm/contactos_dm.pas"/>
+        <IsPartOfProject Value="True"/>
+        <ComponentName Value="dmContactos"/>
+        <HasResources Value="True"/>
+        <ResourceBaseClass Value="DataModule"/>
+        <UnitName Value="contactos_dm"/>
+        <WindowIndex Value="0"/>
+        <TopLine Value="1"/>
+        <CursorPos X="1" Y="1"/>
+        <UsageCount Value="200"/>
+      </Unit18>
+      <Unit19>
+        <Filename Value="src/formularios_abm/contactos_input.pas"/>
+        <IsPartOfProject Value="True"/>
+        <ComponentName Value="ContactosInput"/>
+        <HasResources Value="True"/>
+        <ResourceBaseClass Value="Form"/>
+        <UnitName Value="contactos_input"/>
+        <WindowIndex Value="0"/>
+        <TopLine Value="1"/>
+        <CursorPos X="1" Y="1"/>
+        <UsageCount Value="222"/>
+      </Unit19>
+      <Unit20>
+        <Filename Value="src/formularios_abm/contactos_abm.pas"/>
+        <IsPartOfProject Value="True"/>
+        <ComponentName Value="ContactosABM"/>
+        <HasResources Value="True"/>
+        <ResourceBaseClass Value="Form"/>
+        <UnitName Value="contactos_abm"/>
+        <WindowIndex Value="0"/>
+        <TopLine Value="1"/>
+        <CursorPos X="1" Y="1"/>
+        <UsageCount Value="222"/>
+      </Unit20>
+      <Unit21>
+        <Filename Value="src/formularios_abm/contactos_listado.pas"/>
+        <IsPartOfProject Value="True"/>
+        <ComponentName Value="ListadoContactos"/>
+        <HasResources Value="True"/>
+        <ResourceBaseClass Value="Form"/>
+        <UnitName Value="contactos_listado"/>
+        <WindowIndex Value="0"/>
+        <TopLine Value="5"/>
+        <CursorPos X="3" Y="17"/>
+        <UsageCount Value="219"/>
+      </Unit21>
+      <Unit22>
+        <Filename Value="src/formularios_abm/iva_dm.pas"/>
+        <IsPartOfProject Value="True"/>
+        <ComponentName Value="dmIVA"/>
+        <HasResources Value="True"/>
+        <ResourceBaseClass Value="DataModule"/>
+        <UnitName Value="iva_dm"/>
+        <WindowIndex Value="0"/>
+        <TopLine Value="14"/>
+        <CursorPos X="17" Y="22"/>
+        <UsageCount Value="206"/>
+      </Unit22>
+      <Unit23>
+        <Filename Value="src/formularios_abm/iva_input.pas"/>
+        <IsPartOfProject Value="True"/>
+        <ComponentName Value="IVAInput"/>
+        <HasResources Value="True"/>
+        <ResourceBaseClass Value="Form"/>
+        <UnitName Value="iva_input"/>
+        <WindowIndex Value="0"/>
+        <TopLine Value="10"/>
+        <CursorPos X="35" Y="12"/>
+        <UsageCount Value="205"/>
+      </Unit23>
+      <Unit24>
+        <Filename Value="src/formularios_abm/iva_abm.pas"/>
+        <IsPartOfProject Value="True"/>
+        <ComponentName Value="IVAABM"/>
+        <HasResources Value="True"/>
+        <ResourceBaseClass Value="Form"/>
+        <UnitName Value="iva_abm"/>
+        <WindowIndex Value="0"/>
+        <TopLine Value="60"/>
+        <CursorPos X="19" Y="66"/>
+        <UsageCount Value="205"/>
+      </Unit24>
+      <Unit25>
+        <Filename Value="ayuda/index.html"/>
+        <IsPartOfProject Value="True"/>
+        <WindowIndex Value="0"/>
+        <TopLine Value="1"/>
+        <CursorPos X="1" Y="1"/>
+        <UsageCount Value="205"/>
+        <DefaultSyntaxHighlighter Value="HTML"/>
+      </Unit25>
+      <Unit26>
+        <Filename Value="src/varios/htmlhelp2viewer.pas"/>
+        <IsPartOfProject Value="True"/>
+        <ComponentName Value="HelpViewerForm"/>
+        <HasResources Value="True"/>
+        <ResourceBaseClass Value="Form"/>
+        <UnitName Value="HtmlHelp2Viewer"/>
+        <WindowIndex Value="0"/>
+        <TopLine Value="31"/>
+        <CursorPos X="78" Y="38"/>
+        <UsageCount Value="206"/>
+      </Unit26>
+      <Unit27>
+        <Filename Value="src/formularios_abm/categoriaproductos_dm.pas"/>
+        <IsPartOfProject Value="True"/>
+        <ComponentName Value="dmCategoriaProductos"/>
+        <HasResources Value="True"/>
+        <ResourceBaseClass Value="DataModule"/>
+        <UnitName Value="categoriaproductos_dm"/>
+        <WindowIndex Value="0"/>
+        <TopLine Value="16"/>
+        <CursorPos X="29" Y="25"/>
+        <UsageCount Value="202"/>
+      </Unit27>
+      <Unit28>
+        <Filename Value="src/formularios_abm/categoriaproductos_input.pas"/>
+        <IsPartOfProject Value="True"/>
+        <ComponentName Value="CatProductosInput"/>
+        <HasResources Value="True"/>
+        <ResourceBaseClass Value="Form"/>
+        <UnitName Value="categoriaproductos_input"/>
+        <WindowIndex Value="0"/>
+        <TopLine Value="14"/>
+        <CursorPos X="1" Y="26"/>
+        <UsageCount Value="201"/>
+      </Unit28>
+      <Unit29>
+        <Filename Value="src/formularios_abm/categoriaproductos_abm.pas"/>
+        <IsPartOfProject Value="True"/>
+        <ComponentName Value="CatProductosABM"/>
+        <HasResources Value="True"/>
+        <ResourceBaseClass Value="Form"/>
+        <UnitName Value="categoriaproductos_abm"/>
+        <WindowIndex Value="0"/>
+        <TopLine Value="71"/>
+        <CursorPos X="25" Y="72"/>
+        <UsageCount Value="200"/>
+      </Unit29>
+      <Unit30>
+        <Filename Value="src/trabajos/trabajo_dm.pas"/>
+        <IsPartOfProject Value="True"/>
+        <ComponentName Value="dmTrabajo"/>
+        <HasResources Value="True"/>
+        <ResourceBaseClass Value="DataModule"/>
+        <UnitName Value="trabajo_dm"/>
+        <WindowIndex Value="0"/>
+        <TopLine Value="639"/>
+        <CursorPos X="6" Y="653"/>
+        <UsageCount Value="206"/>
+      </Unit30>
+      <Unit31>
+        <Filename Value="src/trabajos/trabajo_nuevo.pas"/>
+        <IsPartOfProject Value="True"/>
+        <ComponentName Value="TrabajoNuevo"/>
+        <HasResources Value="True"/>
+        <ResourceBaseClass Value="Form"/>
+        <UnitName Value="trabajo_nuevo"/>
+        <WindowIndex Value="0"/>
+        <TopLine Value="1"/>
+        <CursorPos X="48" Y="8"/>
+        <UsageCount Value="206"/>
+      </Unit31>
+      <Unit32>
+        <Filename Value="src/agenda/agenda_dm.pas"/>
+        <IsPartOfProject Value="True"/>
+        <ComponentName Value="dmAgenda"/>
+        <HasResources Value="True"/>
+        <ResourceBaseClass Value="DataModule"/>
+        <UnitName Value="agenda_dm"/>
+        <WindowIndex Value="0"/>
+        <TopLine Value="74"/>
+        <CursorPos X="53" Y="82"/>
+        <UsageCount Value="200"/>
+      </Unit32>
+      <Unit33>
+        <Filename Value="src/agenda/agenda_seleccion.pas"/>
+        <IsPartOfProject Value="True"/>
+        <ComponentName Value="Agenda"/>
+        <HasResources Value="True"/>
+        <ResourceBaseClass Value="Form"/>
+        <UnitName Value="agenda_seleccion"/>
+        <WindowIndex Value="0"/>
+        <TopLine Value="61"/>
+        <CursorPos X="18" Y="97"/>
+        <UsageCount Value="200"/>
+      </Unit33>
+      <Unit34>
+        <Filename Value="src/agenda/agenda_fecha_input.pas"/>
+        <IsPartOfProject Value="True"/>
+        <ComponentName Value="AgendaInputFecha"/>
+        <HasResources Value="True"/>
+        <ResourceBaseClass Value="Form"/>
+        <UnitName Value="agenda_fecha_input"/>
+        <WindowIndex Value="0"/>
+        <TopLine Value="30"/>
+        <CursorPos X="13" Y="38"/>
+        <UsageCount Value="205"/>
+      </Unit34>
+      <Unit35>
+        <Filename Value="src/agenda/agenda_tarea_input.pas"/>
+        <IsPartOfProject Value="True"/>
+        <ComponentName Value="AgendaInputTarea"/>
+        <HasResources Value="True"/>
+        <ResourceBaseClass Value="Form"/>
+        <UnitName Value="agenda_tarea_input"/>
+        <WindowIndex Value="0"/>
+        <TopLine Value="23"/>
+        <CursorPos X="14" Y="34"/>
+        <UsageCount Value="203"/>
+      </Unit35>
+      <Unit36>
+        <Filename Value="src/trabajos/trabajo_tareas_finalizar.pas"/>
+        <IsPartOfProject Value="True"/>
+        <ComponentName Value="TareaFinalizar"/>
+        <HasResources Value="True"/>
+        <ResourceBaseClass Value="Form"/>
+        <UnitName Value="trabajo_tareas_finalizar"/>
+        <WindowIndex Value="0"/>
+        <TopLine Value="3"/>
+        <CursorPos X="32" Y="5"/>
+        <UsageCount Value="200"/>
+      </Unit36>
+      <Unit37>
+        <Filename Value="src/trabajos/trabajo_tareas_dm.pas"/>
+        <IsPartOfProject Value="True"/>
+        <ComponentName Value="dmTrabajosTareas"/>
+        <HasResources Value="True"/>
+        <ResourceBaseClass Value="DataModule"/>
+        <UnitName Value="trabajo_tareas_dm"/>
+        <WindowIndex Value="0"/>
+        <TopLine Value="59"/>
+        <CursorPos X="40" Y="68"/>
+        <UsageCount Value="200"/>
+      </Unit37>
+      <Unit38>
+        <Filename Value="src/trabajos/trabajo_tareas.pas"/>
+        <IsPartOfProject Value="True"/>
+        <ComponentName Value="TrabajosYTareas"/>
+        <HasResources Value="True"/>
+        <ResourceBaseClass Value="Form"/>
+        <UnitName Value="trabajo_tareas"/>
+        <WindowIndex Value="0"/>
+        <TopLine Value="95"/>
+        <CursorPos X="25" Y="103"/>
+        <UsageCount Value="200"/>
+      </Unit38>
+      <Unit39>
+        <Filename Value="src/trabajos/trabajo_tareas_asignarplazos.pas"/>
+        <IsPartOfProject Value="True"/>
+        <ComponentName Value="TareasEstablecerPlazo"/>
+        <HasResources Value="True"/>
+        <ResourceBaseClass Value="Form"/>
+        <UnitName Value="trabajo_tareas_asignarplazos"/>
+        <WindowIndex Value="0"/>
+        <TopLine Value="3"/>
+        <CursorPos X="46" Y="15"/>
+        <UsageCount Value="207"/>
+      </Unit39>
+      <Unit40>
+        <Filename Value="src/trabajos/trabajo_tareas_despacho.pas"/>
+        <IsPartOfProject Value="True"/>
+        <ComponentName Value="TareasDespacho"/>
+        <HasResources Value="True"/>
+        <ResourceBaseClass Value="Form"/>
+        <UnitName Value="trabajo_tareas_despacho"/>
+        <WindowIndex Value="0"/>
+        <TopLine Value="3"/>
+        <CursorPos X="39" Y="15"/>
+        <UsageCount Value="200"/>
+      </Unit40>
+      <Unit41>
+        <Filename Value="src/trabajos/trabajo_dialogo_remitoguia.pas"/>
+        <IsPartOfProject Value="True"/>
+        <ComponentName Value="DialogoRemitoGuia"/>
+        <HasResources Value="True"/>
+        <ResourceBaseClass Value="Form"/>
+        <UnitName Value="trabajo_dialogo_remitoguia"/>
+        <WindowIndex Value="0"/>
+        <TopLine Value="1"/>
+        <CursorPos X="1" Y="1"/>
+        <UsageCount Value="205"/>
+      </Unit41>
+      <Unit42>
+        <Filename Value="src/trabajos/trabajo_dialogo_obs_dentista.pas"/>
+        <IsPartOfProject Value="True"/>
+        <ComponentName Value="DialogoObservacionDentista"/>
+        <HasResources Value="True"/>
+        <ResourceBaseClass Value="Form"/>
+        <UnitName Value="trabajo_dialogo_obs_dentista"/>
+        <WindowIndex Value="0"/>
+        <TopLine Value="1"/>
+        <CursorPos X="7" Y="3"/>
+        <UsageCount Value="201"/>
+      </Unit42>
+      <Unit43>
+        <Filename Value="src/trabajos/trabajo_finalizar.pas"/>
+        <IsPartOfProject Value="True"/>
+        <ComponentName Value="TrabajoFinalizar"/>
+        <HasResources Value="True"/>
+        <ResourceBaseClass Value="Form"/>
+        <UnitName Value="trabajo_finalizar"/>
+        <WindowIndex Value="0"/>
+        <TopLine Value="60"/>
+        <CursorPos X="71" Y="68"/>
+        <UsageCount Value="201"/>
+        <Bookmarks Count="1">
+          <Item0 X="1" Y="35" ID="5"/>
+        </Bookmarks>
+      </Unit43>
+      <Unit44>
+        <Filename Value="src/trabajos/trabajo_finalizar_input.pas"/>
+        <IsPartOfProject Value="True"/>
+        <ComponentName Value="TrabajosFinalizarInput"/>
+        <HasResources Value="True"/>
+        <ResourceBaseClass Value="Form"/>
+        <UnitName Value="trabajo_finalizar_input"/>
+        <WindowIndex Value="0"/>
+        <TopLine Value="6"/>
+        <CursorPos X="10" Y="10"/>
+        <UsageCount Value="205"/>
+      </Unit44>
+      <Unit45>
+        <Filename Value="src/trabajos/trabajo_dialogo_facturacion.pas"/>
+        <IsPartOfProject Value="True"/>
+        <ComponentName Value="DialogoFactura"/>
+        <HasResources Value="True"/>
+        <ResourceBaseClass Value="Form"/>
+        <UnitName Value="trabajo_dialogo_facturacion"/>
+        <WindowIndex Value="0"/>
+        <TopLine Value="4"/>
+        <CursorPos X="39" Y="15"/>
+        <UsageCount Value="176"/>
+      </Unit45>
+      <Unit46>
+        <Filename Value="src/cuentas_corrientes/cuentas_corrientes_listado.pas"/>
+        <IsPartOfProject Value="True"/>
+        <ComponentName Value="CuentasCorrientes"/>
+        <HasResources Value="True"/>
+        <ResourceBaseClass Value="Form"/>
+        <UnitName Value="cuentas_corrientes_listado"/>
+        <EditorIndex Value="1"/>
+        <WindowIndex Value="0"/>
+        <TopLine Value="86"/>
+        <CursorPos X="3" Y="88"/>
+        <UsageCount Value="132"/>
+        <Loaded Value="True"/>
+        <LoadedDesigner Value="True"/>
+      </Unit46>
+      <Unit47>
+        <Filename Value="src/cuentas_corrientes/cuentas_corrientes_dm.pas"/>
+        <IsPartOfProject Value="True"/>
+        <ComponentName Value="dmCuentasCorrientes"/>
+        <HasResources Value="True"/>
+        <ResourceBaseClass Value="DataModule"/>
+        <UnitName Value="cuentas_corrientes_dm"/>
+        <IsVisibleTab Value="True"/>
+        <EditorIndex Value="2"/>
+        <WindowIndex Value="0"/>
+        <TopLine Value="140"/>
+        <CursorPos X="3" Y="157"/>
+        <UsageCount Value="132"/>
+        <Bookmarks Count="1">
+          <Item0 X="1" Y="284" ID="1"/>
+        </Bookmarks>
+        <Loaded Value="True"/>
+        <LoadedDesigner Value="True"/>
+      </Unit47>
+      <Unit48>
+        <Filename Value="src/varios/aaaa_unit_pruebas.pas"/>
+        <IsPartOfProject Value="True"/>
+        <ComponentName Value="Form1"/>
+        <HasResources Value="True"/>
+        <ResourceBaseClass Value="Form"/>
+        <UnitName Value="aaaa_unit_pruebas"/>
+        <WindowIndex Value="0"/>
+        <TopLine Value="3"/>
+        <CursorPos X="5" Y="20"/>
+        <UsageCount Value="125"/>
+      </Unit48>
+      <Unit49>
+        <Filename Value="src/base/base_form_maestro.pas"/>
+        <IsPartOfProject Value="True"/>
+        <ComponentName Value="FormMaestro"/>
+        <HasResources Value="True"/>
+        <ResourceBaseClass Value="Form"/>
+        <UnitName Value="base_form_maestro"/>
+        <WindowIndex Value="0"/>
+        <TopLine Value="1"/>
+        <CursorPos X="33" Y="13"/>
+        <UsageCount Value="111"/>
+      </Unit49>
+      <Unit50>
+        <Filename Value="src/trabajos/trabajo_dialogo_factura.pas"/>
+        <IsPartOfProject Value="True"/>
+        <ComponentName Value="DialogoFacturaC"/>
+        <HasResources Value="True"/>
+        <ResourceBaseClass Value="Form"/>
+        <UnitName Value="trabajo_dialogo_factura"/>
+        <EditorIndex Value="3"/>
+        <WindowIndex Value="0"/>
+        <TopLine Value="44"/>
+        <CursorPos X="1" Y="60"/>
+        <UsageCount Value="109"/>
+        <Loaded Value="True"/>
+      </Unit50>
+      <Unit51>
+        <Filename Value="src/cuentas_corrientes/cuentas_corrientes_facturacion.pas"/>
+        <IsPartOfProject Value="True"/>
+        <ComponentName Value="FacturacionTrabajosCC"/>
+        <HasResources Value="True"/>
+        <ResourceBaseClass Value="Form"/>
+        <UnitName Value="cuentas_corrientes_facturacion"/>
+        <WindowIndex Value="0"/>
+        <TopLine Value="1"/>
+        <CursorPos X="68" Y="7"/>
+        <UsageCount Value="105"/>
+      </Unit51>
+      <Unit52>
+        <Filename Value="src/cuentas_corrientes/cuentes_corrientes_pagos.pas"/>
+        <IsPartOfProject Value="True"/>
+        <ComponentName Value="CuentasCorrientesPagos"/>
+        <HasResources Value="True"/>
+        <ResourceBaseClass Value="Form"/>
+        <UnitName Value="cuentes_corrientes_pagos"/>
+        <WindowIndex Value="0"/>
+        <TopLine Value="77"/>
+        <CursorPos X="1" Y="97"/>
+        <UsageCount Value="54"/>
+        <Bookmarks Count="2">
+          <Item0 X="1" Y="85" ID="2"/>
+          <Item1 X="1" Y="86" ID="3"/>
+        </Bookmarks>
+      </Unit52>
+      <Unit53>
+        <Filename Value="src/trabajos/trabajo_dialogo_remito.pas"/>
+        <IsPartOfProject Value="True"/>
+        <ComponentName Value="DialogoRemito"/>
+        <HasResources Value="True"/>
+        <ResourceBaseClass Value="Form"/>
+        <UnitName Value="trabajo_dialogo_remito"/>
+        <WindowIndex Value="0"/>
+        <TopLine Value="1"/>
+        <CursorPos X="68" Y="11"/>
+        <UsageCount Value="38"/>
+      </Unit53>
+      <Unit54>
+        <Filename Value="src/agenda/cuentas_corrientes_dialogo_recibo.pas"/>
+        <IsPartOfProject Value="True"/>
+        <ComponentName Value="DialogoRecibo"/>
+        <HasResources Value="True"/>
+        <ResourceBaseClass Value="Form"/>
+        <UnitName Value="cuentas_corrientes_dialogo_recibo"/>
+        <WindowIndex Value="0"/>
+        <TopLine Value="36"/>
+        <CursorPos X="70" Y="27"/>
+        <UsageCount Value="42"/>
+      </Unit54>
+      <Unit55>
+        <Filename Value="src/varios/uconvertiraletras.pas"/>
+        <IsPartOfProject Value="True"/>
+        <UnitName Value="uConvertirALetras"/>
+        <WindowIndex Value="0"/>
+        <TopLine Value="16"/>
+        <CursorPos X="13" Y="25"/>
+        <UsageCount Value="25"/>
+      </Unit55>
+      <Unit56>
+        <Filename Value="/usr/lib/codetyphon/typhon/components/pl_ZeosDBO/source/core/ZExprParser.pas"/>
+        <UnitName Value="ZExprParser"/>
+        <WindowIndex Value="0"/>
+        <TopLine Value="374"/>
+        <CursorPos X="7" Y="382"/>
+        <UsageCount Value="3"/>
+        <DefaultSyntaxHighlighter Value="Delphi"/>
+      </Unit56>
+      <Unit57>
+        <Filename Value="/usr/lib/codetyphon/typhon/components/pl_ZeosDBO/source/component/ZAbstractRODataset.pas"/>
+        <UnitName Value="ZAbstractRODataset"/>
+        <WindowIndex Value="0"/>
+        <TopLine Value="1390"/>
+        <CursorPos X="1" Y="1406"/>
+        <UsageCount Value="5"/>
+        <DefaultSyntaxHighlighter Value="Delphi"/>
+      </Unit57>
+      <Unit58>
+        <Filename Value="/usr/lib/codetyphon/typhon/lcl/extdlgs.pas"/>
+        <UnitName Value="ExtDlgs"/>
+        <WindowIndex Value="0"/>
+        <TopLine Value="301"/>
+        <CursorPos X="15" Y="324"/>
+        <UsageCount Value="4"/>
+      </Unit58>
+      <Unit59>
+        <Filename Value="/usr/lib/codetyphon/typhon/lcl/controls.pp"/>
+        <UnitName Value="Controls"/>
+        <WindowIndex Value="0"/>
+        <TopLine Value="36"/>
+        <CursorPos X="3" Y="46"/>
+        <UsageCount Value="5"/>
+      </Unit59>
+      <Unit60>
+        <Filename Value="/usr/lib/codetyphon/typhon/lcl/dialogs.pp"/>
+        <UnitName Value="Dialogs"/>
+        <WindowIndex Value="0"/>
+        <TopLine Value="499"/>
+        <CursorPos X="11" Y="509"/>
+        <UsageCount Value="5"/>
+      </Unit60>
+      <Unit61>
+        <Filename Value="/usr/lib/codetyphon/typhon/components/pl_ZeosDBO/source/dbc/ZDbcInterbase6Utils.pas"/>
+        <UnitName Value="ZDbcInterbase6Utils"/>
+        <WindowIndex Value="0"/>
+        <TopLine Value="829"/>
+        <CursorPos X="1" Y="834"/>
+        <UsageCount Value="5"/>
+        <DefaultSyntaxHighlighter Value="Delphi"/>
+      </Unit61>
+      <Unit62>
+        <Filename Value="trabajo_dm.lfm"/>
+        <WindowIndex Value="0"/>
+        <TopLine Value="667"/>
+        <CursorPos X="1" Y="683"/>
+        <UsageCount Value="2"/>
+        <DefaultSyntaxHighlighter Value="LFM"/>
+      </Unit62>
+      <Unit63>
+        <Filename Value="/usr/lib/codetyphon/typhon/components/pl_ZeosDBO/source/dbc/ZDbcUtils.pas"/>
+        <UnitName Value="ZDbcUtils"/>
+        <WindowIndex Value="0"/>
+        <TopLine Value="328"/>
+        <CursorPos X="20" Y="344"/>
+        <UsageCount Value="1"/>
+        <DefaultSyntaxHighlighter Value="Delphi"/>
+      </Unit63>
+      <Unit64>
+        <Filename Value="/usr/lib/codetyphon/typhon/components/pl_ZeosDBO/source/component/ZAbstractDataset.pas"/>
+        <UnitName Value="ZAbstractDataset"/>
+        <WindowIndex Value="0"/>
+        <TopLine Value="421"/>
+        <CursorPos X="1" Y="431"/>
+        <UsageCount Value="1"/>
+        <DefaultSyntaxHighlighter Value="Delphi"/>
+      </Unit64>
+      <Unit65>
+        <Filename Value="productos_dm.lfm"/>
+        <WindowIndex Value="0"/>
+        <TopLine Value="1"/>
+        <CursorPos X="64" Y="7"/>
+        <UsageCount Value="2"/>
+        <DefaultSyntaxHighlighter Value="LFM"/>
+      </Unit65>
+      <Unit66>
+        <Filename Value="/usr/lib/codetyphon/typhon/lcl/forms.pp"/>
+        <UnitName Value="Forms"/>
+        <WindowIndex Value="0"/>
+        <TopLine Value="735"/>
+        <CursorPos X="14" Y="742"/>
+        <UsageCount Value="2"/>
+      </Unit66>
+      <Unit67>
+        <Filename Value="acercade.lfm"/>
+        <WindowIndex Value="0"/>
+        <TopLine Value="1"/>
+        <CursorPos X="1" Y="10"/>
+        <UsageCount Value="5"/>
+        <DefaultSyntaxHighlighter Value="LFM"/>
+      </Unit67>
+      <Unit68>
+        <Filename Value="principal.lfm"/>
+        <WindowIndex Value="0"/>
+        <TopLine Value="4376"/>
+        <CursorPos X="14" Y="4399"/>
+        <UsageCount Value="8"/>
+        <DefaultSyntaxHighlighter Value="LFM"/>
+      </Unit68>
+      <Unit69>
+        <Filename Value="trabajo_dialogo_facturacion.lfm"/>
+        <WindowIndex Value="0"/>
+        <TopLine Value="1"/>
+        <CursorPos X="1" Y="12"/>
+        <UsageCount Value="5"/>
+        <DefaultSyntaxHighlighter Value="LFM"/>
+      </Unit69>
+      <Unit70>
+        <Filename Value="trabajo_finalizar_input.lfm"/>
+        <WindowIndex Value="0"/>
+        <TopLine Value="1"/>
+        <CursorPos X="1" Y="12"/>
+        <UsageCount Value="5"/>
+        <DefaultSyntaxHighlighter Value="LFM"/>
+      </Unit70>
+      <Unit71>
+        <Filename Value="trabajo_finalizar.lfm"/>
+        <WindowIndex Value="0"/>
+        <TopLine Value="1"/>
+        <CursorPos X="1" Y="12"/>
+        <UsageCount Value="5"/>
+        <DefaultSyntaxHighlighter Value="LFM"/>
+      </Unit71>
+      <Unit72>
+        <Filename Value="/usr/lib/codetyphon/typhon/lcl/stdctrls.pp"/>
+        <UnitName Value="StdCtrls"/>
+        <WindowIndex Value="0"/>
+        <TopLine Value="308"/>
+        <CursorPos X="3" Y="326"/>
+        <UsageCount Value="5"/>
+      </Unit72>
+      <Unit73>
+        <Filename Value="base_abm.lfm"/>
+        <WindowIndex Value="0"/>
+        <TopLine Value="10"/>
+        <CursorPos X="14" Y="20"/>
+        <UsageCount Value="8"/>
+        <DefaultSyntaxHighlighter Value="LFM"/>
+      </Unit73>
+      <Unit74>
+        <Filename Value="/usr/lib/codetyphon/typhon/lcl/lclintf.pas"/>
+        <UnitName Value="LCLIntf"/>
+        <WindowIndex Value="0"/>
+        <TopLine Value="177"/>
+        <CursorPos X="45" Y="188"/>
+        <UsageCount Value="8"/>
+      </Unit74>
+    </Units>
+    <General>
+      <ActiveWindowIndexAtStart Value="0"/>
+    </General>
+    <JumpHistory Count="18" HistoryIndex="17">
+      <Position1>
+        <Filename Value="src/cuentas_corrientes/cuentas_corrientes_dm.pas"/>
+        <Caret Line="278" Column="12" TopLine="270"/>
+      </Position1>
+      <Position2>
+        <Filename Value="src/cuentas_corrientes/cuentas_corrientes_dm.pas"/>
+        <Caret Line="211" Column="1" TopLine="203"/>
+      </Position2>
+      <Position3>
+        <Filename Value="src/cuentas_corrientes/cuentas_corrientes_dm.pas"/>
+        <Caret Line="292" Column="1" TopLine="285"/>
+      </Position3>
+      <Position4>
+        <Filename Value="src/cuentas_corrientes/cuentas_corrientes_dm.pas"/>
+        <Caret Line="320" Column="1" TopLine="304"/>
+      </Position4>
+      <Position5>
+        <Filename Value="src/cuentas_corrientes/cuentas_corrientes_dm.pas"/>
+        <Caret Line="319" Column="1" TopLine="303"/>
+      </Position5>
+      <Position6>
+        <Filename Value="principal.pas"/>
+        <Caret Line="400" Column="26" TopLine="390"/>
+      </Position6>
+      <Position7>
+        <Filename Value="principal.pas"/>
+        <Caret Line="207" Column="3" TopLine="156"/>
+      </Position7>
+      <Position8>
+        <Filename Value="principal.pas"/>
+        <Caret Line="119" Column="8" TopLine="102"/>
+      </Position8>
+      <Position9>
+        <Filename Value="principal.pas"/>
+        <Caret Line="283" Column="3" TopLine="278"/>
+      </Position9>
+      <Position10>
+        <Filename Value="principal.pas"/>
+        <Caret Line="301" Column="3" TopLine="297"/>
+      </Position10>
+      <Position11>
+        <Filename Value="src/cuentas_corrientes/cuentas_corrientes_dm.pas"/>
+        <Caret Line="294" Column="16" TopLine="277"/>
+      </Position11>
+      <Position12>
+        <Filename Value="src/cuentas_corrientes/cuentas_corrientes_dm.pas"/>
+        <Caret Line="293" Column="16" TopLine="276"/>
+      </Position12>
+      <Position13>
+        <Filename Value="src/cuentas_corrientes/cuentas_corrientes_dm.pas"/>
+        <Caret Line="290" Column="46" TopLine="280"/>
+      </Position13>
+      <Position14>
+        <Filename Value="src/cuentas_corrientes/cuentas_corrientes_listado.pas"/>
+        <Caret Line="16" Column="3" TopLine="7"/>
+      </Position14>
+      <Position15>
+        <Filename Value="src/cuentas_corrientes/cuentas_corrientes_listado.pas"/>
+        <Caret Line="88" Column="3" TopLine="86"/>
+      </Position15>
+      <Position16>
+        <Filename Value="src/cuentas_corrientes/cuentas_corrientes_dm.pas"/>
+        <Caret Line="143" Column="3" TopLine="133"/>
+      </Position16>
+      <Position17>
+        <Filename Value="src/cuentas_corrientes/cuentas_corrientes_dm.pas"/>
+        <Caret Line="165" Column="3" TopLine="164"/>
+      </Position17>
+      <Position18>
+        <Filename Value="src/cuentas_corrientes/cuentas_corrientes_listado.pas"/>
+        <Caret Line="88" Column="3" TopLine="86"/>
+      </Position18>
+    </JumpHistory>
+    <CustomSessionData Count="2">
+      <Item0 Name="HTML_Autor"/>
+      <Item1 Name="HTML_Copyright"/>
+    </CustomSessionData>
+  </ProjectSession>
+  <Debugging>
+    <BreakPoints Count="1">
+      <Item1>
+        <Kind Value="bpkSource"/>
+        <WatchScope Value="wpsLocal"/>
+        <WatchKind Value="wpkWrite"/>
+        <Source Value="unit2.pas"/>
+        <Line Value="12"/>
+      </Item1>
+    </BreakPoints>
+  </Debugging>
+  <EditorMacros Count="0"/>
+</CONFIG>

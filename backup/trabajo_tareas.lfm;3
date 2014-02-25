@@ -1,0 +1,58 @@
+object TrabajosYTareas: TTrabajosYTareas
+  Left = 554
+  Height = 444
+  Top = 163
+  Width = 801
+  Caption = 'TrabajosYTareas'
+  ClientHeight = 444
+  ClientWidth = 801
+  OnCreate = FormCreate
+  OnDestroy = FormDestroy
+  LCLVersion = '1.1'
+  object DBGrid1: TDBGrid
+    Left = 8
+    Height = 232
+    Top = 8
+    Width = 784
+    Color = clWindow
+    Columns = <>
+    DataSource = dsTrabajos
+    Options = [dgTitles, dgIndicator, dgColumnResize, dgColumnMove, dgColLines, dgRowLines, dgTabs, dgRowSelect, dgAlwaysShowSelection, dgConfirmDelete, dgCancelOnExit]
+    ReadOnly = True
+    Scrollbars = ssAutoBoth
+    TabOrder = 0
+  end
+  object DBGrid2: TDBGrid
+    Left = 8
+    Height = 160
+    Top = 240
+    Width = 784
+    Color = clWindow
+    Columns = <>
+    DataSource = dsTareas
+    Options = [dgTitles, dgIndicator, dgColumnResize, dgColumnMove, dgColLines, dgRowLines, dgTabs, dgRowSelect, dgAlwaysShowSelection, dgConfirmDelete, dgCancelOnExit]
+    ReadOnly = True
+    Scrollbars = ssAutoBoth
+    TabOrder = 1
+  end
+  object BitBtn1: TBitBtn
+    Left = 664
+    Height = 30
+    Top = 408
+    Width = 128
+    DefaultCaption = True
+    Kind = bkClose
+    ModalResult = 11
+    TabOrder = 2
+  end
+  object dsTrabajos: TDatasource
+    DataSet = dmTrabajosTareas.zTrabajos
+    left = 70
+    top = 119
+  end
+  object dsTareas: TDatasource
+    DataSet = dmTrabajosTareas.zTareas
+    left = 68
+    top = 280
+  end
+end
